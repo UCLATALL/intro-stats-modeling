@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <p>For example, here's a bit of R, we call bits of this language "code." Try pressing the "run" button to see what it will do.</p>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                #No PEC
+            </code>
+            <code data-type="sample-code">
+                print("Hello world!")
+                
+                # Press the "run" button 
+            </code>
+            <code data-type="solution">
+                print("Hello world!")
+                
+                # Press the "run" button 
+            </code>
+            <code data-type="sct">
+                test_function("print")
+                success_msg("Great job!")
+            </code>
+            <div data-type="hint">Press the yellow "run" button. No need to type anything.</div>
+        </div>
+    </body>
+</html>
