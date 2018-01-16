@@ -9,11 +9,9 @@
     <p> After you multiply my.vector by 100, what will happen if you print out my.vector? Will you get the original vector (1,2,3,4,5) or one that has the hundreds (100,200,300,400,500)?<br> Try running this code to see what happsn
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
-            # No PEC
-                
+            # No PEC  
             </code>
             <code data-type="sample-code">
-                
                 # Run the code below to see what happens
                 my.vector <- c(1,2,3,4,5)
                 my.vector * 100 
@@ -31,8 +29,7 @@
             <code data-type="sct">
             test_object("my.vector", incorrect_msg = "Keep the line that assigns c(1,2,3,4,5) to `my.vector`.")
              test_output_contains("my.vector * 100", incorrect_msg = "Keep the line that multiplys my.vector by 100")
-             test_output_contains("my.vector", incorrect_msg = "Make sure to print my.vector")
-             success_msg("Nice one!" Multiplying an object will not change the contents of the object.)   
+             test_output_contains("my.vector", incorrect_msg = "Make sure to print my.vector")  
             </code>
             
             <div data-type="hint">Simply click the Run button and observe the output</div>
