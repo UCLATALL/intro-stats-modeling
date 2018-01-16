@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            </code>
+            <code data-type="sample-code">
+                # Modify this code to simulate 10 coin flips. 
+                rflip()
+                
+            </code>
+            <code data-type="solution">
+                # Modify this code to simulate 10 coin flips.
+                rflip(n=10)
+
+            </code>
+            <code data-type="sct">
+                ex() %>%
+                check_function('rflip')%>%
+                check_arg('n') %>%
+                check_equal()
+                </code>
+        <div data-type="hint">Make sure you set n = 10</div>
+        </div>
+
+    </body>
+</html>
