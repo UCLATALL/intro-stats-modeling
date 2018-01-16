@@ -31,8 +31,8 @@
             <code data-type="sct">
                ex() %>% check_object('my.vector')
                ex() %>% check_object('my.vector2')
-               ex() %>% check_output_expr("my.vector", incorrect_msg = "Have you told R to print out `my.vector`?")
-               ex() %>% check_output_expr("my.vector2", incorrect_msg = "Have you told R to print out `my.vector2`?")
+               ex() %>% check_output_expr("my.vector")
+               ex() %>% check_output_expr("my.vector2")
                success_msg("Great! Continue to the next exercise.")
                 
             </code>
