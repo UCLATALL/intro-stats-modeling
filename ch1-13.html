@@ -27,9 +27,9 @@
             </code>
             
             <code data-type="sct">
-            test_object("my.vector", incorrect_msg = "Keep the line that assigns c(1,2,3,4,5) to `my.vector`.")
-             test_output_contains("my.vector * 100", incorrect_msg = "Keep the line that multiplys my.vector by 100")
-             test_output_contains("my.vector", incorrect_msg = "Make sure to print my.vector")  
+            ex() %>% check_object("my.vector", incorrect_msg = "Keep the line that assigns c(1,2,3,4,5) to `my.vector`.")
+            ex() %>% check_output_contains("my.vector * 100", incorrect_msg = "Keep the line that multiplys my.vector by 100")
+            ex() %>% check_output_contains("my.vector", incorrect_msg = "Make sure to print my.vector")  
             </code>
             
             <div data-type="hint">Simply click the Run button and observe the output</div>
