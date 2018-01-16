@@ -24,9 +24,8 @@
                    
             </code>
             <code data-type="sct">
-                test_object("my.vector")
+                test_object("my.vector", undefined_msg = "make sure to assign my.vector * 100 to my.vector", incorrect_msg = "the contents of my.vector should be my.vector * 100")
                 test_output_contains("my.vector")
-                test_error()
             </code>
             <div data-type="hint"></div>
         </div>
