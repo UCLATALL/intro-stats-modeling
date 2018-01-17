@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                
+            </code>
+            <code data-type="sample-code">
+                # Try using the == as a comparison operator. What do you expect from this code? Run the code to see what happens. 
+                
+                A <- 5
+                B <- 5
+                Compare <- A = B
+                Compare 
+                
+                # Fix the bug in the code above  
+            </code>
+            <code data-type="solution">
+                A <- 5
+                B <- 5
+                Compare <- A == B
+                Compare
+    
+            </code>
+            <code data-type="sct">
+                test_object("A", incorrect_msg = "Make sure the object A is assigned the value 5")
+                test_object("B", incorrect_msg = "Make sure the object B is assigned the value 5")
+                test_object("Compare", incorrect_msg = "Fix the code to assign A == B to compare")
+                test_output_contains("Compare", incorrect_msg = "Did you tell R to print Compare?")
+                success_msg("Nice thinking!")
+                
+            </code>
+            <div data-type="hint">Use == to test if two values are equal</div>
+        </div>
+    </body>
+</html>
