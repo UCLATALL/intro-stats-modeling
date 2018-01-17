@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                #No PEC
+            </code>
+            <code data-type="sample-code">
+                # Read this code and predict what value will come out of the R console. Then run the code and see if you were right. 
+                
+                A <- 1
+                B <- 5
+                
+                Compare <- A > B
+                
+                Compare    
+            </code>
+            <code data-type="solution">
+                A <- 1
+                B <- 5
+                
+                Compare <- A > B
+                
+                Compare     
+            </code>
+            <code data-type="sct">
+                test_object("A", incorrect_msg = "Keep the line that assigns 1 to A")
+                test_object("B", incorrect_msg = "Keep the line that assigns 5 to B")
+                test_object("Compare", incorrect_msg = "Keep the line that assigns A > B to Compare")
+                test_output_contains("Compare", incorrect_msg = "Make sure to print out Compare")
+                success_msg("Great work!")
+            </code>
+            <div data-type="hint">Just click Run</div>
+        </div>
+    </body>
+</html>
