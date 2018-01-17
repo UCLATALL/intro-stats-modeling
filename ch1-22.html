@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                #no PEC
+            </code>
+            <code data-type="sample-code">
+                # Here's the code to create the my.numbers vector: 
+                
+                my.numbers <- c(1:10)
+                
+                # And here's the code to check whether each element of the vector my.numbers is greater than or equal to 5, storing the result in a new vector called my.booleans. 
+                
+                my.booleans <- my.numbers >= 5
+                
+                # This code prints out both vectors
+                
+                my.numbers
+                my.booleans  
+                 
+            </code>
+            <code data-type="solution">
+                my.numbers <- c(1:10)
+                my.booleans <- my.numbers >= 5
+                my.numbers
+                my.booleans
+                 
+            </code>
+            <code data-type="sct">
+                test_object("my.numbers", incorrect_msg = "Make sure to keep the line that assigns c(1:10) to my.numbers")
+                test_object("my.booleans", incorrect_msg = "Make sure you assign my.numbers>= 5 to my.booleans")
+                test_output_contains("my.numbers", incorrect_msg = "Did you print my.numbers?")
+                test_output_contains("my.booleans", incorrect_msg = "Did you print my.booleans?")
+                success_msg("Fantastic work!")
+                
+            </code>
+            <div data-type="hint">Just click Run</div>
+        </div>
+    </body>
+</html>
