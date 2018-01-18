@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+    <p> After you multiply my.vector by 100, what will happen if you print out my.vector? Will you get the original vector (1,2,3,4,5) or one that has the hundreds (100,200,300,400,500)?<br> Try running this code to see what happens.
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            # No PEC  
+            </code>
+            <code data-type="sample-code">
+                # Run the code below to see what happens
+                my.vector <- c(1,2,3,4,5)
+                my.vector * 100 
+                
+                # This will print out my.vector
+                my.vector   
+                 
+            </code>
+            <code data-type="solution">
+            my.vector <- c(1,2,3,4,5)
+            my.vector * 100
+            my.vector
+            </code>
+            
+            <code data-type="sct">
+                test_object("my.vector")
+                test_output_contains("my.vector * 100", incorrect_msg = "make sure to keep the line my.vector * 100")
+                test_output_contains("my.vector", incorrect_msg = "make sure to print my.vector")
+                success_msg("Nice job!")
+            </code>
+            
+            <div data-type="hint">Simply click the Run button and observe the output</div>
+        </div>
+    </body>
+</html>
