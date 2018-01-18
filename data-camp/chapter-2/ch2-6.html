@@ -12,8 +12,7 @@
                 MindsetMatters <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/mindset-matters.csv", header=TRUE, sep=",")
             </code>
             <code data-type="sample-code">
-                # Try running this code 
-                str(MindsetMatters)
+                # Use the tally() function on the MindsetMatters dataframe to create a frequency table of housekeepers by Condition 
                       
             </code>
             <code data-type="solution">
@@ -24,12 +23,11 @@
                 test_object("MindsetMatters")
                 test_function("tally", args = c("x", "data"), 
                 not_called_msg = "Have you used `tally()` to tally the data?", 
-                args_not_specified = "Have you specified both the variable to tally and the dataset?", 
-                incorrect_msg = c("Have you used ~Condition and data = MindsetMatters as your arguments?"))
+                args_not_specified = "Have you specified both the variable to tally and the dataset?")
                 test_output_contains("tally(~Condition, data="MindsetMatters"))
                 
             </code>
-            <div data-type="hint">Just click Run</div>
+            <div data-type="hint">Use tally(), ~Condition, and data=MindsetMatters</div>
         </div>
     </body>
 </html>
