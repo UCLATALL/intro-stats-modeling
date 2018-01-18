@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <p>Now remember, R is case sensitive. Try assigning 5 to num and 10 to NUM</p>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                #No PEC
+            </code>
+            <code data-type="sample-code">
+                # Assign 5 to num and 10 to NUM
+                num <- 
+                
+                NUM <- 
+                
+                # Now write the code to print out the number 10 
+                
+            </code>
+            <code data-type="solution">
+                # Assign 5 to num and 10 to NUM
+                num <- 5
+                
+                NUM <- 10
+                
+                # Now write print out the number 10 
+                NUM 
+            </code>
+            <code data-type="sct">
+                msg_undefined = "Make sure to define the variable."
+                msg_incorrect = "Make sure you assign the correct value to the variable." 
+                ex() %>% 
+                    check_object('num', msg_undefined) %>% check_equal(msg_incorrect)
+                ex() %>%
+                    check_object('NUM', msg_undefined) %>% check_equal(msg_incorrect)
+                ex() %>% check_output_expr("NUM")
+                
+                success_msg("Fantastic work!")
+            </code>
+        <div data-type="hint">Don't forget to print out the object that contains 10</div>
+        </div>
+
+    </body>
+</html>
