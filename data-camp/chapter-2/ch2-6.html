@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                require(mosaic)
+                MindsetMatters <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/mindset-matters.csv", header=TRUE, sep=",")
+            </code>
+            <code data-type="sample-code">
+                # Try running this code 
+                str(MindsetMatters)
+                      
+            </code>
+            <code data-type="solution">
+                tally(~Condition, data=MindsetMatters)
+                 
+            </code>
+            <code data-type="sct">
+                test_object("MindsetMatters")
+                test_function("tally", args = c("x", "data"), 
+                not_called_msg = "Have you used `tally()` to tally the data?", 
+                args_not_specified = "Have you specified both the variable to tally and the dataset?", 
+                incorrect_msg = c("Have you used ~Condition and data = MindsetMatters as your arguments?"))
+                test_output_contains("tally(~Condition, data="MindsetMatters"))
+                
+            </code>
+            <div data-type="hint">Just click Run</div>
+        </div>
+    </body>
+</html>
