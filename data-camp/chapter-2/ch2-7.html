@@ -20,10 +20,12 @@
             </code>
             <code data-type="solution">
                 MindsetMatters <- arrange(MindsetMatters, Age)
+                MindsetMatters
                  
             </code>
             <code data-type="sct">
                 test_object("MindsetMatters")
+                test_output_contains("MindsetMatters")
                 
             </code>
             <div data-type="hint">Save the arranged dataset back to MindsetMatters </div>
