@@ -9,20 +9,23 @@
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
                 require(mosaic)
-                myvector1 <- c(2,2,2,2,2,2,2,2,2)
+                myvector1<-c(2,2,2,2,2,2,2,2)
             </code>
             <code data-type="sample-code">
-                #Now, just for fun, let’s run the tally() function on myvector1, the one that had no variation. 
+
+                # Run the tally() function on myvector1
                 
                  
             </code>
-            <code data-type="solution">   
+            <code data-type="solution">
+               
+                
                 tally(x = myvector1)
                 
             </code>
             <code data-type="sct">
+                test_object("myvector1")
                 test_function("tally")
-                success_msg("Great thinking!")
                 
             </code>
             <div data-type="hint">Try tally(myvector1)</div>
