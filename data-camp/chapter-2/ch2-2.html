@@ -9,28 +9,23 @@
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
                 require(mosaic)
+                myvector1 <- c(2,2,2,2,2,2,2,2,2)
             </code>
             <code data-type="sample-code">
-                # Make a vector called myvector2 that contains the first group of numbers we discussed (2,2,2,2,2,2,2,2,2)
-                
-                myvector2 <- 
-                
-                # Run the tally() function on myvector2
+                #Now, just for fun, let’s run the tally() function on myvector1, the one that had no variation. 
                 
                  
             </code>
-            <code data-type="solution">
-                myvector2 <- c(2,2,2,2,2,2,2,2,2)
-                
-                tally(x = myvector2)
+            <code data-type="solution">   
+                tally(x = myvector1)
                 
             </code>
             <code data-type="sct">
-                test_object("myvector2")
-                test_function("tally")
+                test_function("tally", args = "x")
+                success_msg("Great thinking!")
                 
             </code>
-            <div data-type="hint">Try tally(myvector2)</div>
+            <div data-type="hint">Try tally(myvector1)</div>
         </div>
     </body>
 </html>
