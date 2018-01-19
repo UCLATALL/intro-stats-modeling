@@ -11,26 +11,22 @@
                 require(mosaic)
                 require(tidyverse)
                 MindsetMatters <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/mindset-matters.csv", header=TRUE, sep=",")
-                MindsetMatters$Cond <- factor(MindsetMatters$Cond, levels = c(1,0)), labels=c("Informed","Uninformed"))
             </code>
             <code data-type="sample-code">
-                # Save MindsetMatters, arranged by Age, back to MindsetMatters
+                # save MindsetMatters, arranged by Age, back to MindsetMatters
                 
                 arrange(MindsetMatters, Age)
-                
-                # Write code to print the first few lines of MindsetMatters
                       
             </code>
             <code data-type="solution">
-                MindsetMatters <- arrange(data=MindsetMatters, x=Age)
-                MindsetMatters
+                MindsetMatters <- arrange(MindsetMatters, Age)
                  
             </code>
             <code data-type="sct">
                 test_object("MindsetMatters")
-                test_output_contains("MindsetMatters", incorrect_msg = "Make sure to print MindsetMatters")
+                
             </code>
-            <div data-type="hint">Don't forget to assign the arranged dataset to the object MindsetMatters</div>
+            <div data-type="hint">Save the arranged dataset back to MindsetMatters </div>
         </div>
     </body>
 </html>
