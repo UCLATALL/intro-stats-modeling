@@ -14,22 +14,18 @@
             </code>
             <code data-type="sample-code"> 
                 # Here we will create a numeric version of Interest in Fingers. We'll call it Interest.num
-                Fingers$Interest.num <- as.numeric(Fingers$Interest)
+               Interest.num <- as.numeric(Fingers$Interest)
                 
                 #Modify the following code to also create a factor version of Interest in Fingers. Call it Interest.factor
-                Fingers$Interest.factor <- 
+                Interest.factor <- 
                  
             </code>
             <code data-type="solution">
-                Fingers$Interest.num <- as.numeric(Fingers$Interest)
-                Fingers$Interest.factor <- as.factor(Fingers$Interest)
+                Interest.factor <- as.factor(Fingers$Interest)
                  
             </code>
             <code data-type="sct">
-                test_function("as.numeric", args ="x")
-                test_object("Fingers$Interest.num")
-                test_function("as.factor", args="x")
-                test_object("Fingers$Interest.factor")
+                test_object("Interest.factor")
                 
             </code>
             <div data-type="hint">Use as.factor() and Fingers$Interest</div>
