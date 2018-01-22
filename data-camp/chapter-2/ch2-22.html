@@ -23,7 +23,10 @@
             Fingers$AvgFinger <- sum(Fingers$Thumb, Fingers$Index, Fingers$Middle, Fingers$Ring, Fingers$Pinkie) / 5
             </code>
             <code data-type="sct">
-            test_data_frame("Fingers", columns="AvgFinger")
+            test_correct(test_data_frame("Fingers", columns="AvgFinger"),
+                {
+                test_error()
+                })
             test_output_contains("head(Fingers)")
             </code>
             <div data-type="hint">Add up Fingers$Thumb, Fingers$Index, Fingers$Middle, Fingers$Ring, Fingers$Pinkie and divide by 5</div>
