@@ -13,21 +13,20 @@
                 Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
             </code>
             <code data-type="sample-code"> 
-                # Try using factor() to label the levels of RaceEthnic and Job with words that  match the labels in the Fingers Data documentation. 
                 
-                # Edit this to recode RaceEthnic 
-                Fingers$RaceEthnic <- recode(Fingers$RaceEthnic, '1'= , '2'=, '3'=, '4'=, '5'=)
+                # Edit this code to label the levels of RaceEthnic with words that match the labels in the Fingers Data documentation
+                Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels=c(1,2,3,4,5), labels=c("label1","label2","label3","label4","label5"))
                 
-                # Write code to recode Job 
+                # Write code to label the levels of Job with words that match the labels in the Fingers Data documentation. 
                 
                 # This prints out a few lines of Fingers
                 head(Fingers)
                  
             </code>
             <code data-type="solution">
-             Fingers$RaceEthnic <- recode(Fingers$RaceEthnic, '1'="White", '2'="African American", '3'="Asian", '4'="Latino", '5'="Other")
+             Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels=c(1,2,3,4,5), labels=c("White", "African American", "Asian", "Latino", "Other"))
              
-             Fingers$Job <- recode(Fingers$Job, '0'="not working", '1'="part-time job", '2'="full-time job")
+             Fingers$Job <- factor(Fingers$Job, levels=c(0,1,2), labels=c("not working", "part-time job", "full-time job"))
              
              head(Fingers)
                  
@@ -38,7 +37,7 @@
                 success_msg("Awesome work!")
                 
             </code>
-            <div data-type="hint">use recode() to recode RaceEthnic as 1 = White, 2 = African American, 3 = Asian, 4 = Latino, 5 = Other. Code Job as 0 = not working, 1 = part-time job, and 2=full-time job</div>
+            <div data-type="hint">use factor(). The labels for RaceEthnic should be c("White", "African American", "Asian", "Latino", "Other"). The levels for Job should be c(0,1,2). The labels for job should be c("not working", "part-time job", "full-time job") </div>
         </div>
     </body>
 </html>
