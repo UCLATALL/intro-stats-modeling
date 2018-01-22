@@ -22,8 +22,7 @@
             </code>
             <code data-type="solution">
             Fingers$Job.recode <- recode(Fingers$Job, '0'=0, '1'=50, '2'=100)
-            head(Fingers$Job)
-            head(Fingers$Job.recode)
+            head(select(Fingers, Job, Job.recode))
             </code>
             <code data-type="sct">
             test_data_frame("Fingers", columns=c("Job.recode","Job"))
