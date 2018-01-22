@@ -26,11 +26,7 @@
             head(Fingers$Job.recode)
             </code>
             <code data-type="sct">
-            test_correct(test_data_frame("Fingers", columns=c("Job.recode","Job"),
-                {
-                test_function_result("recode")
-                test_error()
-                })
+            test_data_frame("Fingers", columns=c("Job.recode","Job"))
             </code>
             <div data-type="hint">Use `recode(Fingers$Job, '0'=0, '1'=50, '2'=100)`</div>
         </div>
