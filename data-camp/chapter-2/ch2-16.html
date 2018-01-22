@@ -21,10 +21,10 @@
 
             </code>
             <code data-type="solution">
-             head(data=select(Fingers, Thumb), n=10)
+             head(x=select(Fingers, Thumb), n=10)
             </code>
             <code data-type="sct">
-                test_function("head", args=c("data", "n"))
+                test_function("head", args=c("x", "n"))
                 test_error()
                 success_msg("Awesome work!")
                 
