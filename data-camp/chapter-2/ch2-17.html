@@ -44,7 +44,8 @@
             </code>
             <code data-type="sct">
                 test_object("randomsample")
-                test_output_contains("gf_histogram(~number, data=randomsample)")
+                test_output_contains(" gf_histogram(~number, data=randomsample) %>%
+                    gf_refine(scale_x_continuous(breaks=c(0:9)))")
                 
             </code>
             <div data-type="hint">Just click Run</div>
