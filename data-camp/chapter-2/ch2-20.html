@@ -29,7 +29,9 @@
                 test_function("tally")
                 test_error()
                 })
-            test_output_contains("tally")
+            test_output_contains("tally", 
+                incorrect_msg="did you print tally?")
+            success_msg("Fantastic work!")
             </code>
             <div data-type="hint">Use the tally() function on Fingers$RingLonger</div>
         </div>
