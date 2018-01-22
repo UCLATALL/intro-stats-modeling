@@ -21,12 +21,15 @@
 
             </code>
             <code data-type="solution">
-             head(x=select(Fingers, Thumb), n=10)
+             head(select(Fingers, Thumb), n=10)
             </code>
             <code data-type="sct">
-                test_function("head", args=c("x", "n"))
+                test_function("head", args=c("x", "n"), 
+                not_called_msg="Have you used head()?",
+                args_not_specified="Have you specified both the variable and the number of rows?", 
+                incorrect_msg="Have you correctly used `head()` with `select(Fingers, Thumb)` and `n=10`?"
                 test_error()
-                success_msg("Awesome work!")
+                success_msg("Great thinking!")
                 
             </code>
             <div data-type="hint">Use select(Fingers, Thumb)? Set n=10 </div>
