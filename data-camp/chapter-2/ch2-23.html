@@ -26,7 +26,7 @@
             </code>
             <code data-type="sct">
             test_data_frame("Fingers", columns=c("Job.recode","Job"))
-            test_output_contains("head(select(Fingers, Job, Job.recode))", incorrect_msg="Don't forget to call `head()` and `select(Fingers, Job, Job.recode)`")
+            test_function_result("head", incorrect_msg="Don't forget to call `head()` and `select(Fingers, Job, Job.recode)`")
             </code>
             <div data-type="hint">Use `recode(Fingers$Job, '0'=0, '1'=50, '2'=100)`</div>
         </div>
