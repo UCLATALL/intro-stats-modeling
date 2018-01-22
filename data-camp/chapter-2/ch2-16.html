@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 2 Exercise 12</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(tidyverse)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+                set.seed(2)
+            </code>
+            <code data-type="sample-code"> 
+            # This code shows the RaceEthnic variable for the first 3 students in the Fingers dataframe
+            head(select(Fingers, RaceEthnic), n=3)
+            
+            # Modify the code above to show the Thumb variable for the first 10 students in the Fingers dataframe. 
+
+            </code>
+            <code data-type="solution">
+             head(data=select(data= Fingers, x=Thumb), n=10)
+            </code>
+            <code data-type="sct">
+                test_function("head", args=c("data", "n"))
+                test_error()
+                success_msg("Awesome work!")
+                
+            </code>
+            <div data-type="hint">Use select(Fingers, Thumb)? Set n=10 </div>
+        </div>
+    </body>
+</html>
