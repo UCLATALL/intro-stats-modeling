@@ -17,10 +17,8 @@
             # Use `ntile()` and assign each person's height to one of two categories 
             Fingers$Height.2group <- 
             
-            # This code aligns Sex's levels '1' and '2' to the labels 'female' and 'male'
-            Fingers$Sex <- factor(Fingers$Sex, levels = c(1,2), labels = c('female','male'))
-            
-            # Modify the above code so that it aligns Height.2group's levels '1' and '2' to the labels 'short' and 'tall' 
+            # Assign Height.2group's levels '1' and '2' to the labels 'short' and 'tall' 
+            Fingers$Height.2group <- factor(Fingers$Height.2group, levels= , labels = )
             
             # This prints out a few observations of Height and Height.2group  
             head(select(Fingers, Height, Height.2group))
@@ -35,8 +33,7 @@
             </code>
             <code data-type="sct">
             test_function_result("ntile", incorrect_msg="Did you use `ntile()` with the arguments `Fingers$Height` and `2`?")
-            test_data_frame("Fingers", columns="Height.2group", incorrect_msg="Remember to replace `Fingers$Sex <-` with `Fingers$Height.2group <-`")
-            test_function("factor", args=c("x","levels","labels"), incorrect_msg="Did you replace `Fingers$Sex` with `Fingers$Height.2group`? Did you replace `c('female','male')` with `c('short','tall')`?")
+            test_function("factor", args=c("x","levels","labels"), incorrect_msg="Did you set levels= `c(1,2)` and labels =`c('short','tall')`?")
             test_or(test_output_contains("head(select(Fingers, Height, Height.2group))"),
                     test_output_contains("head(select(Fingers, Height.2group, Height))"), incorrect_msg="Did you use `head()` and `select()` on `Fingers`, `Height`, and `Height.2group`?")
             </code>
