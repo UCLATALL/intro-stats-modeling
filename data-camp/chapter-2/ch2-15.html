@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 2 Exercise 12</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(tidyverse)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+            </code>
+            <code data-type="sample-code"> 
+                # Try using factor() to label the levels of RaceEthnic and Job with words that  match the labels in the Fingers Data documentation. 
+                
+                # Edit this to recode RaceEthnic 
+                Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, '1'="female", '2'="male)
+                
+                # Write code to recode Job 
+                
+                # This prints out a few lines of Fingers
+                head(Fingers)
+                 
+            </code>
+            <code data-type="solution">
+             Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, '1'="White", '2'="African American", '3'="Asian", '4'="Latino", '5'="Other")
+             
+             Fingers$Job <- factor(Fingers$Job, '0'="not working", '1'="part-time job", '2'="full-time job")
+             
+             head(Fingers)
+                 
+            </code>
+            <code data-type="sct">
+                test_data_frame("Fingers", columns = c("RaceEthnic", "Job"))
+                test_error()
+                success_msg("Awesome work!")
+                
+            </code>
+            <div data-type="hint">Code RaceEthnic as 1 = White, 2 = African American, 3 = Asian, 4 = Latino, 5 = Other. Code Job as 0 = not working, 1 = part-time job, and 2=full-time job</div>
+        </div>
+    </body>
+</html>
