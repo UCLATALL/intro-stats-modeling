@@ -14,10 +14,11 @@
                 Fingers$RingLonger <- Fingers$Ring > Fingers$Index
             </code>
             <code data-type="sample-code">
-            # Write code to tally up RingLonger in Fingers store it in the variable, tally
+            # Write code to tally up RingLonger in Fingers. Store it in the variable, tally
                 tally <- 
             
             # Print the contents of tally
+                  
             </code>
             <code data-type="solution">
             tally <- tally(Fingers$RingLonger)
@@ -28,6 +29,7 @@
                 test_function("tally")
                 test_error()
                 })
+            test_output_contains("tally")
             </code>
             <div data-type="hint">Use the tally() function on Fingers$RingLonger</div>
         </div>
