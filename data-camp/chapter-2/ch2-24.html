@@ -33,7 +33,8 @@
             </code>
             <code data-type="sct">
             test_function_result("ntile", incorrect_msg="Did you use `ntile()` with the arguments `Fingers$Height` and `2`?")
-            test_function("factor", args=c("x","levels","labels"), incorrect_msg="Did you set levels= `c(1,2)` and labels =`c('short','tall')`?")
+            test_function("factor", args=c("x"), incorrect_msg="Make sure to factor `Fingers$Height.2group`")
+            test_function("factor", args=c("levels","labels"), incorrect_msg="Did you set levels= `c(1,2)` and labels =`c('short','tall')`?")
             test_or(test_output_contains("head(select(Fingers, Height, Height.2group))"),
                     test_output_contains("head(select(Fingers, Height.2group, Height))"), incorrect_msg="Did you use `head()` and `select()` on `Fingers`, `Height`, and `Height.2group`?")
             </code>
