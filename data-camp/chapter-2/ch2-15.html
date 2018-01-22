@@ -16,7 +16,7 @@
                 # Try using factor() to label the levels of RaceEthnic and Job with words that  match the labels in the Fingers Data documentation. 
                 
                 # Edit this to recode RaceEthnic 
-                Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, '1'="female", '2'="male)
+                Fingers$RaceEthnic <- recode(Fingers$RaceEthnic, '1'="female", '2'="male")
                 
                 # Write code to recode Job 
                 
@@ -25,9 +25,9 @@
                  
             </code>
             <code data-type="solution">
-             Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, '1'="White", '2'="African American", '3'="Asian", '4'="Latino", '5'="Other")
+             Fingers$RaceEthnic <- recode(Fingers$RaceEthnic, '1'="White", '2'="African American", '3'="Asian", '4'="Latino", '5'="Other")
              
-             Fingers$Job <- factor(Fingers$Job, '0'="not working", '1'="part-time job", '2'="full-time job")
+             Fingers$Job <- recode(Fingers$Job, '0'="not working", '1'="part-time job", '2'="full-time job")
              
              head(Fingers)
                  
@@ -38,7 +38,7 @@
                 success_msg("Awesome work!")
                 
             </code>
-            <div data-type="hint">Code RaceEthnic as 1 = White, 2 = African American, 3 = Asian, 4 = Latino, 5 = Other. Code Job as 0 = not working, 1 = part-time job, and 2=full-time job</div>
+            <div data-type="hint">use recode() to recode RaceEthnic as 1 = White, 2 = African American, 3 = Asian, 4 = Latino, 5 = Other. Code Job as 0 = not working, 1 = part-time job, and 2=full-time job</div>
         </div>
     </body>
 </html>
