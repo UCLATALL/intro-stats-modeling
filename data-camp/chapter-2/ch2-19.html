@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(tidyverse)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+            </code>
+            <code data-type="sample-code">
+            # Filter out the students who have missing data for SSLast 
+            Fingers.subset <- 
+            
+            # Print out the variable SSLast from Fingers.subset
+                 
+            </code>
+            <code data-type="solution">
+            Fingers.subset <- filter(Fingers, SSLast != 'NA')
+            Fingers.subset$SSLast
+                 
+            </code>
+            <code data-type="sct">
+                test_object("Fingers.subset")
+                test_output_contains("Fingers.subset$SSLast")
+                
+            </code>
+            <div data-type="hint">Make sure to assign filter(Fingers, SSLast != 'NA' to Fingers.subset</div>
+        </div>
+    </body>
+</html>
