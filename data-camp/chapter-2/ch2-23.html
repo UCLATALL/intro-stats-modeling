@@ -31,8 +31,7 @@
                 test_function_result("recode")
                 test_error()
                 })
-            test_output_contains("head(Fingers$Job)", incorrect_msg="Did you call `head()` on Fingers$Job?")
-            test_output_contains("head(Fingers$Job.recode)", incorrect_msg="Did you call `head()` on Fingers$Job.recode?")
+            test_output_contains("head(Fingers$Job.recode)", incorrect_msg="Did you call `head()` on Fingers$Job?")
             </code>
             <div data-type="hint">Use `recode(Fingers$Job, '0'=0, '1'=50, '2'=100)`</div>
         </div>
