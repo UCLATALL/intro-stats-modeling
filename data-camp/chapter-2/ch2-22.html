@@ -20,13 +20,12 @@
                   
             </code>
             <code data-type="solution">
-            AllFingers <- c(Fingers$Thumb, Fingers$Index, Fingers$Middle, Fingers$Ring, Fingers$Pinkie)
-            FingersSumFingers <- sum(AllFingers)
-            Fingers$AvgFinger <- sum(AllFingers)/5
+            Fingers$AvgFinger <- sum(Fingers$Thumb, Fingers$Index, Fingers$Middle, Fingers$Ring, Fingers$Pinkie)/5
             </code>
             <code data-type="sct">
             test_correct(test_data_frame("Fingers", columns="AvgFinger"),
                 {
+                test_function_result("sum")
                 test_error()
                 })
             test_output_contains("head(Fingers)")
