@@ -18,6 +18,7 @@
                 Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels=c(1,2,3,4,5), labels=c("label1","label2","label3","label4","label5"))
                 
                 # Write code to label the levels of Job with words that match the labels in the Fingers Data documentation. 
+                Fingers$Job <- 
                 
                 # This prints out a few lines of Fingers
                 head(Fingers)
@@ -32,7 +33,10 @@
                  
             </code>
             <code data-type="sct">
-                test_data_frame("Fingers", columns = c("RaceEthnic", "Job"))
+                test_data_frame("Fingers", columns = "RaceEthnic", 
+                incorrect_msg="Have you factored Fingers$RaceEthnic so that levels=c(1,2,3,4,5) and labels=c("White","African American","Asian","Latino","Other")?") 
+                test_data_frame("Fingers", columns = "Job", 
+                incorrect_msg="Have you factored Fingers$Job so that levels=c(0,1,2) and labels=c("not working","part-time job","full-time job")?")
                 test_error()
                 success_msg("Awesome work!")
                 
