@@ -32,7 +32,7 @@
             head(select(Fingers, Height, Height.2group))
             </code>
             <code data-type="sct">
-            test_data_frame("Fingers", incorrect_msg="Did you use `ntile()` with the arguments `Fingers$Height` and `2`?")
+            test_function_result("ntile", incorrect_msg="Did you use `ntile()` with the arguments `Fingers$Height` and `2`?")
             test_function("factor", args=c("x","levels","labels"), incorrect_msg="Did you replace `c('female','male')` with `c('short','tall')`?")
             test_or(test_output_contains("head(select(Fingers, Height, Height.2group))"),
                     test_output_contains("head(select(Fingers, Height.2group, Height))"), incorrect_msg="Did you use `head()` and `select()` on `Fingers`, `Height`, and `Height.2group`?")
