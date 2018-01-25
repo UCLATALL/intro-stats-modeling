@@ -25,14 +25,19 @@
             tinydata <- data.frame(outcome)
             
             # Write code to create a histogram of tinydata
-            gf_histogram(~ outcome, data = tinydata)   
+            gf_histogram(~ outcome, data = tinydata, fill="aquamarine", color="gray")   
             </code>
             <code data-type="sct">
-            test_object("outcome", undefined_msg = "Make sure to not remove `outcome`" )
+            test_object("outcome", 
+                undefined_msg = "Make sure to not remove `outcome`" )
             test_data_frame("tinydata", columns = "outcome", 
-            undefined_msg = "Make sure to not remove `tinydata`!")
+                undefined_msg = "Make sure to not remove `tinydata`!")
+            test_function("gf_histogram", args = "data", incorrect_msg="did you set `data=tinydata`?")
+            test_function("gf_histogram", args = c("fill", "color"), 
+                eval=NA, 
+                args_not_specified_msg="Remember to use `fill=` and `color=` with your own choice of colors")
             test_function_result("gf_histogram", 
-                incorrect_msg="Did you use `~outcome` and `data=tinydata`?")
+                incorrect_msg="Did you use `~outcome`?")
             test_error()
             success_msg = ("Great thinking!")
                 
