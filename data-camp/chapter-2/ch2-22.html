@@ -20,12 +20,11 @@
                   
             </code>
             <code data-type="solution">
-            Fingers$AvgFinger <- sum(Fingers$Thumb, Fingers$Index, Fingers$Middle, Fingers$Ring, Fingers$Pinkie)/5
+            Fingers$AvgFinger <- (Fingers$Thumb + Fingers$Index + Fingers$Middle + Fingers$Ring + Fingers$Pinkie)/5
             </code>
             <code data-type="sct">
             test_correct(test_data_frame("Fingers", columns="AvgFinger"),
                 {
-                test_function_result("sum")
                 test_error()
                 })
             test_output_contains("head(Fingers)", incorrect_msg="Did you call `head()` on Fingers?")
