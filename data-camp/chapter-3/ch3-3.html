@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(tidyverse)
+            </code>
+            <code data-type="sample-code">
+            # This sets up our tiny data frame with our outcome variable
+            outcome <- c(1, 2, 3, 4, 5)
+            tinydata <- data.frame(outcome)
+            
+            # Write code to create a histogram of outcome
+                 
+            </code>
+            <code data-type="solution">
+            # This sets up our tiny data frame with our outcome variable
+            outcome <- c(1, 2, 3, 4, 5)
+            tinydata <- data.frame(outcome)
+            
+            # Write code to create a histogram of tinydata
+            gf_histogram(~ outcome, data = tinydata)   
+            </code>
+            <code data-type="sct">
+            test_object("outcome", undefined_msg = "Make sure to not remove 'outcome'" )
+            test_data_frame("tinydata", columns = "outcome", 
+            undefined_msg = "Make sure to not remove 'tinydata'!")
+            test_function_result("gf_histogram")
+            test_error()
+            success_msg = ("Great thinking!")
+                
+            </code>
+            <div data-type="hint"></div>
+        </div>
+    </body>
+</html>
