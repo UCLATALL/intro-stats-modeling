@@ -15,7 +15,7 @@
             <code data-type="sample-code">
                 # Modify this code to play around with labeling the y-axis
                 gf_histogram(~ Thumb, data = Fingers) %>%
-                    gf_labs(x = "Thumb length (mm)", y = "Your Label" )   
+                    gf_labs(x = "Thumb length (mm)", y = )   
             </code>
             <code data-type="solution">
             # Modify this code to play around with labeling the y-axis
@@ -23,7 +23,7 @@
              gf_labs(x = "Thumb length (mm)", y = "Your Label" )              
             </code>
             <code data-type="sct">
-            test_function("gf_labs", args = c("x", "y"), eval = c(TRUE, FALSE))
+            test_function("gf_labs", args = c("x", "y"), eval = c(FALSE, NA))
             test_function_result("gf_histogram")
             success_msg("Excellent work!")
             </code>
