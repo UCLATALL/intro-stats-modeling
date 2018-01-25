@@ -24,10 +24,9 @@
              head(select(Fingers, Thumb), n=10)
             </code>
             <code data-type="sct">
-                test_function("head", args=c("x", "n"), 
-                not_called_msg="Have you used head()?",
-                args_not_specified="Have you specified both the variable and the number of rows?", 
-                incorrect_msg="Have you correctly used `head()` with `select(Fingers, Thumb)` and `n=10`?"
+                test_function_result("head", 
+                not_called_msg="Have you used head()?", 
+                incorrect_msg="Did you set the arguments to select(Fingers, Thumb) and 10?")
                 success_msg("Great thinking!")
                 
             </code>
