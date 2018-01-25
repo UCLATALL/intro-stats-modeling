@@ -25,7 +25,7 @@
             tinydata <- data.frame(outcome)
             
             # Write code to create a histogram of tinydata
-            gf_histogram(~ outcome, data = tinydata)   
+            gf_histogram(gformula = ~ outcome, data = tinydata)   
             </code>
             <code data-type="sct">
             test_object("outcome", undefined_msg = "Make sure to not remove 'outcome'" )
