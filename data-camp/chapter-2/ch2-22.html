@@ -23,7 +23,7 @@
             Fingers$AvgFinger <- (Fingers$Thumb + Fingers$Index + Fingers$Middle + Fingers$Ring + Fingers$Pinkie)/5
             </code>
             <code data-type="sct">
-            test_correct(test_data_frame("Fingers", columns="AvgFinger"),
+            test_correct(test_data_frame("Fingers", columns="AvgFinger", incorrect_msg="Calculate the average using (Fingers$Thumb + Fingers$Index + Fingers$Middle + Fingers$Ring + Fingers$Pinkie)/5"),
                 {
                 test_error()
                 })
