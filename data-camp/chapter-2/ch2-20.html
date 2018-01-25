@@ -15,22 +15,22 @@
             </code>
             <code data-type="sample-code">
             # Write code to tally up RingLonger in Fingers. Store it in the variable, tally
-                tally <- 
+                howmany.RingLonger <- 
             
             # Print the contents of tally
                   
             </code>
             <code data-type="solution">
-            tally <- tally(Fingers$RingLonger)
+            howmany.RingLonger <- tally(Fingers$RingLonger)
             </code>
             <code data-type="sct">
-            test_correct(test_object("tally"),
+            test_correct(test_object("howmany.RingLonger"),
                 {
                 test_function("tally")
                 test_error()
                 })
-            test_output_contains("tally", 
-                incorrect_msg="did you print tally?")
+            test_output_contains("howmany.RingLonger", 
+                incorrect_msg="did you print howmany.RingLonger?")
             success_msg("Fantastic work!")
             </code>
             <div data-type="hint">Use the tally() function on Fingers$RingLonger</div>
