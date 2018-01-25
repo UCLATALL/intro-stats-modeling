@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(tidyverse)
+            </code>
+            <code data-type="sample-code">
+            # This is the same code as before but we added in another outcome value, 3.5
+            outcome <- c(1, 2, 3, 4, 5, 3.2)
+            tinydata <- data.frame(outcome)
+                
+            # This makes a histogram with 5 bins 
+            gf_histogram(~outcome, data = tinydata, fill="aquamarine", color="gray", bins=5)   
+                 
+            </code>
+            <code data-type="solution">
+            # This is the same code as before but we added in another outcome value, 3.5
+            outcome <- c(1, 2, 3, 4, 5, 3.2)
+            tinydata <- data.frame(outcome)
+                
+            # This makes a histogram with 5 bins 
+            gf_histogram(~outcome, data = tinydata, fill="aquamarine", color="gray", bins=5)     
+                 
+            </code>
+            <code data-type="sct">
+            test_object("outcome")
+            test_data_frame("tinydata")
+            test_function_result("gf_histogram")
+            test_error()
+            success_msg("You're doing great!")
+                
+            </code>
+            <div data-type="hint">Just click run!</div>
+        </div>
+    </body>
+</html>
