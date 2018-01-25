@@ -32,7 +32,7 @@
                 undefined_msg = "Make sure to not remove `outcome`" )
             test_data_frame("tinydata", columns = "outcome", 
                 undefined_msg = "Make sure to not remove `tinydata`!")
-            test_function("gf_histogram", args="")
+            test_function("gf_histogram", args="formula")
             test_function("gf_histogram", args = "data", incorrect_msg="did you set `data=tinydata`?")
             test_function("gf_histogram", args = c("fill", "color"), 
                 eval=NA, 
