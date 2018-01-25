@@ -31,9 +31,7 @@
             test_object("outcome", undefined_msg = "Make sure to not remove 'outcome'" )
             test_data_frame("tinydata", columns = "outcome", 
             undefined_msg = "Make sure to not remove 'tinydata'!")
-            test_function("gf_histogram", args = c("gformula", "data"),
-                not_called_msg = "Did you call 'gf_histogram'?", 
-                args_not_specified_msg = "Did you use '~outcome' and 'tinydata' as arguments?")
+            test_function_result("gf_histogram")
             test_error()
             success_msg = ("Great thinking!")
                 
