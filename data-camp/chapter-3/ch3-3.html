@@ -36,8 +36,7 @@
             test_function("gf_histogram", args = c("fill", "color"), 
                 eval=NA, 
                 args_not_specified_msg="Remember to use `fill=` and `color=` with your own choice of colors")
-            test_function_result("gf_histogram", 
-                incorrect_msg="Did you use `~outcome`?")
+            test_output_contains("~outcome")
             test_error()
             success_msg = ("Great thinking!")
                 
