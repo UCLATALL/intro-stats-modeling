@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                # creates MindsetMatters data frame
+                MindsetMatters <- read.csv(file="https://github.com/UCLATALL/intro-stats-modeling/blob/master/datasets/mindset-matters.csv", header=TRUE, sep=",")
+
+                # loads packages 
+                require(mosaic)
+                require(tidyverse)
+            </code>
+            <code data-type="sample-code">
+            # This will create a relative frequency histogram of Age 
+            gf_histogram(..density..~Age, data = MindsetMatters, fill = "coral2")
+            
+            # Write code to create a frequency histogram of age 
+
+            </code>
+            <code data-type="solution">
+            # This will create a relative frequency histogram of Age 
+            gf_histogram(..density..~Age, data = MindsetMatters, fill = "coral2")
+            
+            # Write code to create a frequency histogram of age   
+            gf_histogram(~Age, data=MindsetMatters)
+            
+            </code>
+            <code data-type="sct">
+            test_function_result("gf_histogram", 
+                index=1, 
+                incorrect_msg = "Make sure to not delete the formula for the relative frequency table!")
+            test_student_typed(c("\gf_histogram(~Age, data=MindsetMatters)\", 
+                not_typed_msg = "Have you used gf_histogram(~Age, data=MindsetMatters)?")
+                
+            </code>
+            <div data-type="hint"></div>
+        </div>
+    </body>
+</html>
