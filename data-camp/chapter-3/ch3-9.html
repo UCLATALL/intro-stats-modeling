@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(tidyverse)
+                
+            </code>
+            <code data-type="sample-code">
+            # This creates our model population 
+            model.pop <- c(1,2,3,4,5,6)
+            
+            # This puts the model.pop into a data frame called dicerolls
+            dicerolls <- data.frame(model.pop)
+                
+            # Write code to create a relative frequency histogram of our model population. 
+            # Remember to include bins as an argument. 
+                 
+            </code>
+            <code data-type="solution">
+            # This creates our model population 
+            model.pop <- c(1,2,3,4,5,6)
+            
+            # This puts the model.pop into a data frame called dicerolls
+            dicerolls <- data.frame(model.pop)
+                
+            # Write code to create a relative frequency histogram of our model population. 
+            # Remember to include bins as an argument.               
+            gf_histogram(..density.. ~ model.pop, data = dicerolls, color = "black", bins = 6)
+            </code>
+            <code data-type="sct">
+            test_object("model.pop")
+            test_data_frame("dicerolls")
+            test_function("gf_histogram", args= c("data", "bins"), args_not_specified="Did you set `data=dicerools` and `bins=6`?) 
+            test_student_typed("...density...~model.pop")
+            test_error()
+            success_msg("Look at you go!")   
+            </code>
+            <div data-type="hint"> Remember to use gf_histogram and ..density..</div>
+        </div>
+    </body>
+</html>
