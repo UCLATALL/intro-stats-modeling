@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(tidyverse)
+                model.pop <- c(1,2,3,4,5,6)
+            </code>
+            <code data-type="sample-code">
+            # This samples the same way 12 times 
+            resample(model.pop, 12)
+            
+            # Will this accomplish the same thing? 
+            sample(model.pop, 12)
+            </code>
+            <code data-type="solution">
+            # This samples the same way 12 times 
+            resample(model.pop, 12)
+            
+            # Will this accomplish the same thing? 
+            sample(model.pop, 12)         
+            </code>
+            <code data-type="sct">
+            test_function("resample")
+            test_function("sample")
+            test_error()
+            success_msg("Great!")
+            </code>
+            <div data-type="hint">Just click Run!</div>
+        </div>
+    </body>
+</html>
