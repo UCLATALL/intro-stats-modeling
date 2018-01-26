@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            model.pop <- c(1,2,3,4,5,6)
+            set.seed(4)
+                
+            </code>
+            <code data-type="sample-code">
+            sample1 <- resample(model.pop, 12)
+            dicerolls <- data.frame(sample1)
+            
+            # Write code to create a relative frequency histogram
+            # Remember to put in bins as an argument 
+                 
+            </code>
+            <code data-type="solution">
+            sample1 <- resample(model.pop, 12)
+            dicerolls <- data.frame(sample1)
+            
+            # Write code to create a relative frequency histogram
+            # Remember to put in bins as an argument 
+            gf_histogram(..density..~sample1, data=dicerolls, bins=6)  
+                 
+            </code>
+            <code data-type="sct">
+            test_object("sample1")
+            test_object("dicerolls")
+            test_function("gf_histogram", args=c("data","bins"))  
+            test_error()
+            success_msg("Excellent work!")
+                
+            </code>
+            <div data-type="hint">Try gf_histogram(..density..~sample1, data=dicerolls, bins=6)</div>
+        </div>
+    </body>
+</html>
