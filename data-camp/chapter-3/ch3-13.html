@@ -46,12 +46,15 @@
 
             # this will create a histogram of your sample3
             # add onto it to include a density plot
-            gf_histogram(..density..~ sample3, data = dicerolls, color="darkgray", fill="springgreen", bins=6) 
+            gf_histogram(..density..~ sample3, data = dicerolls, color="darkgray", fill="springgreen", bins=6) %>% 
+                gf_density()
 
             # create histograms of sample4 and sample5 with density plots 
-            gf_histogram(..density..~sample4, data=dicerolls, color="darkgray", fill="springgreen", bins=6)
+            gf_histogram(..density..~sample4, data=dicerolls, color="darkgray", fill="springgreen", bins=6) %>%
+                gf_density()
             
-            gf_histogram(..density..~sample5, data=dicerolls, color="darkgray", fill="springgreen", bins=6)
+            gf_histogram(..density..~sample5, data=dicerolls, color="darkgray", fill="springgreen", bins=6) %>%
+                gf_density()
                  
             </code>
             <code data-type="sct">
