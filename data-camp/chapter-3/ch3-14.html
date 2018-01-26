@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(tidyverse)
+            model.pop <- c(1,2,3,4,5,6)   
+            </code>
+            <code data-type="sample-code">
+            #pre run
+            set.seed(7)
+
+            # create a sample with 10000 rolls of a die
+            largesample <- 
+
+            # add largesample to the dicerolls data frame
+            dicerolls <- 
+
+            # this will create a histogram of your largesample
+            gf_histogram(..density..~ largesample, data = dicerolls, color="darkgray", fill="springgreen", bins=6)  
+                
+                 
+            </code>
+            <code data-type="solution">
+            #pre run
+            set.seed(7)
+
+            # create a sample with 10000 rolls of a die
+            largesample <- resample(model.pop, 24)
+
+            # add largesample to the dicerolls data frame
+            dicerolls <- data.frame(largesample)
+
+            # this will create a histogram of your largesample
+            gf_histogram(..density..~ largesample, data = dicerolls, color="darkgray", fill="springgreen", bins=6) 
+                
+                 
+            </code>
+            <code data-type="sct">
+                
+                
+            </code>
+            <div data-type="hint"></div>
+        </div>
+    </body>
+</html>
