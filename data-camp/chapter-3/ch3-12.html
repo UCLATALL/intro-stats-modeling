@@ -23,11 +23,11 @@
             gf_histogram(..density..~sample2, data=dicerolls, color="darkgray", fill="springgreen", bins=6) 
             </code>
             <code data-type="solution">
+            set.seed(5)
             sample2 <- resample(model.pop, 24)
             dicerolls <- data.frame(sample2)
             
             # This will create a histogram 
-            set.seed(5)
             gf_histogram(..density..~sample2, data=dicerolls, color="darkgray", fill="springgreen", bins=6)    
             </code>
             <code data-type="sct">
