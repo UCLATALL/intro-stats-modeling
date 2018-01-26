@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                model.pop <- c(1,2,3,4,5,6)
+            </code>
+            <code data-type="sample-code">
+            set.seed(5)
+            
+            # Modify this code from 12 dice rolls to 24 dice rolls 
+            sample2 <- resample(model.pop, 12)
+            dicerolls <- data.frame(sample2)
+            
+            # This will create a histogram 
+            gf_histogram(..density..~sample2, data=dicerolls, color="darkgray", fill="springgreen", bins=6) 
+            </code>
+            <code data-type="solution">
+            sample2 <- resample(model.pop, 24)
+            dicerolls <- data.frame(sample2)
+            
+            # This will create a histogram 
+            set.seed(5)
+            gf_histogram(..density..~sample2, data=dicerolls, color="darkgray", fill="springgreen", bins=6)    
+            </code>
+            <code data-type="sct">
+            test_object("sample2", incorrect_msg="Did you modify the code to specify 24 dice rolls?")
+            test_object("dicerolls")
+            test_function_result("gf_histogram")
+            </code>
+            <div data-type="hint">Just adjust the number of dice rolls. Keep everything else the same</div>
+        </div>
+    </body>
+</html>
