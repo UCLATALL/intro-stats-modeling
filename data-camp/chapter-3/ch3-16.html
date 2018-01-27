@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(tidyverse)
+            model.pop <- c(1,2,3,4,5,6)  
+                
+            </code>
+            <code data-type="sample-code">
+            #pre run
+            set.seed(7)
+            W.pop <- c(rep(1,5), 2,rep(3,10),rep(4,10),5, rep(6,5))
+
+            # create a sample that draws 10000 times from W.pop
+            largesample <- 
+
+            # add largesample to the weird data frame
+            weird <- data.frame()
+
+            # this will create a histogram of your largesample
+            gf_histogram(..density..~ largesample, data = weird, color="darkgray", fill="mistyrose", bins=6) 
+            </code>
+            
+            <code data-type="solution">
+            set.seed(7)
+            W.pop <- c(rep(1,5), 2,rep(3,10),rep(4,10),5, rep(6,5))
+
+            # create a sample that draws 10000 times from W.pop
+            largesample <- resample(W.pop, 10000)
+
+            # add largesample to the weird data frame
+            weird <- data.frame(largesample)
+
+            # this will create a histogram of your largesample
+            gf_histogram(..density..~ largesample, data = weird, color="darkgray", fill="mistyrose", bins=6) 
+            </code>
+            <code data-type="sct">
+            test_object("W.pop")
+            test_object("largesample")
+            test_data_frame("weird")
+            test_function("gf_histogram")
+            test_error()
+            success_msg("Your effort really shows!")
+                
+            </code>
+            <div data-type="hint">Use `resample()` to sample with replacement</div>
+        </div>
+    </body>
+</html>
