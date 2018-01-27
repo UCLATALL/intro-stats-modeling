@@ -6,7 +6,7 @@
         <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
     </head>
     <body>
-        <div data-datacamp-exercise data-lang="r">
+        <div data-datacamp-exercise data-lang="r" data-height=500>
             <code data-type="pre-exercise-code">
             require(mosaic)
             require(tidyverse)
@@ -50,7 +50,7 @@
             test_object("weird")
             
             test_object("smallsample")
-            test_function_result("gf_histogram")
+            test_output_contains("gf_histogram(..density..~ smallsample, data = weird, color="darkgray", fill="mistyrose", bins=6) ")
                 
             </code>
             <div data-type="hint">Use `resample()` to sample without replacement</div>
