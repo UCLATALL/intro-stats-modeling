@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(tidyverse)
+            model.pop <- c(1,2,3,4,5,6)  
+            </code>
+            <code data-type="sample-code">
+            # pre run 
+            set.seed(10)
+            W.pop <- c(rep(1,5), 2, rep(3,10), rep(4,10), 5, rep(6,5))
+            weird <- data.frame(W.pop)
+            
+            # Create a sample that draws 24 times from W.pop
+            smallsample <- 
+            
+            # Add smallsample to the weird data frame 
+            weird <- data.frame()
+            
+            # This will create a histogram of your smallsample
+            gf_histogram(..density..~ smallsample, data = weird, color="darkgray", fill="mistyrose", bins=6) 
+            
+            </code>
+            <code data-type="solution">
+            # pre run 
+            set.seed(10)
+            W.pop <- c(rep(1,5), 2, rep(3,10), rep(4,10), 5, rep(6,5))
+            weird <- data.frame(W.pop)
+            
+            # Create a sample that draws 24 times from W.pop
+            smallsample <- resample(W.pop, 24)
+            
+            # Add smallsample to the weird data frame 
+            weird <- data.frame(smallsample)
+            
+            # This will create a histogram of your smallsample
+            gf_histogram(..density..~ smallsample, data = weird, color="darkgray", fill="mistyrose", bins=6)             
+                
+                 
+            </code>
+            <code data-type="sct">
+            test_object("W.pop")
+            test_object("weird")
+            
+            test_object("smallsample")
+            test_function_result("gf_histogram")
+                
+            </code>
+            <div data-type="hint">Use `resample()` to sample without replacement</div>
+        </div>
+    </body>
+</html>
