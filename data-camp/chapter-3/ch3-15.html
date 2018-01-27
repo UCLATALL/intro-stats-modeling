@@ -50,7 +50,9 @@
             test_object("weird")
             
             test_object("smallsample")
-            test_output_contains("gf_histogram(..density..~ smallsample, data = weird, color="darkgray", fill="mistyrose", bins=6)")
+            test_function("gf_histogram")
+            test_error()
+            success_msg("Look at you go!") 
                 
             </code>
             <div data-type="hint">Use `resample()` to sample without replacement</div>
