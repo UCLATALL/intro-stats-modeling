@@ -19,10 +19,6 @@
             <code data-type="solution">
             #Simple solution 
             gf_histogram(~ Population, data = HappyPlanetIndex)
-            
-            #Another solution 
-            gf_histogram(~ Population, data = HappyPlanetIndex, fill = "slateblue4") %>%  
-            gf_labs(x = "Population (in millions)")
             </code>
             <code data-type="sct">
             test_function("gf_histogram", incorrect_msg="Don't forget to use `~Population` and `data=HappyPlanetIndex` as arguments")
