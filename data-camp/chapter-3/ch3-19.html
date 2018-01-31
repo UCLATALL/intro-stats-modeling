@@ -25,9 +25,7 @@
             gf_labs(x = "Population (in millions)")
             </code>
             <code data-type="sct">
-            test_or(test_function_result("gf_histogram", index =1), 
-                    test_function_result("gf_histogram", index =2),
-                    incorrect_msg="Don't forget to use `~Population` and `data=HappyPlanetIndex` as arguments")
+            test_function("gf_histogram", incorrect_msg="Don't forget to use `~Population` and `data=HappyPlanetIndex` as arguments")
             success_msg("You're a rock star!")
             </code>
             <div data-type="hint">Use the gf_histogram() function</div>
