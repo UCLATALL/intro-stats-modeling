@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(tidyverse)
+            HappyPlanetIndex <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/happy-planet-index.csv", header=TRUE, sep=",") 
+            HappyPlanetIndex$Region <- recode(HappyPlanetIndex$Region, '1'="Latin America", '2'="Western Nations", '3'="Middle East and North Africa", '4'="Sub-Saharan Africa", '5'="South Asia", '6'="East Asia", '7'="Former Communist Countries")
+            </code>
+            <code data-type="sample-code">
+            # Make a histogram of Population from HappyPlanetIndex    
+            </code>
+            <code data-type="solution">
+            #Simple solution 
+            gf_histogram(~ Population, data = HappyPlanetIndex)
+            
+            #Another solution 
+            gf_histogram(~ Population, data = HappyPlanetIndex, fill = "slateblue4") %>%  
+            gf_labs(x = "Population (in millions)")
+            </code>
+            <code data-type="sct">
+            test_or(test_function_result("gf_histogram", index =1), 
+                    test_function_result("gf_histogram", index =2),
+                    incorrect_msg="Don't forget to use `~Population` and `data=HappyPlanetIndex` as arguments")
+            success_msg("You're a rock star!")
+            </code>
+            <div data-type="hint">Use the gf_histogram() function</div>
+        </div>
+    </body>
+</html>
