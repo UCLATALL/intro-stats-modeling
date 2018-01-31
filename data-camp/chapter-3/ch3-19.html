@@ -6,7 +6,7 @@
         <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
     </head>
     <body>
-        <div data-datacamp-exercise data-lang="r">
+        <div data-datacamp-exercise data-lang="r" data-height=500>
             <code data-type="pre-exercise-code">
             require(mosaic)
             require(tidyverse)
@@ -14,7 +14,7 @@
             HappyPlanetIndex$Region <- recode(HappyPlanetIndex$Region, '1'="Latin America", '2'="Western Nations", '3'="Middle East and North Africa", '4'="Sub-Saharan Africa", '5'="South Asia", '6'="East Asia", '7'="Former Communist Countries")
             </code>
             <code data-type="sample-code">
-            # Make a histogram of Population from HappyPlanetIndex    
+            # Make a histogram of Population from HappyPlanetIndex using gf_histogram() 
             </code>
             <code data-type="solution">
             #Simple solution 
