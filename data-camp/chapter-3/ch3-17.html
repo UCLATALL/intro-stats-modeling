@@ -14,17 +14,24 @@
             </code>
             <code data-type="sample-code">
             # Write code to sort Wt from lowest to highest
-           
+          
+
                  
             </code>
             <code data-type="solution">
             # Write code to sort Wt from lowest to highest
+            # Solution 1
             arrange(MindsetMatters, Wt)
+                
+            # Solution 2 
+            sort(MindsetMatters$Wt)
                 
             </code>
             <code data-type="sct">
-            test_or(test_function_result("arrange"), 
-                test_function("sort"))
+            test_or(test_function_result("arrange"),
+                    test_function_result("sort"), 
+                    incorrect_msg="Use either arrange() or sort()")
+            success_msg("Fantastic work!")
                 
             </code>
             <div data-type="hint">You could use either sort() or arrange() to sort Wt from lowest to highest</div>
