@@ -14,10 +14,10 @@
             HappyPlanetIndex$Region <- recode(HappyPlanetIndex$Region, '1'="Latin America", '2'="Western Nations", '3'="Middle East and North Africa", '4'="Sub-Saharan Africa", '5'="South Asia", '6'="East Asia", '7'="Former Communist Countries")
             </code>
             <code data-type="sample-code">
-            # This calculates the Q3 + 1.5*IQR
+            # this calculates the Q3 + 1.5*IQR
             UpperBoundary <- 31.225 + 1.5*(31.225-4.455)
 
-            # Modify this code to select only countries with populations less than the upper boundary.
+            # modify this code for to filter countries with population sizes greater than the UpperBoundary
             SmallerCountries <- 
   
             # this makes a histogram of the smaller countries' populations
@@ -30,7 +30,7 @@
             UpperBoundary <- 31.225 + 1.5*(31.225-4.455)
             
             # modify this code for Population from HappyPlanetIndex
-            SmallerCountries <- filter(HappyPlanetIndex, Population < (10.48+1.5*(31.225-4.455)))
+            SmallerCountries <- filter(HappyPlanetIndex, Population < UpperBoundary)
 
             # this makes a histogram of the smaller countries' populations
             gf_histogram(~ Population, data = SmallerCountries, fill = "slateblue4") %>%  
@@ -40,7 +40,9 @@
             test_object("UpperBoundary")
             test_function("filter", incorrect_msg="Did you use the `filter()` function?")
             test_function_result("filter", incorrect_msg="Did you use `Population < UpperBoundary` as the second argument?")
-            test_object("SmallerCountaries")
+            test_object("SmallerCountries")
+            test_output_contains("gf_histogram(~ Population, data = SmallerCountries, fill = "slateblue4") %>%  
+            gf_labs(x = "Population (in millions)", title = "Population of Countries (Excludes Outliers)")")
             test_error()
             success_msg("That was a tough one! Great job working through it.")
             </code>
