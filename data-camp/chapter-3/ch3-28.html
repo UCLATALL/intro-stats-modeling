@@ -22,17 +22,17 @@
             </code>
             
             <code data-type="sample-code">
-            # Add margin and format arguments to the tally() function. Set margin to TRUE and format to proportion
+            # Add margin and format arguments to the tally() function. Set margins to TRUE and format to proportion
             tally(~ RaceEthnic, data = Fingers)
             </code>
             
             <code data-type="solution">
             # Add margin and format arguments to the tally() function. Set margin to TRUE and format to proportion
-            tally(~ RaceEthnic, data = Fingers, margin = TRUE, format = "proportion")   
+            tally(~ RaceEthnic, data = Fingers, margins = TRUE, format = "proportion")   
             </code>
             
             <code data-type="sct">
-            test_function("tally")
+            test_function("tally", args=c("margins", "format"))
             test_error()
             success_msg("You're doing fantastic work!")
             </code>
