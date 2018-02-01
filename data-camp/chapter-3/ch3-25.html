@@ -38,13 +38,16 @@
             Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels = c(1,2,3,4,5), labels = c("White","African American","Asian","Latino","Other"))
             Fingers$Job <- factor(Fingers$Job, levels = c(0,1,2), labels = c("not working", "part-time job", "full-time job"))
             </code>
+            
             <code data-type="sample-code">
             # Create a bar graph of RaceEthnic in the Fingers data frame. Use the gf_bar() function 
             </code>
+            
             <code data-type="solution">
             # Create a bar graph of RaceEthnic in the Fingers data frame. Use the gf_bar() function 
             gf_bar(~RaceEthnic, data=Fingers)    
             </code>
+            
             <code data-type="sct">
             test_function("gf_bar", args="data", incorrect_msg="Don't forget to set `data=Fingers`")
             test_function_result("gf_bar", incorrect_msg="Did you use `~RaceEthnic`?")
