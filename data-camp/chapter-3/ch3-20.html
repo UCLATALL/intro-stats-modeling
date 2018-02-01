@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(tidyverse)
+            HappyPlanetIndex <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/happy-planet-index.csv", header=TRUE, sep=",") 
+            HappyPlanetIndex$Region <- recode(HappyPlanetIndex$Region, '1'="Latin America", '2'="Western Nations", '3'="Middle East and North Africa", '4'="Sub-Saharan Africa", '5'="South Asia", '6'="East Asia", '7'="Former Communist Countries")  
+            </code>
+            <code data-type="sample-code">
+            # Produces favstats for Population of countries in HappyPlanetIndex
+            favstats(~ Population, data = HappyPlanetIndex)
+            
+            # Based on the numbers from the favstats results, use R as a calculator to find the range of Wt    
+            </code>
+            <code data-type="solution">
+            # Produces favstats for Population of countries in HappyPlanetIndex
+            favstats(~ Population, data = HappyPlanetIndex)
+            
+            # Based on the numbers from the favstats results, use R as a calculator to find the range of Wt
+            31.225 - 4.455    
+            </code>
+            <code data-type="sct">
+            test_output_contains("31.225 - 4.455")
+            test_error() 
+            success_msg("Keep up the great work!") 
+            </code>
+            <div data-type="hint">Subtract the minimum from the maximum to find the range</div>
+        </div>
+    </body>
+</html>
