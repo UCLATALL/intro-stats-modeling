@@ -41,8 +41,6 @@
             test_function("filter", incorrect_msg="Did you use the `filter()` function?")
             test_function_result("filter", incorrect_msg="Did you use `Population < UpperBoundary` as the second argument?")
             test_object("SmallerCountries")
-            test_output_contains("gf_histogram(~ Population, data = SmallerCountries, fill = "slateblue4") %>%  
-            gf_labs(x = "Population (in millions)", title = "Population of Countries (Excludes Outliers)")")
             test_error()
             success_msg("That was a tough one! Great job working through it.")
             </code>
