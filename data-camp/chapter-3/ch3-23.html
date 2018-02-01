@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(tidyverse)
+            HappyPlanetIndex <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/happy-planet-index.csv", header=TRUE, sep=",") 
+            HappyPlanetIndex$Region <- recode(HappyPlanetIndex$Region, '1'="Latin America", '2'="Western Nations", '3'="Middle East and North Africa", '4'="Sub-Saharan Africa", '5'="South Asia", '6'="East Asia", '7'="Former Communist Countries")
+            </code>
+            <code data-type="sample-code">
+            # this calculates the Q3 + 1.5*IQR
+            UpperBoundary <- 31.225 + 1.5*(31.225-4.455)
+
+            # modify this code for to filter countries with population sizes greater than the UpperBoundary
+            SmallerCountries <- 
+  
+            # this makes a histogram of the smaller countries' populations
+            gf_histogram(~ Population, data = SmallerCountries, fill = "slateblue4") %>%  
+            gf_labs(x = "Population (in millions)", title = "Population of Countries (Excludes Outliers)")
+                      
+            </code>
+            <code data-type="solution">
+            # this calculates the Q3 + 1.5*IQR
+            UpperBoundary <- 31.225 + 1.5*(31.225-4.455)
+            
+            # modify this code for Population from HappyPlanetIndex
+            SmallerCountries <- filter(HappyPlanetIndex, Population < (10.48+1.5*(31.225-4.455)))
+
+            # this makes a histogram of the smaller countries' populations
+            gf_histogram(~ Population, data = SmallerCountries, fill = "slateblue4") %>%  
+            gf_labs(x = "Population (in millions)", title = "Population of Countries (Excludes Outliers)")
+            </code>
+            <code data-type="sct">
+            test_object("UpperBoundary")
+            test_function("filter", incorrect_msg="Did you use the `filter()` function?")
+            test_function("filter", args="x", incorrect_msg="Did you remember to specify `HappyPlanetIndex` as the first argument?")
+            test_function_result("filter", incorrect_msg="Did you use `Population < UpperBoundary` as the second argument?")
+            test_object("SmallerCountaries")
+            test_error()
+            success_msg("That was a tough one! Great job working through it.")
+            </code>
+            <div data-type="hint">You can use `Population < UpperBoundary` to select populations less than 31.255 + 1.5*(31.255-4.455)</div>
+        </div>
+    </body>
+</html>
