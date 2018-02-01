@@ -20,7 +20,7 @@
             </code>
             <code data-type="solution">
             # Modify this code to create a boxplot of Population from HappyPlanetIndex
-            gf_boxplot(Population ~ 1, data=HappyPlanetIndex)  
+            gf_boxplot(gformula=Population ~ 1, data=HappyPlanetIndex)  
             </code>
             <code data-type="sct">
             test_function("gf_boxplot", args=c("gformula", "data"), incorrect_msg="Did you change `Wt` to `Population`and set `data=HappyPlanetIndex`?")
