@@ -43,13 +43,13 @@
             <code data-type="sample-code">
             # Modify this code to create density histograms 
             gf_histogram(~ Thumb, data = Fingers) %>%
-                gf_fact_grid(Sex ~.)
+                gf_facet_grid(Sex ~.)
             </code>
             
             <code data-type="solution">
             # Modify this code to create density histograms 
             gf_histogram(...density...~ Thumb, data = Fingers) %>%
-                gf_fact_grid(Sex ~.) %>%
+                gf_facet_grid(Sex ~.) %>%
                 gf_density()  
             </code>
             
