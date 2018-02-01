@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(tidyverse)
+            HappyPlanetIndex <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/happy-planet-index.csv", header=TRUE, sep=",") 
+            HappyPlanetIndex$Region <- recode(HappyPlanetIndex$Region, '1'="Latin America", '2'="Western Nations", '3'="Middle East and North Africa", '4'="Sub-Saharan Africa", '5'="South Asia", '6'="East Asia", '7'="Former Communist Countries")
+            Pop.stats <- favstats(~ Population, data = HappyPlanetIndex)
+            SmallerCountries <- filter(HappyPlanetIndex, Population < (Pop.stats$Q3 + 1.5*(Pop.stats$Q3 - Pop.stats$Q1)))  
+            </code>
+            <code data-type="sample-code">
+            # Make a boxplot of Population from the SmallerCountries
+            gf_boxplot(Population ~ 1, data=SmallerCountries)
+            </code>
+            <code data-type="solution">
+            # Make a boxplot of Population from the SmallerCountries
+            gf_boxplot(Population ~ 1, data=SmallerCountries)   
+            </code>
+            <code data-type="sct">
+            test_function_result("gf_boxplot")
+            test_error()
+            success_msg("Nice work!")
+            </code>
+            <div data-type="hint">Just click the Run button</div>
+        </div>
+    </body>
+</html>
