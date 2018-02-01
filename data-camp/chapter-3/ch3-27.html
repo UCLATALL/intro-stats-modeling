@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 3 Exercise 26</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            # Load packages 
+            require(mosaic)
+            require(tidyverse)
+            
+            # Import Fingers data frame
+            Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+            Fingers <- data.frame(Fingers) 
+            </code>
+            
+            <code data-type="sample-code">
+            # This creates a frequency table of Sex
+            tally(~ Sex, data = Fingers)
+
+            # Write code to create a frequency table of RaceEthnic      
+            </code>
+            <code data-type="solution">
+            # This creates a frequency table of Sex
+            tally(~ Sex, data = Fingers)
+
+            # Write code to create a frequency table of RaceEthnic 
+            tally(~ RaceEthnic, data = Fingers)
+            </code>
+            
+            <code data-type="sct">
+            test_function("tally", args="data", index=1, incorrect_msg="Make sure not to change the code for the first frequency table")
+            test_function_result("tally", index=1)
+            test_function("tally", args="data", index=2, incorrect_msg="Have you set `data=Fingers`?")
+            test_function_result("tally", index=2, incorrect_msg="Have you specified `~RaceEthnic`?")
+            test_error()
+            success_msg("You're a supe-R coder!")
+            </code>
+            
+            <div data-type="hint">Use given code as a guide. Just change Sex to RaceEthnic</div>
+        </div>
+    </body>
+</html>
