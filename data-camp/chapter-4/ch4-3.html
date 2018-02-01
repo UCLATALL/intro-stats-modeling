@@ -42,37 +42,37 @@
             </code>
             <code data-type="sample-code">
             # Write code to create paneled histograms of Thumb to explore variables that would do a poor job of explaining variation (categorical variables)
-            # Store it in a variable called myHistogram
             
-            myHistogram <- 
-            
-            # This prints myHistogram
-            myHistogram
             
             </code>
             <code data-type="solution">
             # One solution 
-            myHistogram <- gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Sex) %>%
+            gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Sex) %>%
             gf_facet_grid(Sex ~ .)
             
             # Another solution 
-            myHistogram <- gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~RaceEthnic) %>%
+            gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~RaceEthnic) %>%
             gf_facet_grid(RaceEthnic ~ .)
             
             # Another solution 
-            myHistogram <- gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Year) %>%
+            gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Year) %>%
             gf_facet_grid(Year ~ .)
             
             # Yet another solution 
-            myHistogram <- gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Job) %>%
+            gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Job) %>%
             gf_facet_grid(Job ~ .)   
             </code>
             
             <code data-type="sct">
-            test_or(test_function_result("gf_histogram", index=1),
-                    test_function_result("gf_histogram", index=2),
-                    test_function_result("gf_histogram", index=3),
-                    test_function_result("gf_histogram", index=4))
+            test_or(test_output_contains("gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Sex) %>%
+            gf_facet_grid(Sex ~ .)"),
+                    test_output_contains("gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~RaceEthnic) %>%
+            gf_facet_grid(RaceEthnic ~ .)"),
+                    test_output_contains("gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Year) %>%
+            gf_facet_grid(Year ~ .)"),
+                    test_output_contains("gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Job) %>%
+            gf_facet_grid(Job ~ .)")
+            test_error()
             </code>
             <div data-type="hint"></div>
         </div>
