@@ -69,31 +69,10 @@
             </code>
             
             <code data-type="sct">
-            test_or(test_correct(test_object(myHistogram),
-                {
-                    test_function("gf_histogram", args=c("data", "fill"), index=1)
-                    test_function("gf_facet_grid", index=1)
-                    test_error()
-                }), 
-                    test_correct(test_object("myHistogram"), 
-                {
-                    test_function("gf_histogram", args=c("data", "fill"), index=2)
-                    test_function("gf_facet_grid", index=2)
-                    test_error()
-                }),
-                    test_correct(test_object("myHistogram"), 
-                {
-                    test_function("gf_histogram", args=c("data", "fill"), index=3)
-                    test_function("gf_facet_grid", index=3)
-                    test_error()
-                }),
-                    test_correct(test_object("myHistogram"), 
-                {
-                    test_function("gf_histogram", args=c("data", "fill"), index=4)
-                    test_function("gf_facet_grid", index=4)
-                    test_error()
-                }))
-
+            test_or(test_function_result("gf_histogram", index=1),
+                    test_function_result("gf_histogram", index=2),
+                    test_function_result("gf_histogram", index=3),
+                    test_function_result("gf_histogram", index=4))
             </code>
             <div data-type="hint"></div>
         </div>
