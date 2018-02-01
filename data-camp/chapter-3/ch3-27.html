@@ -15,6 +15,10 @@
             # Import Fingers data frame
             Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
             Fingers <- data.frame(Fingers) 
+                
+            # Clean up the data 
+            Fingers$RaceEthnic <- as.factor(Fingers$RaceEthnic)
+            Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels = c(1,2,3,4,5), labels = c("White","African American","Asian","Latino","Other"))
             </code>
             
             <code data-type="sample-code">
