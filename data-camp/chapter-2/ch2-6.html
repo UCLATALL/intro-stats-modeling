@@ -24,8 +24,8 @@
             <code data-type="sct">
                 test_object("MindsetMatters")
                 test_function("tally", not_called_msg = "Have you used `tally()` to tally the data?")
-                test_or(test_output_contains("tally(~Condition, data=MindsetMatters)"), 
-                        test_output_contains("tally(MindsetMatters$Condition)")
+                test_or(test_output_regex("tally(~Condition, data=MindsetMatters)"), 
+                        test_output_regex("tally(MindsetMatters$Condition)")
                 test_error()
             </code>
             <div data-type="hint">Use tally(), ~Cond, and data=MindsetMatters</div>
