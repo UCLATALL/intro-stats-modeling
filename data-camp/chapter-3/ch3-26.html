@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 3 Exercise 26</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            # Load packages
+            require(mosaic)
+            require(tidyverse)
+            
+            # Import Fingers data frame
+            Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+            Fingers <- data.frame(Fingers)
+            
+            # Clean up str
+            Fingers$Sex <- as.factor(Fingers$Sex)
+            Fingers$RaceEthnic <- as.factor(Fingers$RaceEthnic)
+            Fingers$SSLast <- as.numeric(Fingers$SSLast)
+            Fingers$Year <- as.factor(Fingers$Year)
+            Fingers$Job <- as.factor(Fingers$Job)
+            Fingers$MathAnxious <- as.numeric(Fingers$MathAnxious)
+            Fingers$Interest <- as.numeric(Fingers$Interest)
+            Fingers$GradePredict <- as.numeric(Fingers$GradePredict)
+            Fingers$Thumb <- as.numeric(Fingers$Thumb)
+            Fingers$Index <- as.numeric(Fingers$Index)
+            Fingers$Middle <- as.numeric(Fingers$Middle)
+            Fingers$Ring <- as.numeric(Fingers$Ring)
+            Fingers$Pinkie <- as.numeric(Fingers$Pinkie)
+            Fingers$Height <- as.numeric(Fingers$Height)
+            Fingers$Weight <- as.numeric(Fingers$Weight)
+
+            # Label a few factors
+            Fingers$Sex <- factor(Fingers$Sex, levels = c(1,2), labels = c("female", "male"))
+            Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels = c(1,2,3,4,5), labels = c("White","African American","Asian","Latino","Other"))
+            Fingers$Job <- factor(Fingers$Job, levels = c(0,1,2), labels = c("not working", "part-time job", "full-time job"))   
+            </code>
+            
+            <code data-type="sample-code">
+            # add arguments color and fill to these bar graphs
+            gf_bar(~ Sex, data = Fingers)
+            gf_bar(~ RaceEthnic, data = Fingers)   
+            </code>
+            
+            <code data-type="solution">
+            # add arguments color and fill to these bar graphs
+            # the colors below are just examples. Any color is acceptable as long as you use the color and fill arguments
+            gf_bar(~ Sex, data = Fingers, color="darkgray", fill="mistyrose" )
+            gf_bar(~ RaceEthnic, data = Fingers, color="darkgray", fill="mistyrose")  
+            </code>
+            
+            <code data-type="sct">
+            test_function("gf_bar", args=c("color", "fill"), index=1, eval=NA, 
+                not_called_msg="Did you keep the function `gf_bar`?", 
+                args_not_specified_msg="Have you specified both the color and the fill?")
+            test_function("gf_bar", args=c("color", "fill"), index=2, eval=NA, 
+                not_called_msg="Did you keep the second function call of `gf_bar`?", 
+                args_not_specified_msg="Have you specified both the color and the fill for the second bar graph?")
+            test_error()
+            success_msg("Nice job!")
+            </code>
+            
+            <div data-type="hint">Remember to specify both the color and fill for both bar graphs</div>
+        </div>
+    </body>
+</html>
