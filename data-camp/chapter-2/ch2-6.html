@@ -17,15 +17,16 @@
                       
             </code>
             <code data-type="solution">
-                tally(x = ~Condition, data=MindsetMatters)
+                tally(~Condition, data=MindsetMatters)
+                tally(MindsetMatters$Condition)
                  
             </code>
             <code data-type="sct">
                 test_object("MindsetMatters")
-                test_function("tally", args = c("x", "data"), 
-                not_called_msg = "Have you used `tally()` to tally the data?", 
-                args_not_specified = "Have you specified both the variable to tally and the dataset?")
-                
+                test_function("tally", not_called_msg = "Have you used `tally()` to tally the data?")
+                test_or(test_output_contains("tally(~Condition, data=MindsetMatters)"), 
+                        test_output_contains("tally(MindsetMatters$Condition)")
+                test_error()
             </code>
             <div data-type="hint">Use tally(), ~Cond, and data=MindsetMatters</div>
         </div>
