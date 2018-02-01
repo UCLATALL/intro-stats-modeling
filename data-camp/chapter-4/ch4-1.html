@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            # Load packages 
+            require(mosaic)
+            require(tidyverse)
+            
+            # Import Fingers data frame
+            Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+            Fingers <- data.frame(Fingers) 
+
+            # clean up str
+            Fingers$Sex <- as.factor(Fingers$Sex)
+            Fingers$RaceEthnic <- as.factor(Fingers$RaceEthnic)
+            Fingers$SSLast <- as.numeric(Fingers$SSLast)
+            Fingers$Year <- as.factor(Fingers$Year)
+            Fingers$Job <- as.factor(Fingers$Job)
+            Fingers$MathAnxious <- as.numeric(Fingers$MathAnxious)
+            Fingers$Interest <- as.numeric(Fingers$Interest)
+            Fingers$GradePredict <- as.numeric(Fingers$GradePredict)
+            Fingers$Thumb <- as.numeric(Fingers$Thumb)
+            Fingers$Index <- as.numeric(Fingers$Index)
+            Fingers$Middle <- as.numeric(Fingers$Middle)
+            Fingers$Ring <- as.numeric(Fingers$Ring)
+            Fingers$Pinkie <- as.numeric(Fingers$Pinkie)
+            Fingers$Height <- as.numeric(Fingers$Height)
+            Fingers$Weight <- as.numeric(Fingers$Weight)
+
+            # label a few factors
+            Fingers$Sex <- factor(Fingers$Sex, levels = c(1,2), labels = c("female", "male"))
+            Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels = c(1,2,3,4,5), labels = c("White","African American","Asian","Latino","Other"))
+            Fingers$Job <- factor(Fingers$Job, levels = c(0,1,2), labels = c("not working", "part-time job", "full-time job"))
+            Fingers$Year <- factor(Fingers$Year, levels = c(1,2,3,4), labels = c("freshman", "sophomore", "junior", "senior")) 
+            </code>
+            
+            <code data-type="sample-code">
+            # Write code to draw a histogram of Thumb from the Fingers dataset
+            </code>
+            
+            <code data-type="solution">
+            # Write code to draw a histogram of Thumb from the Fingers dataset
+            gf_histogram(~Thumb, data=Fingers)
+
+            </code>
+            <code data-type="sct">
+            test_or(
+                test_function("gf_histogram", args="data"), 
+                test_function("hist", args="x"))  
+            </code>
+            <div data-type="hint">Use gf_histogram()</div>
+        </div>
+    </body>
+</html>
