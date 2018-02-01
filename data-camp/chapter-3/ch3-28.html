@@ -32,7 +32,7 @@
             </code>
             
             <code data-type="sct">
-            test_function_result("tally", incorrect_msg="Have you set `margin=TRUE` and `format="proportion"`?")
+            test_output_contains("tally(~ RaceEthnic, data = Fingers, margin = TRUE, format = "proportion")")
             test_error()
             success_msg("You're doing fantastic work!")
             </code>
