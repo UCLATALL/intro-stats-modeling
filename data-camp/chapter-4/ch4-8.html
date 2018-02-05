@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(ggformula)
+            require(tidyverse)
+            
+            Fingers$Sex <- as.factor(Fingers$Sex)
+            Fingers$RaceEthnic <- as.factor(Fingers$RaceEthnic)
+            Fingers$SSLast <- as.numeric(Fingers$SSLast)
+            Fingers$Year <- as.factor(Fingers$Year)
+            Fingers$Job <- as.factor(Fingers$Job)
+            Fingers$MathAnxious <- as.numeric(Fingers$MathAnxious)
+            Fingers$Interest <- as.numeric(Fingers$Interest)
+            Fingers$GradePredict <- as.numeric(Fingers$GradePredict)
+            Fingers$Thumb <- as.numeric(Fingers$Thumb)
+            Fingers$Index <- as.numeric(Fingers$Index)
+            Fingers$Middle <- as.numeric(Fingers$Middle)
+            Fingers$Ring <- as.numeric(Fingers$Ring)
+            Fingers$Pinkie <- as.numeric(Fingers$Pinkie)
+            Fingers$Height <- as.numeric(Fingers$Height)
+            Fingers$Weight <- as.numeric(Fingers$Weight)
+
+            # prerun
+            Fingers$Job <- as.factor(Fingers$Job)
+            Fingers$Job <- factor(Fingers$Job, levels=c(0,1,2), labels=c("no job", "part-time", "full-time"))
+            </code>
+            
+            <code data-type="sample-code">
+            # Modify this boxplot to look at Thumb length by Job 
+            gf_boxplot(Thumb ~ Sex, data = Fingers, color = ~Sex) %>% 
+                gf_jitter(height=0, color="gray", alpha=.5, size=3)
+            </code>
+            <code data-type="solution">
+            gf_boxplot(Thumb ~ Job, data = Fingers, color = ~Sex) %>% 
+                gf_jitter(height=0, color="gray", alpha=.5, size=3)  
+            </code>
+            
+            <code data-type="sct">
+            test_output_contains("gf_boxplot(Thumb ~ Job, data = Fingers, color = ~Sex) %>% 
+                gf_jitter(height=0, color="gray", alpha=.5, size=3)")   
+            </code>
+            
+            <div data-type="hint">Did you change Sex to Job?</div>
+        </div>
+    </body>
+</html>
