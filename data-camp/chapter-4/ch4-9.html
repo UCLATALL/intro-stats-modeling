@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(ggformula)
+            require(haven)
+            Survey <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/student-survey.csv", header=TRUE, sep=",")  
+            
+            set.seed(100)
+            ServerID <- c(1:44)
+            Tip <- sample(Tip_Study_Data$tips, 44)
+            Servers <- data.frame(ServerID, Tip)
+            
+            Condition <- Tip_Study_Data$condition
+            Tip <- Tip_Study_Data$tips 
+            TipExperiment <- data.frame(ServerID, Tip, Condition)
+            TipExperiment$Condition <- factor(TipExperiment$Condition, levels=c(1,2), labels=c("Control", "Thank You"))
+            </code>
+            <code data-type="sample-code">
+            # Take a look at a few lines of Survey 
+            
+            # Make a histogram of Any1_20. 
+                 
+            </code>
+            <code data-type="solution">
+            gf_histogram(~ Any1_20, data = Survey)  
+              
+            </code>
+            <code data-type="sct">
+            test_function_result("gf_histogram")
+            </code>
+            <div data-type="hint">Use ~ Any1_20 as the first argument</div>
+        </div>
+    </body>
+</html>
