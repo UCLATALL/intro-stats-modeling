@@ -34,7 +34,6 @@ Fingers$Height <- as.numeric(Fingers$Height)
 Fingers$Weight <- as.numeric(Fingers$Weight)
 
 # label a few factors
-Fingers$Sex <- factor(Fingers$Sex, levels = c(1,2), labels = c("female", "male"))
 Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels = c(1,2,3,4,5), labels = c("White","African American","Asian","Latino","Other"))
 Fingers$Job <- factor(Fingers$Job, levels = c(0,1,2), labels = c("not working", "part-time job", "full-time job"))
 Fingers$Year <- factor(Fingers$Year, levels = c(1,2,3,4), labels = c("freshman", "sophomore", "junior", "senior"))  
@@ -42,7 +41,7 @@ Fingers$Year <- factor(Fingers$Year, levels = c(1,2,3,4), labels = c("freshman",
             
             <code data-type="sample-code">
             # Change the default colors for the different values of the explanatory variable 
-            gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Sex))   
+            gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Sex)   
             </code>
             <code data-type="solution">
             gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Sex) %>%
