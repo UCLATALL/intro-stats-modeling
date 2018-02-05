@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                # creates MindsetMatters data frame
+                MindsetMatters <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/mindset-matters.csv", header=TRUE, sep=",")
+
+                # loads packages 
+                require(mosaic)
+                require(tidyverse)
+                
+                #Creates WtLost variable
+                MindsetMatters$WtLost <- MindsetMatters$Wt2 < MindsetMatters$Wt
+                MindsetMatters$WtLost = ifelse(MindsetMatters$WtLost, "lost", "not lost")
+                
+            </code>
+            <code data-type="sample-code">
+                # Create a bar graph of WtLost then use gf_facet_grid() to compare the outcome across conditions
+            </code>
+            <code data-type="solution">
+                gf_bar(~ WtLost, data = MindsetMatters) %>%
+                gf_facet_grid(Condition ~ .)      
+            </code>
+            <code data-type="sct">
+                test_function_result("gf_bar")
+                test_function_result("gf_fact_grid", incorrect_msg="Did you use `Condition ~ .`?")
+            </code>
+            <div data-type="hint">Don't forget to let R know to create a facet grid by Condition</div>
+        </div>
+    </body>
+</html>
