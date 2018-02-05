@@ -50,7 +50,8 @@ Fingers$Year <- factor(Fingers$Year, levels = c(1,2,3,4), labels = c("freshman",
             </code>
             <code data-type="sct">
             test_function("gf_histogram", incorrect_msg="Keep the sample code the same")
-            test_function("scale_fill_manual", incorrect_msg="Did you use the `scale_fill_values` function with `values =`?")
+            test_function("gf_refine", incorrect_msg="Have you called `gf_refine()`?")
+            test_function("scale_fill_manual", incorrect_msg="Have you used the `scale_fill_values()` and set `values =` colors?")
             </code>
             <div data-type="hint">The explanatory variable is sex</div>
         </div>
