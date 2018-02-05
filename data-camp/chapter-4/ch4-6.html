@@ -27,11 +27,11 @@
                 gf_bar(~ WtLost, data = MindsetMatters) %>%
                 gf_facet_grid(Condition ~ .) 
                 
-                gf_facet_grid(Condition ~ ., data=MindsetMatters)
+
             </code>
             <code data-type="sct">
                 test_function_result("gf_bar")
-                test_function_result("gf_fact_grid", incorrect_msg="Did you use `Condition ~ .`?")
+                test_function("gf_facet_grid")
             </code>
             <div data-type="hint">Don't forget to let R know to create a facet grid by Condition</div>
         </div>
