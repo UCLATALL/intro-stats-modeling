@@ -24,7 +24,7 @@
                 # Create a bar graph of WtLost then use gf_facet_grid() to compare the outcome across conditions
             </code>
             <code data-type="solution">
-                gf_bar(~ WtLost, data = MindsetMatters) %>%
+                gf_bar(~ WtLost, data = MindsetMatters) 
                 gf_facet_grid(Condition ~ .)      
             </code>
             <code data-type="sct">
