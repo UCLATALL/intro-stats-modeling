@@ -38,11 +38,11 @@
             
             <code data-type="sample-code">
             # Modify this boxplot to look at Thumb length by Job 
-            gf_boxplot(Thumb ~ Sex, data = Fingers, color = ~Sex) %>% 
+            gf_boxplot(Thumb ~ Sex, data = Fingers) %>% 
                 gf_jitter(height=0, color="gray", alpha=.5, size=3)
             </code>
             <code data-type="solution">
-            gf_boxplot(Thumb ~ Job, data = Fingers, color = ~Sex) %>% 
+            gf_boxplot(Thumb ~ Job, data = Fingers) %>% 
                 gf_jitter(height=0, color="gray", alpha=.5, size=3)  
             </code>
             
