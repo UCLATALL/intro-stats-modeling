@@ -47,14 +47,12 @@
             <code data-type="solution">
             # Modify this code to create density histograms 
             gf_histogram(..density..~ Thumb, data = Fingers) %>%
-                gf_facet_grid(Sex ~.) %>%
-                gf_density()  
+                gf_facet_grid(Sex ~.) %>% 
             </code>
             
             <code data-type="sct">
             test_function_result("gf_histogram")
             test_function_result("gf_facet_grid")
-            test_function("gf_density")
             test_error()
             success_msg("You're doing a fantastic job!")
             </code>
