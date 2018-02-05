@@ -11,44 +11,43 @@
             # Load packages 
             require(mosaic)
             require(tidyverse)
+            require(ggformula)
             
             # Import Fingers data frame
             Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
             Fingers <- data.frame(Fingers) 
 
             # clean up str
-            Fingers$Sex <- as.factor(Fingers$Sex)
-            Fingers$RaceEthnic <- as.factor(Fingers$RaceEthnic)
-            Fingers$SSLast <- as.numeric(Fingers$SSLast)
-            Fingers$Year <- as.factor(Fingers$Year)
-            Fingers$Job <- as.factor(Fingers$Job)
-            Fingers$MathAnxious <- as.numeric(Fingers$MathAnxious)
-            Fingers$Interest <- as.numeric(Fingers$Interest)
-            Fingers$GradePredict <- as.numeric(Fingers$GradePredict)
-            Fingers$Thumb <- as.numeric(Fingers$Thumb)
-            Fingers$Index <- as.numeric(Fingers$Index)
-            Fingers$Middle <- as.numeric(Fingers$Middle)
-            Fingers$Ring <- as.numeric(Fingers$Ring)
-            Fingers$Pinkie <- as.numeric(Fingers$Pinkie)
-            Fingers$Height <- as.numeric(Fingers$Height)
-            Fingers$Weight <- as.numeric(Fingers$Weight)
+Fingers$Sex <- as.factor(Fingers$Sex)
+Fingers$RaceEthnic <- as.factor(Fingers$RaceEthnic)
+Fingers$SSLast <- as.numeric(Fingers$SSLast)
+Fingers$Year <- as.factor(Fingers$Year)
+Fingers$Job <- as.factor(Fingers$Job)
+Fingers$MathAnxious <- as.numeric(Fingers$MathAnxious)
+Fingers$Interest <- as.numeric(Fingers$Interest)
+Fingers$GradePredict <- as.numeric(Fingers$GradePredict)
+Fingers$Thumb <- as.numeric(Fingers$Thumb)
+Fingers$Index <- as.numeric(Fingers$Index)
+Fingers$Middle <- as.numeric(Fingers$Middle)
+Fingers$Ring <- as.numeric(Fingers$Ring)
+Fingers$Pinkie <- as.numeric(Fingers$Pinkie)
+Fingers$Height <- as.numeric(Fingers$Height)
+Fingers$Weight <- as.numeric(Fingers$Weight)
 
-            # label a few factors
-            Fingers$Sex <- factor(Fingers$Sex, levels = c(1,2), labels = c("female", "male"))
-            Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels = c(1,2,3,4,5), labels = c("White","African American","Asian","Latino","Other"))
-            Fingers$Job <- factor(Fingers$Job, levels = c(0,1,2), labels = c("not working", "part-time job", "full-time job"))
-            Fingers$Year <- factor(Fingers$Year, levels = c(1,2,3,4), labels = c("freshman", "sophomore", "junior", "senior"))    
+# label a few factors
+Fingers$Sex <- factor(Fingers$Sex, levels = c(1,2), labels = c("female", "male"))
+Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels = c(1,2,3,4,5), labels = c("White","African American","Asian","Latino","Other"))
+Fingers$Job <- factor(Fingers$Job, levels = c(0,1,2), labels = c("not working", "part-time job", "full-time job"))
+Fingers$Year <- factor(Fingers$Year, levels = c(1,2,3,4), labels = c("freshman", "sophomore", "junior", "senior"))  
             </code>
             
             <code data-type="sample-code">
             # Change the default colors for the different values of the explanatory variable 
-            gf_histogram(..density.. ~Thumb, data=Fingers, 
-            fill = ~ Sex)   
+            gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Sex))   
             </code>
             <code data-type="solution">
-            gf_histogram(..density.. ~Thumb, data=Fingers, 
-            fill = ~ Sex) %>%
-                 gf_refine(scale_fill_manual(values = c("purple", "orange")))
+            gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Sex) %>%
+                gf_refine(scale_fill_manual(values = c("red","blue")))
                  
             </code>
             <code data-type="sct">
