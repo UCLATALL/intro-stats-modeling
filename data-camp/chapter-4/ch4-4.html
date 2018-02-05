@@ -64,14 +64,8 @@
             </code>
             
             <code data-type="sct">
-            test_or(test_output_contains("gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Sex) %>%
-            gf_facet_grid(Sex ~ .)"),
-                    test_output_contains("gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~RaceEthnic) %>%
-                        gf_facet_grid(RaceEthnic ~ .)"),
-                    test_output_contains("gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Year) %>%
-                        gf_facet_grid(Year ~ .)"),
-                    test_output_contains("gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Job) %>%
-                        gf_facet_grid(Job ~ .)"))        
+            test_function("gf_histogram")
+            test_function("gf_facet_grid")
             test_error()
             </code>
             <div data-type="hint"></div>
