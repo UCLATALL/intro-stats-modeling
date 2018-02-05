@@ -48,19 +48,7 @@
             <code data-type="solution">
             # One solution 
             gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Sex) %>%
-            gf_facet_grid(Sex ~ .)
-            
-            # Another solution 
-            gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~RaceEthnic) %>%
-            gf_facet_grid(RaceEthnic ~ .)
-            
-            # Another solution 
-            gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Year) %>%
-            gf_facet_grid(Year ~ .)
-            
-            # Yet another solution 
-            gf_histogram(..density.. ~ Thumb, data = Fingers, fill = ~Job) %>%
-            gf_facet_grid(Job ~ .)   
+            gf_facet_grid(Sex ~ .) 
             </code>
             
             <code data-type="sct">
