@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+             require(mosaic)
+             require(tidyverse)
+            </code>
+            <code data-type="sample-code">
+            # pre-run
+            set.seed(13)
+
+            # modify this to generate a random sample of 10,000 
+            Any1_20 <- resample(1:20, 211)
+
+            # modify this to put Any1_20 into a new data frame called Computer
+            Computer <- 
+
+            # this makes a histogram of Any1_20 from Computer
+            gf_histogram(~ Any1_20, data = Computer, fill = "dodgerblue", color = "gray", bins = 20) %>%
+            gf_labs(title = "Computer generated random numbers (n = 211)")
+                    
+            </code>
+            <code data-type="solution">
+            # pre-run
+            set.seed(13)
+
+            # modify this to generate a random sample of 10,000 
+            Any1_20 <- resample(1:20, 10000)
+
+            # modify this to put Any1_20 into a new data frame called Computer
+            Computer <- data.frame(Any1_20)
+
+            # this makes a histogram of Any1_20 from Computer
+            gf_histogram(~ Any1_20, data = Computer, fill = "dodgerblue", color = "gray", bins = 20) %>%
+            gf_labs(title = "Computer generated random numbers (n = 10000)")
+   
+            </code>
+            <code data-type="sct">
+            test_object("Any1_20")
+            test_data_frame("Computer")
+            test_function_result("gf_histogram")
+            test_function("gf_labs", args="title")
+            test_error()
+            success_msg("You're doing a fantastic job!")
+            </code>
+            <div data-type="hint">Don't forget to modify the title of the histogram to reflect the change to n=10000</div>
+        </div>
+    </body>
+</html>
