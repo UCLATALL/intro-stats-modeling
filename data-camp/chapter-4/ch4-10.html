@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 4 Exercise 10</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+             require(mosaic)
+             require(tidyverse)
+            </code>
+            <code data-type="sample-code">
+            # pre-run
+            set.seed(13)
+
+            # create a random sample of 200 numbers between 1 and 20
+            Any1_20 <- 
+
+            # this puts Any1_20 into a new data frame called Computer
+            Computer <- data.frame(Any1_20)
+
+            # make a histogram of Any1_20 from Computer  
+       
+            </code>
+            <code data-type="solution">
+            # pre-run
+            set.seed(13)
+
+            # create a random sample of 200 numbers between 1 and 20
+            Any1_20 <- resample(1:20, 211)
+
+            # this puts Any1_20 into a new data frame called Computer
+            Computer <- data.frame(Any1_20)  
+            
+            # make a histogram of Any1_20 from Computer 
+            gf_histogram(~ Any1_20, data = Computer)
+                
+            </code>
+            <code data-type="sct">
+             test_object("Any1_20")
+             test_object("Computer")
+             test_function_result("gf_histogram")
+            </code>
+            <div data-type="hint"></div>
+        </div>
+    </body>
+</html>
