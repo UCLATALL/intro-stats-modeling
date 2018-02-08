@@ -12,6 +12,12 @@
             require(ggformula)
             require(haven)
             Tip_Study_Data <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/tip_study_data.csv", header=TRUE, sep=",")  
+           
+            set.seed(100)
+            ServerID <- c(1:44)
+            Tip <- sample(Tip_Study_Data$tips, 44)
+            Servers <- data.frame(ServerID, Tip)
+                              
             set.seed(8)
             Servers <- sample(Servers, orig.id=FALSE)
             Servers$RandomGroups1 <- append(rep(1,22), rep(2,22))
