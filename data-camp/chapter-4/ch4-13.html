@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 4 Exercise 13</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(ggformula)
+            Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+            Fingers <- data.frame(Fingers)
+            Fingers$Height.2group <- ntile(Fingers$Height, 2)
+            Fingers$Height.2group <- factor(Fingers$Height.2group, levels = c(1,2), labels = c("short", "tall"))
+            
+            </code>
+            <code data-type="sample-code">
+            # create histograms of Thumb in a grid by Height.2group
+
+            # create a scatterplot of Thumb by Height.2group  
+            </code>
+            <code data-type="solution">
+            # create histograms of Thumb in a grid by Height.2group
+            gf_histogram(~Thumb, data=Fingers) %>%
+            gf_facet_grid(Height.2group ~ .)
+            
+            # create a scatterplot of Thumb by Height.2group
+            gf_point(Thumb ~ Height.2group, data=Fingers)
+            
+            
+            # use this code if you want your plot to look like ours 
+            gf_histogram(~ Thumb, data = Fingers, fill = "darkolivegreen4") %>%
+            gf_facet_grid(Height.2group ~ .) 
+
+            gf_point(Thumb ~ Height.2group, data = Fingers, alpha = .5, size = 3, color = "darkolivegreen4") 
+                    
+            </code>
+            <code data-type="sct">
+            test_function("gf_histogram")
+            test_function("gf_point")
+            test_error()
+            success_msg("Keep up the great work!")
+            </code>
+            <div data-type="hint">Don't forget to use gf_facet_grid to put your histograms of Height.2group in a grid</div>
+        </div>
+    </body>
+</html>
