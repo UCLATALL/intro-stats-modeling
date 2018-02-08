@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(ggformula)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+                Fingers <- data.frame(Fingers)
+                Fingers$Height.2group <- ntile(Fingers$Height, 2)
+                Fingers$Height.2group <- factor(Fingers$Height.2group, levels = c(1,2), labels = c("short", "tall"))
+            </code>
+            <code data-type="sample-code">
+            # modify this code to break Height into 3 categories
+                Fingers$Height.2group <- ntile(Fingers$Height, 2)
+                Fingers$Height.2group <- factor(Fingers$Height.2group, levels = c(1,2), labels = c("short", "tall"))
+
+            # create a scatterplot of Thumb by Height.3group
+
+            # create boxplots of Thumb by Height.3group   
+            </code>
+            
+            <code data-type="solution">
+            # modify this code to break Height into 3 categories
+            Fingers$Height.3group <- ntile(Fingers$Height, 3)
+            Fingers$Height.3group <- factor(Fingers$Height.3group, levels = c(1,2,3), labels = c("short", "medium", "tall"))
+
+            # create a scatterplot of Thumb by Height.3group
+            gf_point(Thumb ~ Height.3group, data = Fingers) 
+
+            # create boxplots of Thumb by Height.3group
+            gf_boxplot(Thumb ~ Height.3group, data = Fingers)  
+            </code>
+            
+            <code data-type="sct">
+            test_data_frame("Fingers", incorrect_msg="Did you remember to use `ntile()`?")
+            test_function("gf_point")
+            test_function("gf_boxplot")
+            test_error()
+            success_msg("Keep it up!")
+            </code>
+            <div data-type="hint">Don't forget to set the number of categories to 3</div>
+        </div>
+    </body>
+</html>
