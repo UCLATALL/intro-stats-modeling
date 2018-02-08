@@ -17,7 +17,6 @@
                 Fingers <- data.frame(Fingers) 
                 
                 # clean up str
-                Fingers$Sex <- as.factor(Fingers$Sex)
                 Fingers$RaceEthnic <- as.factor(Fingers$RaceEthnic)
                 Fingers$SSLast <- as.numeric(Fingers$SSLast)
                 Fingers$Year <- as.factor(Fingers$Year)
@@ -34,7 +33,6 @@
                 Fingers$Weight <- as.numeric(Fingers$Weight)
 
                 # label a few factors
-                Fingers$Sex <- factor(Fingers$Sex, levels = c(1,2), labels = c("female", "male"))
                 Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels = c(1,2,3,4,5), labels = c("White","African American","Asian","Latino","Other"))
                 Fingers$Job <- factor(Fingers$Job, levels = c(0,1,2), labels = c("not working", "part-time job", "full-time job"))
                 Fingers$Year <- factor(Fingers$Year, levels = c(1,2,3,4), labels = c("freshman", "sophomore", "junior", "senior"))
