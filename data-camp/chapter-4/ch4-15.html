@@ -36,7 +36,6 @@
             # create boxplots of Thumb by Height.3group
             gf_boxplot(Thumb ~ Height.3group, data = Fingers)  
             </code>
-            
             <code data-type="sct">
             test_data_frame("Fingers", incorrect_msg="Did you remember to use `ntile()`?")
             test_function("gf_point")
