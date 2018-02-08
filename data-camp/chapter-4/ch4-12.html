@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 4 Exercise 12</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                
+            </code>
+            <code data-type="sample-code">
+                # write code to cut Height from Fingers into 2 categories
+                # save this as a new variable: Height.2group
+                Fingers$Height.2group <- 
+
+                # modify this to label Fingers$Height.2group appropriately
+                Fingers$Sex <- factor(Fingers$Sex, levels = c(1,2), labels = c("female", "male"))
+
+                # this prints select variables in Fingers
+                head(select(Fingers, Thumb, Height, Height.2group))
+            </code>
+            <code data-type="solution">
+                # write code to cut Height from Fingers into 2 categories
+                # save this as a new variable: Height.2group
+                Fingers$Height.2group <- ntile(Fingers$Height, 2)
+
+                # modify this to label Fingers$Height.2group appropriately
+                Fingers$Height.2group <- factor(Fingers$Height.2group, levels = c(1,2), labels = c("short", "tall"))
+
+                # this prints select variables in Fingers
+                head(select(Fingers, Thumb, Height, Height.2group)) 
+            </code>
+            <code data-type="sct">
+                test_data_frame("Fingers$Height.2group")
+                test_function("ntile", incorrect_msg="Did you use `ntile()`?)
+                test_function("factor", args=c("levels","labels"))
+                test_function_result("head")
+                test_error()
+                success_msg("Wow! You're a rock staR. Keep up the good work!")
+            </code>
+            <div data-type="hint">Have you used ntile with Fingers$Height and 2 as the arguments?</div>
+        </div>
+    </body>
+</html>
