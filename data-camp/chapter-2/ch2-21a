@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 2 Exercise 21a</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(tidyverse)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",") 
+            </code>
+            <code data-type="sample-code">
+            # Print out the first six rows of Fingers
+            
+            # Use select() to look at Ring, Index, and RingLonger  
+            </code>
+            <code data-type="solution">
+            head(Fingers)
+            select(Fingers, Ring, Index, RingLonger)
+            </code>
+            <code data-type="sct">
+            test_function_result("head")
+            test_function_result("select")
+            test_error()
+            success_msg("Great work!")
+            </code>
+            <div data-type="hint">Divide Fingers$Index by Fingers$Ring using the / operator</div>
+        </div>
+    </body>
+</html>
