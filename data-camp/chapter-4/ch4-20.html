@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r" data-height=500>
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(ggformula)
+            require(haven)
+            Tip_Study_Data <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/tip_study_data.csv", header=TRUE, sep=",")  
+            ServerID <- c(1:44)
+            Condition <- Tip_Study_Data$condition
+            Tip <- Tip_Study_Data$tips
+            TipExperiment <- data.frame(ServerID, Tip, Condition)
+            TipExperiment$Condition <- factor(TipExperiment$Condition, levels = c(1,2), labels = c("Control", "Thank You"))
+            </code>
+            <code data-type="sample-code">
+            # Create a histogram for Tip for both conditions in TipExperiment
+
+            </code>
+            <code data-type="solution">
+            # Create a histogram for Tip for both conditions in TipExperiment
+            gf_histogram(..density..~ Tip, data = TipExperiment) %>%
+            gf_facet_grid(Condition ~ .)  
+              
+            </code>
+            <code data-type="sct">
+            test_function("gf_histogram")
+            test_error()
+            </code>
+            <div data-type="hint"></div>
+        </div>
+    </body>
+</html>
