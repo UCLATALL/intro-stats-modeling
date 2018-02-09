@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Chapter 1 Exercise 1</title>
+        <title>Chapter 3 Exercise 13</title>
         <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
     </head>
     <body>
@@ -28,10 +28,9 @@
             # add onto it to include a density plot
             gf_histogram(..density..~ sample3, data = dicerolls, color="darkgray", fill="springgreen", bins=6) 
 
-            # create histograms of sample4 and sample5 with density plots 
-                
-                 
+            # create histograms of sample4 and sample5 with density plots  
             </code>
+                
             <code data-type="solution">
             #pre run
             set.seed(7)
@@ -54,12 +53,17 @@
                 gf_density()
             
             gf_histogram(..density..~sample5, data=dicerolls, color="darkgray", fill="springgreen", bins=6) %>%
-                gf_density()
-                 
+                gf_density()   
             </code>
-            <code data-type="sct">
-            
                 
+            <code data-type="sct">
+            test_object("sample3")
+            test_object("sample4")
+            test_object("sample5")
+            test_data_frame("dicerolls")
+            test_function("gf_histogram")
+            test_error()
+            success_msg("Great work!")
             </code>
             <div data-type="hint"></div>
         </div>
