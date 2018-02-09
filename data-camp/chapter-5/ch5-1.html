@@ -8,23 +8,38 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
-                
+                require(mosaic)
+                require(ggformula)
             </code>
             <code data-type="sample-code">
+                # Modify this line 
+                outcome <- c() 
+                           
+                # Put outcome into the tinydata data frame 
+                tinydata <- data.frame()
                 
-                
-                 
+                # This will give you the favstats for outcome 
+                favstats(~ outcome, data = tinydata)     
             </code>
+            
             <code data-type="solution">
+                # Modify this line 
+                outcome <- c(5, 5, 5, 10, 20) 
+                           
+                # Put outcome into the tinydata data frame 
+                tinydata <- data.frame(outcome)
                 
-                
-                 
+                # This will give you the favstats for outcome 
+                favstats(~ outcome, data = tinydata) 
             </code>
+            
             <code data-type="sct">
-                
-                
+                test_object("outcome")
+                test_data_frame("tinydata")
+                test_function_result("favstats")
+                test_error()
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Have you created a data frame out of outcome?</div>
         </div>
     </body>
 </html>
