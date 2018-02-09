@@ -34,7 +34,7 @@
             </code>
             <code data-type="sct">
                 test_data_frame("Fingers", columns = "RaceEthnic")
-                test_data_frame("Fingers", columns = "Job")
+                test_object("Fingers$Job", eval=FALSE)
                 test_error()
                 success_msg("Awesome work!")
                 
