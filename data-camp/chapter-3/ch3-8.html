@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            # Load packages 
+            require(mosaic)
+            require(tidyverse)
+            
+            # Import Fingers data frame
+            Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+            Fingers <- data.frame(Fingers)
+                
+            </code>
+            <code data-type="sample-code">
+             # make a density histogram of Fingers$Thumb
+                    
+            </code>
+            <code data-type="solution">
+            # make a density histogram of Fingers$Thumb
+            gf_histogram(..density.. ~ Thumb, data = Fingers)
+            
+            # another solution
+            gf_histogram(..density..~Fingers$Thumb)
+            </code>
+            <code data-type="sct">
+            test_or(test_output_contains('gf_histogram(..density.. ~ Thumb, data = Fingers)')),
+                    test_output_contains('gf_histogram(..density..~Fingers$Thumb)')
+            </code>
+            <div data-type="hint"></div>
+        </div>
+    </body>
+</html>
