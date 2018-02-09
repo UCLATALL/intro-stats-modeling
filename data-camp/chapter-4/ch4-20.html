@@ -12,11 +12,16 @@
             require(ggformula)
             require(haven)
             Tip_Study_Data <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/tip_study_data.csv", header=TRUE, sep=",")  
-            ServerID <- c(1:44)
-            Condition <- Tip_Study_Data$condition
-            Tip <- Tip_Study_Data$tips
-            TipExperiment <- data.frame(ServerID, Tip, Condition)
-            TipExperiment$Condition <- factor(TipExperiment$Condition, levels = c(1,2), labels = c("Control", "Thank You"))
+           
+set.seed(100)
+ServerID <- c(1:44)
+Tip <- sample(Tip_Study_Data$tips, 44)
+Servers <- data.frame(ServerID, Tip)
+
+Condition <- Tip_Study_Data$condition
+Tip <- Tip_Study_Data$tips
+TipExperiment <- data.frame(ServerID, Tip, Condition)
+TipExperiment$Condition <- factor(TipExperiment$Condition, levels = c(1,2), labels = c("Control", "Thank You"))
             </code>
             <code data-type="sample-code">
             # Create a histogram for Tip for both conditions in TipExperiment
