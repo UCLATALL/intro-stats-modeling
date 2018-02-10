@@ -8,23 +8,45 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(ggformula)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
                 
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+                # here is the code you wrote before
+                    Empty.model <- lm(Thumb ~ NULL, data=Fingers)
+
+                # generate predictions from the Empty.model
+                    Fingers$Prediction <- 
+
+                # generate residuals from the Empty.model
+                    Fingers$Residual <- 
+  
+                # this will print out a few lines of Fingers
+                    head(select(Fingers, Thumb, Prediction, Residual), 10)
             </code>
             <code data-type="solution">
-                
-                
-                 
+                # here is the code you wrote before
+                    Empty.model <- lm(Thumb ~ NULL, data=Fingers)
+
+                # generate predictions from the Empty.model
+                    Fingers$Prediction <- predict(Empty.model)
+
+                # generate residuals from the Empty.model
+                    Fingers$Residual <- resid(Empty.model)
+  
+                # this will print out a few lines of Fingers
+                    head(select(Fingers, Thumb, Prediction, Residual), 10)
             </code>
             <code data-type="sct">
-                
+                test_object("Empty.model")
+                test_data_frame("Fingers")
+                test_error()
+                success_msg("Keep up the great work!")
                 
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Use the predict() and resid() functions</div>
         </div>
     </body>
 </html>
