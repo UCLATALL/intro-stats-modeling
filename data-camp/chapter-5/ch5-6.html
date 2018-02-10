@@ -2,27 +2,37 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Chapter 1 Exercise 1</title>
+        <title>Chapter 5 Exercise 6</title>
         <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
     </head>
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
-                
+            require(mosaic)
+            require(ggformula)
+            # set up TinyFingers
+                StudentID <- c(1,2,3,4,5,6)
+                Thumb <- c(56, 60, 61, 63, 64, 68)
+                TinyFingers <- data.frame(StudentID, Thumb)
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+            # modify this to save favstats for Thumb length
+                TinyThumb.stats <- 
+            # modify this to draw a vline representing the mean in purple
+                gf_histogram(~ Thumb, data = TinyFingers) %>%
+                    gf_vline()
             </code>
             <code data-type="solution">
-                
-                
-                 
+            # modify this to save favstats for Thumb length
+                TinyThumb.stats <- favstats( ~ Thumb, data=TinyFingers)
+
+            # modify this to draw a vline representing the mean in purple
+                gf_histogram(~ Thumb, data = TinyFingers) %>%
+                gf_vline(xintercept = ~ mean, color = "purple", data = TinyThumb.stats) 
             </code>
             <code data-type="sct">
-                
-                
+                test_object("TinyThumb.stats")
+                test_function_result("gf_histogram")
             </code>
             <div data-type="hint"></div>
         </div>
