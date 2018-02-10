@@ -11,20 +11,25 @@
                 
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+                # modify this to save the residuals 
+                TinyFingers$Residual <- 
+
+                # this print TinyFingers
+                TinyFingers
             </code>
             <code data-type="solution">
-                
-                
-                 
+                # modify this to save the residuals 
+                TinyFingers$Residual <- TinyFingers$Thumb - TinyFingers$Prediction
+
+                # this print TinyFingers
+                TinyFingers
             </code>
             <code data-type="sct">
-                
-                
+                test_data_frame("TinyFingers")
+                test_error()
+                success_msg("Great thinking!")
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Subtract Thumb from Prediction</div>
         </div>
     </body>
 </html>
