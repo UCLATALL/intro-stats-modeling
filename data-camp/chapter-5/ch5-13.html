@@ -14,7 +14,6 @@
  Empty.model <- lm(Thumb ~ NULL, data=Fingers)
                 Fingers$Prediction <- predict(Empty.model)
                  Fingers$Residual <- resid(Empty.model)
-                
             </code>
             <code data-type="sample-code">
             # make histograms for Thumb, Prediction, and Residual
