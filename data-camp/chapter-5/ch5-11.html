@@ -15,6 +15,7 @@
                 TinyFingers <- data.frame(StudentID, Thumb)
                 TinyEmpty.model <- lm(Thumb ~ NULL, data = TinyFingers)
                 TinyFingers$Prediction <- predict(TinyEmpty.model) 
+                TinyFingers$Residual <- TinyFingers$Thumb - TinyFingers$Prediction
             </code>
             <code data-type="sample-code">
                 # get the favstats for Thumb
