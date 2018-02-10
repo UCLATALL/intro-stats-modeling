@@ -8,23 +8,32 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
-                
+                require(mosaic)
+                require(ggformula)
+                StudentID <- c(1,2,3,4,5,6)
+                Thumb <- c(56, 60, 61, 63, 64, 68)
+                TinyFingers <- data.frame(StudentID, Thumb)
+                TinyEmpty.model <- lm(Thumb ~ NULL, data = TinyFingers)
+                TinyFingers$Prediction <- predict(TinyEmpty.model) 
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+                # get the favstats for Thumb
+
+                # get the favstats for Residuals
+
+                # if you decide to save them, make sure to print them out
             </code>
             <code data-type="solution">
-                
-                
-                 
+                favstats(~Thumb, data=TinyFingers)
+                favstats(~Residual, data=TinyFingers)
             </code>
             <code data-type="sct">
-                
-                
+                test_function_result("favstats", index=1)
+                test_function_result("favstats", index=2)
+                test_error()
+                success_msg("You're getting the hang of it!")
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Don't forget to use ~Thumb and ~Residual</div>
         </div>
     </body>
 </html>
