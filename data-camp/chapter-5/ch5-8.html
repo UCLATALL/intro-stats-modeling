@@ -8,23 +8,31 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
-                
+                require(mosaic)
+                require(ggformula)
+                StudentID <- c(1,2,3,4,5,6)
+                Thumb <- c(56, 60, 61, 63, 64, 68)
+                TinyFingers <- data.frame(StudentID, Thumb)
+                TinyEmpty.model <- lm(Thumb ~ NULL, data = TinyFingers) 
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+                # modify this to save the predictions from the TinyEmpty.model
+                    TinyFingers$Prediction <-  
+  
+                # this prints TinyFingers
+                    TinyFingers
             </code>
             <code data-type="solution">
-                
-                
-                 
+                # modify this to save the predictions from the TinyEmpty.model
+                    TinyFingers$Prediction <- predict(TinyEmpty.model)
+                    TinyFingers   
             </code>
             <code data-type="sct">
-                
-                
+                test_data_frame("TinyFingers")
+                test_output_contains("TinyFingers")
+                test_error()
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Use the predict() function on TinyEmpty.model</div>
         </div>
     </body>
 </html>
