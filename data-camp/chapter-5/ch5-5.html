@@ -8,23 +8,28 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
-                
+                require(mosaic)
+                require(ggformula)
+                outcome <- c(5,5,5,10,20)
+                tinydata <- data.frame(outcome)
+                outcome.stats <- favstats(~ outcome, data = tinydata)
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+            # Modify this code to draw a vline representing the median in green
+                gf_histogram(~ outcome, data = tinydata) %>%
+                    gf_vline(xintercept = ~mean, color = "purple",
+                    data = outcome.stats)
             </code>
             <code data-type="solution">
-                
-                
-                 
+                 gf_histogram(~ outcome, data = tinydata) %>%
+                    gf_vline(xintercept = ~median, color = "green",
+                    data = outcome.stats)    
             </code>
             <code data-type="sct">
-                
-                
+                test_function("gf_vline", args=c("xintercept", "color", "data")
+                test_error()
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Have you replaced mean with median and purple with green?</div>
         </div>
     </body>
 </html>
