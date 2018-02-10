@@ -8,23 +8,30 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
+                 require(mosaic)
+                 require(ggformula)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+ Empty.model <- lm(Thumb ~ NULL, data=Fingers)
+                Fingers$Prediction <- predict(Empty.model)
+                 Fingers$Residual <- resid(Empty.model)
                 
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+            # make histograms for Thumb, Prediction, and Residual
             </code>
             <code data-type="solution">
-                
-                
-                 
+            # make histograms for Thumb, Prediction, and Residual
+                gf_histogram(~ Thumb, data = Fingers)
+                gf_histogram(~ Prediction, data = Fingers)
+                gf_histogram(~ Residual, data = Fingers)
             </code>
             <code data-type="sct">
-                
-                
+                test_function_result("gf_histogram", index=1)
+                test_function_result("gf_histogram", index=2)
+                test_function_result("gf_histogram", index=3)
+                test_error()
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Don't forget to make all three histograms!</div>
         </div>
     </body>
 </html>
