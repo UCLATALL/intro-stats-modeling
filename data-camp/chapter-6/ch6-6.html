@@ -11,20 +11,33 @@
                 
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+                # calculate the standard deviation of Thumb from Fingers
+                    sd( )
+
+                # calculate the standard deviation with sqrt() and var()
+                    sqrt(var( ))
+
+                # calculate the standard deviation with favstats()
+                    favstats( )
             </code>
             <code data-type="solution">
                 
-                
-                 
+                sd(Fingers$Thumb)
+                sqrt(var(Fingers$Thumb))
+                favstats(~ Thumb, data = Fingers)
+
             </code>
             <code data-type="sct">
-                
-                
+                test_function_result("sd")
+                test_correct(test_function_result("sqrt"),
+             {
+                test_function("var")
+                test_error()
+              })
+                test_function_result("favstats")
+                test_error()
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Make sure to calculate sd three separate ways</div>
         </div>
     </body>
 </html>
