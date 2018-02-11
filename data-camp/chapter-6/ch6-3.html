@@ -8,23 +8,29 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
-                
+                 require(mosaic)
+                 require(ggformula)
+                 Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+                # create an empty model of Thumb length from Fingers
+                    Empty.model <- 
+  
+                # modify this code to see the SS
+                    anova()  
             </code>
             <code data-type="solution">
-                
-                
-                 
+                # create an empty model of Thumb length from Fingers
+                    Empty.model <- lm(Thumb ~ NULL, data = Fingers)
+  
+                # modify this code to see the SS
+                    anova(Empty.model)
             </code>
             <code data-type="sct">
-                
-                
+                test_object("Empty.model")
+                test_function_result("anova")
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Use the lm() function to create an empty model</div>
         </div>
     </body>
 </html>
