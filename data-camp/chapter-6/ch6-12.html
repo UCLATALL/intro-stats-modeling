@@ -8,23 +8,39 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(ggformula)
                 
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+                #prerun
+                set.seed(1)
+
+                # this creates var1 by resampling from numbers -3 to 3
+                var1 <- resample(-3:3, 1000)
+
+                # put var1 into a data frame called somedata
+                somedata <- 
+
             </code>
             <code data-type="solution">
-                
-                
-                 
+                #prerun
+                set.seed(1)
+
+                # this creates var1 by resampling from numbers -3 to 3
+                var1 <- resample(-3:3, 1000)
+
+                # put var1 into a data frame called somedata
+                somedata <- data_frame(var1)
+
             </code>
             <code data-type="sct">
-                
-                
+                test_data_frame("somedata")
+                test_error()
+                success_msg("Wow! Great effort!")
+
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Don't forget to make var1 a data frame using the data_frame() function</div>
         </div>
     </body>
 </html>
