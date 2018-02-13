@@ -1,30 +1,53 @@
 +<!DOCTYPE html>
 +<html>
-+    <head>
-+        <meta charset="UTF-8">
-+        <title>Chapter 6 Exercise 10</title>
-+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
-+    </head>
-+    <body>
-+        <div data-datacamp-exercise data-lang="r">
-+            <code data-type="pre-exercise-code">
-+                
-+            </code>
-+            <code data-type="sample-code">
-+                
-+                
-+                 
-+            </code>
-+            <code data-type="solution">
-+                
-+                
-+                 
-+            </code>
-+            <code data-type="sct">
-+                
-+                
-+            </code>
-+            <div data-type="hint"></div>
-+        </div>
-+    </body>
-+</html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 6 Exercise 13</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r" data-height=500>
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(ggformula)
+            set.seed(1)
+            var1 <- resample(-3:3, 1000)
+            somedata <- data.frame(var1)
+            var2 <- resample(-3:3, 1000)
+            var3 <- resample(-3:3, 1000)
+            var4 <- resample(-3:3, 1000)
+            var5 <- resample(-3:3, 1000)
+            var6 <- resample(-3:3, 1000)
+            var7 <- resample(-3:3, 1000)
+            var8 <- resample(-3:3, 1000)
+            var9 <- resample(-3:3, 1000)
+            var10 <- resample(-3:3, 1000)
+            somedata <- data.frame(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10)
+                
+            </code>
+            <code data-type="sample-code">
+            # try changing the bin number to be smaller than 30
+            gf_histogram(..density..~ sum, data = somedata, bins = 30)
+
+             # try changing the bin number to be larger than 30
+            gf_histogram(..density..~ sum, data = somedata, bins = 30)
+            </code>
+            
+            <code data-type="solution">
+            # try changing the bin number to be smaller than 30
+            gf_histogram(..density..~ sum, data = somedata, bins = 10)
+
+            # try changing the bin number to be larger than 30
+            gf_histogram(..density..~ sum, data = somedata, bins = 75)
+            </code>
+            <code data-type="sct">
+            test_error()
+            success_msg("Great work!")
+
+            </code>
+            <div data-type="hint">Make sure to change the number of bins</div>
+        </div>
+    </body>
+</html>
