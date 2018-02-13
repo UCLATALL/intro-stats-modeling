@@ -8,12 +8,12 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
-                
+                require(mosaic)
+                require(ggformula)
+                MindsetMatters <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/mindset-matters.csv", header=TRUE, sep=",")
+                MindsetMatters$PoundsLost <- MindsetMatters$Wt - MindsetMatters$Wt2
             </code>
             <code data-type="sample-code">
-                # pre-run
-                    MindsetMatters$PoundsLost <- MindsetMatters$Wt - MindsetMatters$Wt2
-
                 # create an empty model of PoundsLost from MindsetMatters
                     Empty.model <- 
   
@@ -22,25 +22,21 @@
   
             </code>
             <code data-type="solution">
-                # pre-run
-                    MindsetMatters$PoundsLost <- MindsetMatters$Wt - MindsetMatters$Wt2
-
                 # create an empty model of PoundsLost from MindsetMatters
                     Empty.model <- lm(PoundsLost ~ NULL, data = MindsetMatters)
   
                 # find SS, var, and sd
-                # note that there are multiple correct solutions
                     anova(Empty.model)
                     var(MindsetMatters$PoundsLost)
                     sd(MindsetMatters$PoundsLost)
-                
-                 
             </code>
             <code data-type="sct">
-                
-                
+                test_object("Empty.model")
+                test_error()
+                success_msg("Nice job!")
+
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Remember to use NULL for the empty model</div>
         </div>
     </body>
 </html>
