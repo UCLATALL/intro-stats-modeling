@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 6 Exercise 13</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(ggformula)
+            set.seed(1)
+            var1 <- resample(-3:3, 1000)
+            somedata <- data.frame(var1)
+            var2 <- resample(-3:3, 1000)
+            var3 <- resample(-3:3, 1000)
+            var4 <- resample(-3:3, 1000)
+            var5 <- resample(-3:3, 1000)
+            var6 <- resample(-3:3, 1000)
+            var7 <- resample(-3:3, 1000)
+            var8 <- resample(-3:3, 1000)
+            var9 <- resample(-3:3, 1000)
+            var10 <- resample(-3:3, 1000)
+            somedata <- data.frame(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10)
+                
+            </code>
+            <code data-type="sample-code">
+            # run this code 
+            summary(somedata)
+
+            </code>
+            
+            <code data-type="solution">
+            # run this code 
+            summary(somedata)
+
+            </code>
+            <code data-type="sct">
+            test_function_result("summary")
+            test_error()
+            success_msg("Fantastic! On to the next challenge")
+
+            </code>
+            <div data-type="hint">Just click Run</div>
+        </div>
+    </body>
+</html>
