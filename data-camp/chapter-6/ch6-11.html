@@ -8,23 +8,35 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(ggformula)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
                 
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+                # modify this to create a boolean variable that records whether a Thumb is greater than 65.1
+                Fingers$GreaterThan65.1 <- 
+
+                # modify this to find the proportion of GreaterThan65.1
+                tally(~ , data = , format="proportion")
+             
             </code>
             <code data-type="solution">
-                
-                
-                 
+                # modify this to create a variable that records whether a Thumb is greater than 65.1
+                Fingers$GreaterThan65.1 <- Fingers$Thumb > 65.1
+
+                # modify this to find the proportion of GreaterThan65.1
+                tally(~ GreaterThan65.1, data = Fingers, format="proportion")
+  
             </code>
             <code data-type="sct">
-                
-                
+                test_data_frame("Fingers")
+                test_function("tally", args=c("data","format"))
+                test_error()
+                success_msg("Way to go!")
+
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Here's an example of code that records whether a Thumb is < 60 `Fingers$Thumb < 60`</div>
         </div>
     </body>
 </html>
