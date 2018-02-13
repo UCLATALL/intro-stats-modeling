@@ -8,23 +8,32 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(ggformula)
                 
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+                # z-score if distribution 1 were true
+                (37000 - 35000)/1000
+
+                # z-score if distribution 2 were true
+
             </code>
             <code data-type="solution">
-                
-                
-                 
+                # z-score if distribution 1 were true
+                (37000 - 35000)/1000
+
+                # z-score if distribution 2 were true
+                (37000 - 35000)/5000
+
             </code>
             <code data-type="sct">
-                
-                
+                test_output_contains("(37000 - 35000)/1000")
+                test_output_contains("(37000 - 35000)/5000", incorrect_msg="Did you divide by the sd of the second distribution?")
+                test_error()
+                success_msg("Great thinking!") 
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Don't forget to tell R to calculate the difference by putting it in parentheses</div>
         </div>
     </body>
 </html>
