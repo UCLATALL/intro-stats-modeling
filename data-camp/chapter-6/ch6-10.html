@@ -8,23 +8,36 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
+                require(mosaic)
+                require(ggformula)
+                outcome <- rnorm(500, 100, 12)
+                explanatory <- rep(2, 100)
+                somedata2 <- data.frame(outcome, explanatory)
                 
             </code>
             <code data-type="sample-code">
-                
-                
-                 
+                # get a tally of greaterthan110
+                    tally()
+
+                # get the tally in proportions
+                    tally()
+   
             </code>
             <code data-type="solution">
-                
-                
-                 
+                # get a tally of greaterthan110
+                    tally(~ greaterthan110, data = somedata2)
+
+                # get the tally in proportions
+                    tally(~ greaterthan110, data = somedata2, format = "proportion")
+ 
             </code>
             <code data-type="sct">
-                
-                
+                test_function("tally", index=1)
+                test_function("tally", args=c("data","format"), index=2)
+                test_error()
+
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Don't forget to add the argument that sets format = "proportion"</div>
         </div>
     </body>
 </html>
