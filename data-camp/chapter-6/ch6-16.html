@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 6 Exercise 13</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(ggformula)
+            set.seed(1)
+            var1 <- resample(-3:3, 1000)
+            somedata <- data.frame(var1)
+            var2 <- resample(-3:3, 1000)
+            var3 <- resample(-3:3, 1000)
+            var4 <- resample(-3:3, 1000)
+            var5 <- resample(-3:3, 1000)
+            var6 <- resample(-3:3, 1000)
+            var7 <- resample(-3:3, 1000)
+            var8 <- resample(-3:3, 1000)
+            var9 <- resample(-3:3, 1000)
+            var10 <- resample(-3:3, 1000)
+            somedata <- data.frame(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10)
+                
+            </code>
+            <code data-type="sample-code">
+            # add up the values for the 10 variables and save it as sum
+            somedata$sum <- 
+  
+            # this will make a histogram of sum 
+            gf_histogram(..density.. ~ sum, data = somedata)
+            </code>
+            
+            <code data-type="solution">
+            # add up the values for the 10 variables and save it as sum
+            somedata$sum <- somedata$var1 + somedata$var2 + somedata$var3 + somedata$var4 + somedata$var5 + somedata$var6 + somedata$var7 + somedata$var8 + somedata$var9 + somedata$var10
+  
+            # this will make a histogram of sum 
+            gf_histogram(..density.. ~ sum, data = somedata)
 
+            </code>
+            <code data-type="sct">
+            test_data_frame("somedata")
+            test_function_result("gf_histogram")
+            test_error()
+            success_msg("Great work!")
+
+            </code>
+            <div data-type="hint">Don't use the sum(). This will add up all the values of that variable and just come up with 1 number; we want to add up var1, var2, var3 etc for each person</div>
+        </div>
+    </body>
+</html>
