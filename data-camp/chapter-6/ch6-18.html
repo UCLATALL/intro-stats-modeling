@@ -10,6 +10,62 @@
 <code data-type="pre-exercise-code">
 require(mosaic)
 require(ggformula)
+set.seed(5)
+# set up Kargle
+n <- 10000
+m <- 35000
+s <- 5000
+score <- rnorm(n, m, s)
+game <- rep("Kargle", n)
+Kargle <- data.frame(score, game)
+# Kargle intervals
+zscore <- (Kargle$score-m)/s
+interval <- ifelse(zscore>0, trunc(1+zscore), trunc(zscore - 1))
+absinterval <- ifelse(zscore>0, abs(trunc(1+zscore)), abs(trunc(zscore - 1)))
+Kargle <- cbind(Kargle, zscore, interval, absinterval)
+   
+# set up Bargle
+n <- 10000
+m <- 35000
+s <- 1000
+score <- rnorm(n, m, s)
+game <- rep("Bargle", n)
+Bargle <- data.frame(score, game)
+# Bargle intervals
+zscore <- (Bargle$score-m)/s
+interval <- ifelse(zscore>0, trunc(1+zscore), trunc(zscore - 1))
+absinterval <- ifelse(zscore>0, abs(trunc(1+zscore)), abs(trunc(zscore - 1)))
+Bargle <- cbind(Bargle, zscore, interval, absinterval)
+
+VideoGame <- rbind(Bargle, Kargle)
+   
+# zone 1
+VideoGame$zone <- ifelse(VideoGame$absinterval == 1, 1, 2)
+VideoGame$zone <- recode(VideoGame$zone, '1'="1", '2'="outside 1")
+VideoGame$zone <- as.factor(VideoGame$zone)
+tally(zone ~ game, data=VideoGame, format="proportion")
+zonetable <- tally(zone ~ game, data=VideoGame, format="proportion")
+
+# zone 2
+VideoGame$zone <- ifelse(VideoGame$absinterval <= 2, 2, 3)
+VideoGame$zone <- recode(VideoGame$zone, '2'="2", '3'="outside 2")
+VideoGame$zone <- as.factor(VideoGame$zone)
+tally(zone ~ game, data=VideoGame, format="proportion")
+zonetable <- rbind(zonetable, tally(zone ~ game, data=VideoGame, format="proportion"))
+
+# zone 3
+VideoGame$zone <- ifelse(VideoGame$absinterval <= 3, 3, 4)
+VideoGame$zone <- recode(VideoGame$zone, '3'="3", '4'="outside 3")
+VideoGame$zone <- as.factor(VideoGame$zone)
+tally(zone ~ game, data=VideoGame, format="proportion")
+tally(zone ~ game, data=VideoGame, format="proportion")
+zonetable <- rbind(zonetable, tally(zone ~ game, data=VideoGame, format="proportion"))
+
+# all zones
+VideoGame$zone <- ifelse(VideoGame$absinterval > 4, 4, VideoGame$absinterval)
+VideoGame$zone <- recode(VideoGame$zone, '1'="1",'2'="2",'3'="3", '4'="outside 3")
+VideoGame$zone <- as.factor(VideoGame$zone)
+   
  </code>
 <code data-type="sample-code">
   # change the standard deviation to whatever you'd like it to be
