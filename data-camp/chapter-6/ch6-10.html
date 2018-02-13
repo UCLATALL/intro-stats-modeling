@@ -13,6 +13,7 @@
                 outcome <- rnorm(500, 100, 12)
                 explanatory <- rep(2, 100)
                 somedata2 <- data.frame(outcome, explanatory)
+                somedata2$greaterthan110 <- somedata2$outcome > 110
             </code>
             <code data-type="sample-code">
                 # get a tally of greaterthan110
