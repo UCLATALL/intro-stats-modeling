@@ -8,12 +8,56 @@
 +    <body>
 +        <div data-datacamp-exercise data-lang="r">
 +            <code data-type="pre-exercise-code">
-+                
++               require(mosaic)
+                require(ggformula)
 +            </code>
 +            <code data-type="sample-code">
-+                
-+                
-+                 
+  # change the standard deviation to whatever you'd like it to be
+s <- 3500
+
+# you can just run this code 
+# set up Zargle
+n <- 10000
+m <- 35000
+score <- rnorm(n, m, s)
+game <- rep("Zargle", n)
+Zargle <- data.frame(score, game)
+
+# Zargle intervals
+zscore <- (Zargle$score-m)/s
+interval <- ifelse(zscore>0, trunc(1+zscore), trunc(zscore - 1))
+absinterval <- ifelse(zscore>0, abs(trunc(1+zscore)), abs(trunc(zscore - 1)))
+zone <- ifelse(absinterval > 4, 4, absinterval)
+zone <- as.factor(zone)
+Zargle <- cbind(Zargle, zscore, interval, absinterval, zone)
+
+# add Zargle to VideoGame
+VideoGame <- rbind(VideoGame,Zargle)
+VideoGame$zone <- recode(VideoGame$zone, '1'="1",'2'="2",'3'="3", '4'="outside 3")
+VideoGame$zone <- as.factor(VideoGame$zone)
+
+# make histogram
+gf_histogram( ~ score, fill = ~zone, data = VideoGame, bins=160) %>%
+  gf_facet_grid(game ~ .)
+
+# make table
+VideoGame$zone <- ifelse(VideoGame$absinterval == 1, 1, 2)
+VideoGame$zone <- as.factor(VideoGame$zone)
+zonetable <- tally(zone ~ game, data=VideoGame, format="proportion")
+
+VideoGame$zone <- ifelse(VideoGame$absinterval <= 2, 2, 3)
+VideoGame$zone <- as.factor(VideoGame$zone)
+zonetable <- rbind(zonetable, tally(zone ~ game, data=VideoGame, format="proportion"))
+
+VideoGame$zone <- ifelse(VideoGame$absinterval <= 3, 3, 4)
+VideoGame$zone <- as.factor(VideoGame$zone)
+zonetable <- rbind(zonetable, tally(zone ~ game, data=VideoGame, format="proportion"))
+
+table <- data.frame(rbind(zonetable[1,], zonetable[3,], zonetable[5,], zonetable[6,]))
+zone <- c('1','2','3',"outside 3")
+table <- cbind(zone, table)
+table
+       
 +            </code>
 +            <code data-type="solution">
 +                
