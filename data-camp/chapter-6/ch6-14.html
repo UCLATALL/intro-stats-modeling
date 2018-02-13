@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 6 Exercise 13</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">
+            require(mosaic)
+            require(ggformula)
+            set.seed(1)
+            var1 <- resample(-3:3, 1000)
+            somedata <- data.frame(var1)
+            var2 <- resample(-3:3, 1000)
+            var3 <- resample(-3:3, 1000)
+            var4 <- resample(-3:3, 1000)
+            var5 <- resample(-3:3, 1000)
+            var6 <- resample(-3:3, 1000)
+            var7 <- resample(-3:3, 1000)
+            var8 <- resample(-3:3, 1000)
+            var9 <- resample(-3:3, 1000)
+            var10 <- resample(-3:3, 1000)
+            somedata <- data.frame(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10
+                
+            </code>
+            <code data-type="sample-code">
+            # write code to print out a few lines of somedata
+
+
+            # write code to look at the individual histograms of each variable 
+            # the first one (var1) has been written for you
+            gf_histogram(~ var1, color = "red", data = somedata)
+            </code>
+            
+            <code data-type="solution">
+            # write code to print out a few lines of somedata
+            head(somedata)
+
+
+            # write code to look at the individual histograms of each variable 
+            # the first one (var1) has been written for you
+             gf_histogram(~ var1, color = "red", data = somedata, index=1)  
+             gf_histogram(~ var2, data = somedata) 
+             gf_histogram(~ var3, data = somedata) 
+             gf_histogram(~ var4, data = somedata) 
+             gf_histogram(~ var5, data = somedata)
+             gf_histogram(~ var6, data = somedata)
+             gf_histogram(~ var7, data = somedata)
+             gf_histogram(~ var8, data = somedata)
+             gf_histogram(~ var9, data = somedata)
+             gf_histogram(~ var10, data = somedata)
+
+            </code>
+            <code data-type="sct">
+                test_function_result("head")
+                test_function("gf_histogram", args="data", index=1)
+                test_function("gf_histogram", args="data", index=2)
+                test_function("gf_histogram", args="data", index=3)
+                test_function("gf_histogram", args="data", index=4)
+                test_function("gf_histogram", args="data", index=5)
+                test_function("gf_histogram", args="data", index=6)
+                test_function("gf_histogram", args="data", index=7)
+                test_function("gf_histogram", args="data", index=8)
+                test_function("gf_histogram", args="data", index=9)
+                test_function("gf_histogram", args="data", index=10)
+                test_error()
+
+            </code>
+            <div data-type="hint">Use the gf_histogram() function</div>
+        </div>
+    </body>
+</html>
