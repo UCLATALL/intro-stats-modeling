@@ -40,25 +40,25 @@
             </code>
             <code data-type="sample-code">
                 # write code to cut Height from Fingers into 2 categories
-                # save this as a new variable: Height.2group
-                Fingers$Height.2group <- 
+                # save this as a new variable: Height2Group
+                Fingers$Height2Group <- 
 
-                # modify this to label Fingers$Height.2group appropriately
+                # modify this to label Fingers$Height2Group appropriately
                 Fingers$Sex <- factor(Fingers$Sex, levels = c(1,2), labels = c("female", "male"))
 
                 # this prints select variables in Fingers
-                head(select(Fingers, Thumb, Height, Height.2group))
+                head(select(Fingers, Thumb, Height, Height2Group))
             </code>
             <code data-type="solution">
                 # write code to cut Height from Fingers into 2 categories
-                # save this as a new variable: Height.2group
-                Fingers$Height.2group <- ntile(Fingers$Height, 2)
+                # save this as a new variable: Height2Group
+                Fingers$Height2Group <- ntile(Fingers$Height, 2)
 
-                # modify this to label Fingers$Height.2group appropriately
-                Fingers$Height.2group <- factor(Fingers$Height.2group, levels = c(1,2), labels = c("short", "tall"))
+                # modify this to label Fingers$Height2Group appropriately
+                Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))
 
                 # this prints select variables in Fingers
-                head(select(Fingers, Thumb, Height, Height.2group)) 
+                head(select(Fingers, Thumb, Height, Height2Group)) 
             </code>
             <code data-type="sct">
                 test_data_frame("Fingers")
