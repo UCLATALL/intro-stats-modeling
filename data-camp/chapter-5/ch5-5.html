@@ -17,7 +17,7 @@
             <code data-type="sample-code">
             # Modify this code to draw a vline representing the median in green
                 gf_histogram(~ outcome, data = tinydata) %>%
-                    gf_vline(xintercept = ~mean, color = "purple",
+                    gf_vline(xintercept = ~mean, color = "blue",
                     data = outcome.stats)
             </code>
             <code data-type="solution">
@@ -27,7 +27,9 @@
             </code>
             <code data-type="sct">
                 test_function_result("gf_histogram")
+                test_function_result("gf_vline")
                 test_error()
+                
             </code>
             <div data-type="hint">Have you replaced mean with median and purple with green?</div>
         </div>
