@@ -18,7 +18,7 @@
             <code data-type="sample-code">
             # modify this to save favstats for Thumb length
                 TinyThumb.stats <- 
-            # modify this to draw a vline representing the mean in purple
+            # modify this to draw a vline representing the mean in blue
                 gf_histogram(~ Thumb, data = TinyFingers) %>%
                     gf_vline()
             </code>
@@ -26,9 +26,9 @@
             # modify this to save favstats for Thumb length
                 TinyThumb.stats <- favstats( ~ Thumb, data=TinyFingers)
 
-            # modify this to draw a vline representing the mean in purple
+            # modify this to draw a vline representing the mean in blue
                 gf_histogram(~ Thumb, data = TinyFingers) %>%
-                gf_vline(xintercept = ~ mean, color = "purple", data = TinyThumb.stats) 
+                gf_vline(xintercept = ~ mean, color = "blue", data = TinyThumb.stats) 
             </code>
             <code data-type="sct">
                 test_object("TinyThumb.stats")
