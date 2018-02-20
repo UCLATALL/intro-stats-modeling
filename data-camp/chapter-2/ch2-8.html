@@ -17,17 +17,19 @@
                 
                 MindsetMatters <- 
                 
-                # write code to print out MindsetMatters
+                # write code to print out a few rows of MindsetMatters
                       
             </code>
             <code data-type="solution">
                 MindsetMatters <- arrange(MindsetMatters, desc(Wt))
-                MindsetMatters
+                head(MindsetMatters)
                  
             </code>
             <code data-type="sct">
                 test_object("MindsetMatters")
-                test_output_contains("MindsetMatters")
+                test_function("head")
+                test_output_contains("head(MindsetMatters)")
+               
                 
             </code>
             <div data-type="hint">Did you arrange by desc(Wt)?</div>
