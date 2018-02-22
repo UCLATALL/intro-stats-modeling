@@ -11,31 +11,27 @@
                 require(mosaic)
                 require(ggformula)
                 Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
-                Sex.model <- lm(Thumb ~ Sex, data = Fingers) 
+                #set up tiny data set
+                Thumb <- c(56, 60, 61, 63, 64, 68)
+                Sex <- c("female","female","female","male","male","male")
+                TinyFingers <- data.frame(Sex, Thumb)
+                TinySex.model <- lm(Thumb ~ Sex, data = TinyFingers)
+                TinySex.fun <- makeFun(TinySex.model)
                 
             </code>
             <code data-type="sample-code">
-            # make a function and save it as Sex.fun
-              Sex.fun <- 
-            
-            # this will return Sex.fun's prediction of Thumb length for a female 
-              Sex.fun("female")
-
+            TinyFingers$Sex.Predicted <- 
             </code>
             <code data-type="solution">
-            # make a function and save it as Sex.fun
-              Sex.fun <- makeFun(Sex.model)
-            
-            # this will return Sex.fun's prediction of Thumb length for a female 
-              Sex.fun("female")
-                         
+            TinyFingers$Sex.Predicted <- predict(TinySex.model)
+       
             </code>
             <code data-type="sct">
-              test_object("Sex.fun")
-              test_function_result("Sex.fun")
+              test_data_frame("TinyFingers")
+              test_function("predict")
               test_error()
             </code>
-            <div data-type="hint">Use makeFun() and Sex.model to create Sex.fun()</div>
+            <div data-type="hint">Use the predict() function</div>
         </div>
     </body>
 </html>
