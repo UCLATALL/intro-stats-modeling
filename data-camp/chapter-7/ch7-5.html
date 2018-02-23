@@ -14,9 +14,25 @@
                 
             </code>
             <code data-type="sample-code">
+                # here is the code you wrote before
+                Sex.model <- lm(Thumb ~ Sex, data = Fingers)
+
+                # generate predictions from Sex.model
+                Fingers$Prediction <-
+
+                # this will print out a 10 lines of Fingers
+                head(select(Fingers, Sex, Thumb, Prediction), 10)
 
             </code>
             <code data-type="solution">
+                # here is the code you wrote before
+                Sex.model <- lm(Thumb ~ Sex, data=Fingers)
+
+                # generate predictions from this function
+                Fingers$Prediction <- predict(Sex.model)
+
+                # this will print out a few lines of Fingers
+                head(select(Fingers, Sex, Thumb, Prediction), 10)
 
        
             </code>
