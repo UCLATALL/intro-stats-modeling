@@ -17,13 +17,13 @@
             <code data-type="sample-code">
                 # this is the code to create histograms of Thumb in a grid by Sex 
                 # modify the code to create histograms of Sex.resid in a grid by Sex
-                gf_histogram(~ Thumb, data=TinyFingers) %>%
+                gf_histogram(~ Thumb, data=Fingers) %>%
                     gf_facet_grid(Sex ~ .) 
             </code>
             <code data-type="solution">
                 # this is the code to create histograms of Thumb in a grid by Sex 
                 # modify the code to create histograms of Sex.resid in a grid by Sex
-                gf_histogram(~ Sex.resid, data=TinyFingers) %>%
+                gf_histogram(~ Sex.resid, data=Fingers) %>%
                     gf_facet_grid(Sex ~ .)
             </code>
             <code data-type="sct">
