@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Chapter 7 Exercise 12</title>
+        <title>Chapter 7 Exercise 11</title>
         <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
     </head>
     <body>
@@ -10,7 +10,7 @@
             <code data-type="pre-exercise-code">                
                 require(mosaic)
                 require(ggformula)
-                require(supernova)      
+                require(supernova)
                 
                 #set up tiny data set
                 Thumb <- c(56, 60, 61, 63, 64, 68)
@@ -23,7 +23,8 @@
                 TinyFingers$Sex.resid2 <- resid(TinySex.model)
                 TinyEmpty.model <- lm(Thumb ~ NULL, data = TinyFingers)
                 TinyFingers$Empty.pred <- predict(TinyEmpty.model)
-       
+
+                
             </code>
             <code data-type="sample-code">
                 # modify this code for TinySex.model
@@ -31,17 +32,17 @@
 
             </code>
             <code data-type="solution">
-                # run this code 
+                # modify this code to find the SS of TinySex.model
                 supernova(TinySex.model)
-                
+
             </code>
             <code data-type="sct">
-                test_function("supernova")
-                test_function_result("supernova")
+                test_function_result("supernova", incorrect_msg = "Did you change to `TinySex.model`?")
                 test_error()
-                
+                success_msg("Wow! Great work.")
+
             </code>
-            <div data-type="hint">Make sure to input the correct model to the supernova() function</div>
+            <div data-type="hint">Make sure to specify the correct model</div>
         </div>
     </body>
 </html>
