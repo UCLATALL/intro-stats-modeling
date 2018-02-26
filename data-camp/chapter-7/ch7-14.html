@@ -15,16 +15,18 @@
                     
             </code>
             <code data-type="sample-code">
-                # fit Sex.model to show the relationship between Thumb and Sex in the Fingers data frame 
-     
+                # fit Sex.model to show Thumb ~ Sex in the Fingers data frame 
+                Sex.model <- lm(formula = , data = ) 
+                             
                 # print out the model 
                 
+                             
                 # print the supernova table for Sex.model
 
             </code>
             <code data-type="solution">
                 # fit Sex.model to the Fingers data frame 
-                Sex.model <- lm(Fingers$Thumb ~ Fingers$Sex)
+                Sex.model <- lm(formula = Thumb ~ Sex, data = Fingers)
                              
                 # print out the model 
                 Sex.model
@@ -34,7 +36,7 @@
        
             </code>
             <code data-type="sct">
-                test_function_result("lm", incorrect_msg="Did you run `lm()` on `Fingers$Thumb ~ Fingers$Sex`?")
+                test_function_result("lm", args=c("formula', "data"))
                 test_object("Sex.model")
                 test_output_contains("Sex.model", incorrect_msg="Don't forget to print `Sex.model`")
                 test_function_result("supernova")
