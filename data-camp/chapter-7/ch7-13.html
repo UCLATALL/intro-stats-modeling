@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 7 Exercise 12</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">                
+                require(mosaic)
+                require(ggformula)
+                require(supernova)          
+                #set up tiny data set
+                Thumb <- c(56, 60, 61, 63, 64, 68)
+                Sex <- c("female","female","female","male","male","male")
+                TinyFingers <- data.frame(Sex, Thumb)
+                TinyFingers$Sex <- as.factor(TinyFingers$Sex)
+                TinySex.model <- lm(Thumb ~ Sex, data = TinyFingers)
+                TinyFingers$Sex.predicted <- predict(TinySex.model)
+                TinyFingers$Sex.resid <- TinyFingers$Thumb - TinyFingers$Sex.predicted
+                TinyFingers$Sex.resid2 <- resid(TinySex.model)
+                TinyEmpty.model <- lm(Thumb ~ NULL, data = TinyFingers)
+                TinyFingers$Empty.pred <- predict(TinyEmpty.model)
+       
+            </code>
+            <code data-type="sample-code">
+                # modify this code for TinySex.model
+                supernova()
 
+            </code>
+            <code data-type="solution">
+                # run this code 
+                supernova(TinySex.model)
+                
+            </code>
+            <code data-type="sct">
+                test_function("supernova")
+                test_function_result("supernova")
+                test_error()
+                
+            </code>
+            <div data-type="hint">Make sure to input the correct model to the supernova() function</div>
+        </div>
+    </body>
+</html>
