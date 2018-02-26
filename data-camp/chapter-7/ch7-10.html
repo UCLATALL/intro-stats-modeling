@@ -10,20 +10,44 @@
             <code data-type="pre-exercise-code">                
                 require(mosaic)
                 require(ggformula)
+                
+                #set up tiny data set
+                Thumb <- c(56, 60, 61, 63, 64, 68)
+                Sex <- c("female","female","female","male","male","male")
+                TinyFingers <- data.frame(Sex, Thumb)
+                TinyFingers$Sex <- as.factor(TinyFingers$Sex)
+                TinySex.model <- lm(Thumb ~ Sex, data = TinyFingers)
+                TinyFingers$Sex.predicted <- predict(TinySex.model)
+                TinyFingers$Sex.resid <- TinyFingers$Thumb - TinyFingers$Sex.predicted
+                TinyFingers$Sex.resid2 <- resid(TinySex.model)
+                TinyEmpty.model <- lm(Thumb ~ NULL, data = TinyFingers)
+                TinyFingers$Empty.pred <- predict(TinyEmpty.model)
 
                 
             </code>
             <code data-type="sample-code">
+                # here is the code you wrote before 
+                TinyEmpty.model <- lm(Thumb ~ NULL, data = TinyFingers) 
+                
+                # write code to get the SS leftover from TinyEmpty.model
 
             </code>
             <code data-type="solution">
+                # here is the code you wrote before 
+                TinyEmpty.model <- lm(Thumb ~ NULL, data = TinyFingers) 
+                
+                # write code to get the SS leftover from TinyEmpty.model
+                anova(TinyEmpty.model)
 
-       
             </code>
             <code data-type="sct">
+                test_function_result("lm")
+                test_object("TinyEmpty.model")
+                test_function_result("anova")
+                test_error()
 
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Use the anova() function</div>
         </div>
     </body>
 </html>
