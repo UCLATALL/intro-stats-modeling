@@ -10,20 +10,37 @@
             <code data-type="pre-exercise-code">                
                 require(mosaic)
                 require(ggformula)
-
-                
+                require(supernova)
+                require(lsr)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+                Fingers$Height3Group <- ntile(Fingers$Height, 3)
+                Fingers$Height3Group <- factor(Fingers$Height3Group, levels = c(1,2,3), labels = c("short", "medium", "tall")) 
             </code>
             <code data-type="sample-code">
-
+                # modify this code to fit the model 
+                Height3Group.model <- lm(Thumb ~ )
+                
+                # this prints out the estimates 
+                Height3Group.model
+                                      
             </code>
             <code data-type="solution">
+                # modify this code to fit the model 
+                Height3Group.model <- lm(Thumb ~ Height3Group, data = Fingers)
+                
+                # this prints out the estimates 
+                Height3Group.model
 
-       
             </code>
             <code data-type="sct">
+                test_function_result("lm")
+                test_object("Height3Group.model")
+                test_output_contains("Height3Group.model")
+                test_error()
+                success_msg("Super job!")
 
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Have you created a model that shows Thumb as a function of Height3Group?</div>
         </div>
     </body>
 </html>
