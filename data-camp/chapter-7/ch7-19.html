@@ -10,20 +10,39 @@
             <code data-type="pre-exercise-code">                
                 require(mosaic)
                 require(ggformula)
-
-                
+                require(supernova)
+                require(lsr)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
             </code>
             <code data-type="sample-code">
+                # modify these two lines of code to create 3 Height groups with the labels "short", "medium", and "tall"
+                Fingers$Height2Group <- ntile(Fingers$Height, 2) 
+                Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))
+                
+                # this code prints out 10 rows of Fingers for selected columns 
+                head(select(Fingers, Thumb, Height, Height3Group), 10)
 
             </code>
             <code data-type="solution">
-
+                 # modify these two lines of code to create 3 Height groups with the labels "short", "medium", and "tall"
+                Fingers$Height3Group <- ntile(Fingers$Height, 3) 
+                Fingers$Height3Group <- factor(Fingers$Height3Group, levels = c(1,2,3), labels = c("short", "medium", "tall"))
+                
+                # this code prints out 10 rows of Fingers for selected columns 
+                head(select(Fingers, Thumb, Height, Height3Group), 10)
        
             </code>
             <code data-type="sct">
+                test_function_result("ntile")
+                test_function_result("factor")
+                test_function("factor", args = c("levels", "labels"))
+                test_data_frame("Fingers")
+                test_output_contains("head(select(Fingers, Thumb, Height, Height3Group),10)")
+                test_error()
+                success_msg("Rock on!")
 
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Don't forget to change the column name from Height2Group to Height3Group</div>
         </div>
     </body>
 </html>
