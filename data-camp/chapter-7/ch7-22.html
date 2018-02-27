@@ -10,20 +10,30 @@
             <code data-type="pre-exercise-code">                
                 require(mosaic)
                 require(ggformula)
-
+                require(supernova)
+                require(lsr)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+                Fingers$Height3Group <- ntile(Fingers$Height, 3)
+                Fingers$Height3Group <- factor(Fingers$Height3Group, levels = c(1,2,3), labels = c("short", "medium", "tall"))
+                Height3Group.model <- lm(Thumb ~ Height3Group, data = Fingers)
                 
             </code>
             <code data-type="sample-code">
+                # use supernova() to print the ANOVA table for Height3Group.model
 
             </code>
             <code data-type="solution">
+                # use supernova() to print the ANOVA table for Height3Group.model
+                supernova(Height3Group.model)
 
-       
             </code>
             <code data-type="sct">
+                test_function_result("supernova")
+                test_error()
+                success_msg("Well done!")
 
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Have you used the supernova() function on Height3Group.model?</div>
         </div>
     </body>
 </html>
