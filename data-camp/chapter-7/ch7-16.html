@@ -10,20 +10,41 @@
             <code data-type="pre-exercise-code">                
                 require(mosaic)
                 require(ggformula)
-
-                
+                require(supernova)
+                require(lsr)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+                Fingers$Height2Group <- ntile(Fingers$Height, 2) 
             </code>
             <code data-type="sample-code">
+                # a reminder of how we used factor() before: 
+                Fingers$Sex <- factor(Fingers$Sex, levels = c(1,2), labels = c("female", "male"))
+                
+                # modify this line so that 1s are labeled as "short" and 2s are labeled as "tall"
+                Fingers$Height2Group <- factor()
+                
+                # this prints out 10 rows of Fingers for the selected columns
+                head(select(Fingers, Thumb, Height, Height2Group), 10)
 
             </code>
             <code data-type="solution">
+                # a reminder of how we used factor() before: 
+                Fingers$Sex <- factor(Fingers$Sex, levels = c(1,2), labels = c("female", "male"))
+                
+                # modify this line so that 1s are labeled as "short" and 2s are labeled as "tall"
+                Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))
+                
+                # this prints out 10 rows of Fingers for the selected columns
+                head(select(Fingers, Thumb, Height, Height2Group), 10)
 
-       
             </code>
             <code data-type="sct">
+                test_data_frame("Fingers")
+                test_output_contains("head(select(Fingers, Thumb, Height, Height2Group), 10)")
+                test_error()
+                success_msg("Great work!")
 
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Don't forget to select the Height2Group column from the Fingers data frame when labelling the levels</div>
         </div>
     </body>
 </html>
