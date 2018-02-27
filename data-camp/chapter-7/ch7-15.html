@@ -10,20 +10,24 @@
             <code data-type="pre-exercise-code">                
                 require(mosaic)
                 require(ggformula)
-
-                
+                require(supernova)
+                require(lsr)
+                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
             </code>
             <code data-type="sample-code">
-
+                # run this code 
+                cohensD(Thumb ~ Sex, data = Fingers)
             </code>
             <code data-type="solution">
-
-       
+                # run this code 
+                cohensD(Thumb ~ Sex, data = Fingers)
             </code>
             <code data-type="sct">
+                test_function_result("cohensD")
+                test_error()
 
             </code>
-            <div data-type="hint"></div>
+            <div data-type="hint">Just press Run</div>
         </div>
     </body>
 </html>
