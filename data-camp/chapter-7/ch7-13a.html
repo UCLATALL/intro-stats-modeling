@@ -12,36 +12,42 @@
                 require(ggformula)
                 require(supernova)      
                 
-                #set up tiny data set
-                Thumb <- c(56, 60, 61, 63, 64, 68)
-                Sex <- c("female","female","female","male","male","male")
-                TinyFingers <- data.frame(Sex, Thumb)
-                TinyFingers$Sex <- as.factor(TinyFingers$Sex)
-                TinySex.model <- lm(Thumb ~ Sex, data = TinyFingers)
-                TinyFingers$Sex.predicted <- predict(TinySex.model)
-                TinyFingers$Sex.resid <- TinyFingers$Thumb - TinyFingers$Sex.predicted
-                TinyFingers$Sex.resid2 <- resid(TinySex.model)
-                TinyEmpty.model <- lm(Thumb ~ NULL, data = TinyFingers)
-                TinyFingers$Empty.pred <- predict(TinyEmpty.model)
+Thumb <- c(56, 60, 61, 63, 64, 68)
+Sex <- c(1,1,1,2,2,2)
+TinyFingers <- data.frame(Sex, Thumb)
+TinyFingers$Sex <- factor(TinyFingers$Sex, levels = c(1,2), labels = c("female", "male"))
+
+TinySex.model <- lm(Thumb ~ Sex, data = TinyFingers)
+TinySex.fun <- makeFun(TinySex.model)
+
+TinyFingers$Sex.predicted <- predict(TinySex.model)
+TinyFingers$Sex.resid <- resid(TinySex.model)
+
+TinyEmpty.model <- lm(Thumb ~ NULL, data = TinyFingers)
+TinyFingers$Empty.pred <- predict(TinyEmpty.model)
+TinyFingers$Empty.resid <- resid(TinyEmpty.model)
        
             </code>
             <code data-type="sample-code">
-                # modify this code for TinySex.model
-                supernova()
+                # This creates a column for error reduced by the Sex.model 
+                TinyFingers$ErrorReduced <- TinyFingers$Sex.predicted - TinyFingers$Empty.pred
+                                            
+                # Modify this to sum up squared ErrorReduced
 
             </code>
             <code data-type="solution">
-                # run this code 
-                supernova(TinySex.model)
-                
+                # This creates a column for error reduced by the Sex.model 
+                TinyFingers$ErrorReduced <- TinyFingers$Sex.predicted - TinyFingers$Empty.pred
+                                            
+                # Modify this to sum up squared ErrorReduced
+                sum(TinyFingers$ErrorReduced^2)
             </code>
             <code data-type="sct">
-                test_function("supernova")
-                test_function_result("supernova")
+                test_data_frame("TinyFingers")
+                test_function_result("sum")
                 test_error()
-                
             </code>
-            <div data-type="hint">Make sure to input the correct model to the supernova() function</div>
+            <div data-type="hint">Look at the example code above if you need help</div>
         </div>
     </body>
 </html>
