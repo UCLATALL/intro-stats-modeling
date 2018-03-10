@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 9 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">                
+                require(mosaic)
+                require(ggformula)
+                require(supernova)
+                set.seed(10)
+            </code>
+            <code data-type="sample-code">
+                # Generate a giant sample of dicerolls 
+                giantsample <- resample()
+                
+                # Calculate the mean of the giant sample
+            </code>
+            <code data-type="solution">
+                # Generate a giant sample of diecerolls 
+                giantsample <- resample(100000)
+                
+                # Calculate the mean of the giant sample 
+                mean(giantsample)
+            </code>
+            <code data-type="sct">
+                test_object("giantsample")
+                test_function_result("mean")
+                test_error()
+                success_msg("Great thinking!")
+            </code>
+        </div>
+    </body>
+</html>
