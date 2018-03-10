@@ -14,10 +14,10 @@
                 Fingers$Job <- as.numeric(Fingers$Job)
             </code>
             <code data-type="sample-code">
-            # Use `ntile()` and assign each person's height to one of two categories 
+            # Use `ntile()` to cut the data into groups 
             Fingers$Height.2group <- 
             
-            # Assign Height.2group's levels '1' and '2' to the labels 'short' and 'tall' 
+            # Label the levels "short" and "tall"
             Fingers$Height.2group <- factor(Fingers$Height.2group, levels= , labels = )
             
             # This prints out a few observations of Height and Height.2group  
@@ -27,7 +27,7 @@
             <code data-type="solution">
             Fingers$Height.2group <- ntile(Fingers$Height, 2)
  
-            Fingers$Height.2group  <- factor(Fingers$Height.2group, levels = c(1,2), labels = c('short', 'tall'))
+            Fingers$Height.2group  <- factor(Fingers$Height.2group, levels = c(1,2), labels = c("short", "tall"))
   
             head(select(Fingers, Height, Height.2group))
             </code>
