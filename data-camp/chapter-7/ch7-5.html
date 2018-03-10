@@ -17,10 +17,10 @@
                 Sex.model <- lm(Thumb ~ Sex, data = Fingers)
 
                 # generate predictions from Sex.model
-                Fingers$Prediction <-
+                Fingers$Sex.predicted <-
 
                 # this will print out a 10 lines of Fingers
-                head(select(Fingers, Sex, Thumb, Prediction), 10)
+                head(select(Fingers, Sex, Thumb, Sex.predicted), 10)
 
             </code>
             <code data-type="solution">
@@ -28,10 +28,10 @@
                 Sex.model <- lm(Thumb ~ Sex, data=Fingers)
 
                 # generate predictions from this function
-                Fingers$Prediction <- predict(Sex.model)
+                Fingers$Sex.predicted <- predict(Sex.model)
 
                 # this will print out a few lines of Fingers
-                head(select(Fingers, Sex, Thumb, Prediction), 10)
+                head(select(Fingers, Sex, Thumb, Sex.predicted), 10)
             </code>
             <code data-type="sct">
                 test_object("Sex.model")
