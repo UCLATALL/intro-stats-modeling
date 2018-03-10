@@ -48,30 +48,24 @@
                 
             </code>
             <code data-type="sample-code">
-                # this makes a scatterplot of the raw scores
-                # size makes the points bigger or smaller
-                gf_point(Thumb ~ Height, data = Fingers, size = 4, color = "black") %>%
-                     gf_lm(Thumb ~ Height, data = Fingers, color = "blue")
+            # this transforms all Thumb lengths into zscores
+            Fingers$zThumb <- zscore(Fingers$Thumb)
 
-                # modify this to make a scatterplot of the zscores
-                # feel free to change the colors
-                gf_point() %>%
-                    gf_lm()
-
+            # modify this to do the same for Height
+            Fingers$zHeight <- 
             </code>
             <code data-type="solution">
-                # modify this to make a scatterplot of the zscores
-                # feel free to change the colors
-                gf_point(zThumb ~ zHeight, data = Fingers) %>%
-                    gf_lm(zThumb ~ zHeight, data = Fingers)
+            # this transforms all Thumb lengths into zscores
+            Fingers$zThumb <- zscore(Fingers$Thumb)
+
+            # modify this to do the same for Height
+            Fingers$zHeight <- zscore(Fingers$Height)
 
             </code>
             <code data-type="sct">
-                test_function("gf_point")
-                test_function("gf_lm")
-                test_error()
+            test_data_frame("Fingers")
             </code>
-            <div data-type="hint">Change Thumb and Height to zThumb and zHeight</div>
+            <div data-type="hint">Use Height instead of Thumb</div>
         </div>
     </body>
 </html>
