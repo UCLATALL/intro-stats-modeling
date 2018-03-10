@@ -15,6 +15,9 @@
             </code>
             <code data-type="sample-code">
                 Fingers$Sex.resid <- 
+                                     
+                # This prints the first few rows of Fingers
+                head(select(Fingers, Thumb, Sex.resid), 10)
 
             </code>
             <code data-type="solution">
@@ -23,6 +26,7 @@
             <code data-type="sct">
                 test_function("resid", incorrect_msg="Did you call the `resid()` function?") 
                 test_data_frame("Fingers")
+                test_output_contains("head(select(Fingers, Thumb, Sex.resid), 10)")
                 test_error()
                 success_msg("You're doing a terrific job!")
 
