@@ -42,31 +42,36 @@
                 
                 Height.model <- lm(Thumb ~ Height, data = Fingers)
                 Fingers$Height.resid <- resid(Height.model)
+                                        
+                Fingers$zThumb <- zscore(Fingers$Thumb)
+                Fingers$zHeight <- zscore(Fingers$Height)
                 
             </code>
             <code data-type="sample-code">
-                # this transforms all Thumb lengths into zscores
-                Fingers$zThumb <- zscore(Fingers$Thumb)
+                # this makes a scatterplot of the raw scores
+                # size makes the points bigger or smaller
+                gf_point(Thumb ~ Height, data = Fingers, size = 4, color = "black") %>%
+                     gf_lm(Thumb ~ Height, data = Fingers, color = "blue")
 
-                # modify this to do the same for Height
-                Fingers$zHeight <- 
+                # modify this to make a scatterplot of the zscores
+                # feel free to change the colors
+                gf_point() %>%
+                    gf_lm()
 
             </code>
             <code data-type="solution">
-                # this transforms all Thumb lengths into zscores
-                Fingers$zThumb <- zscore(Fingers$Thumb)
-
-                # modify this to do the same for Height
-                Fingers$zHeight <- zscore(Fingers$Height)
+                # modify this to make a scatterplot of the zscores
+                # feel free to change the colors
+                gf_point(zThumb ~ zHeight, data = Fingers) %>%
+                    gf_lm(zThumb ~ zHeight, data = Fingers)
 
             </code>
             <code data-type="sct">
-                test_data_frame("Fingers")
-                test_function("zscore", index = 2)
+                test_function("gf_point")
+                test_function("gf_lm")
                 test_error()
-
             </code>
-            <div data-type="hint">Modify the code to select Height instead of Thumb</div>
+            <div data-type="hint">Change Thumb and Height to zThumb and zHeight</div>
         </div>
     </body>
 </html>
