@@ -20,7 +20,7 @@
                 Fingers <- data.frame(Fingers)
                 # clean up str
 
-                Fingers$Sex <- as.factor(Fingers$Sex)
+                
                 Fingers$RaceEthnic <- as.numeric(Fingers$RaceEthnic)
                 Fingers$SSLast <- as.numeric(Fingers$SSLast)
                 Fingers$Year <- as.numeric(Fingers$Year)
@@ -37,8 +37,7 @@
                 Fingers$Weight <- as.numeric(Fingers$Weight)
 
                 Fingers <- filter(Fingers, Thumb >= 33 & Thumb <= 100)
-                set.seed(2)require(mosaic)
-                require(ggformula)
+                set.seed(2)
 
             </code>
             <code data-type="sample-code">
