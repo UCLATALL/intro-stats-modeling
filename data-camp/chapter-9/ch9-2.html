@@ -22,7 +22,7 @@
             </code>
             <code data-type="solution">
                 # Generate a giant sample of diecerolls 
-                giantsample <- resample(100000)
+                giantsample <- resample(1:6, 100000)
                 
                 # Calculate the mean of the giant sample 
                 mean(giantsample)
