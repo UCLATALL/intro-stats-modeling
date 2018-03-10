@@ -10,20 +10,55 @@
             <code data-type="pre-exercise-code">                
                 require(mosaic)
                 require(ggformula)
-
+                #set up tiny data set
+                Thumb <- c(56, 60, 61, 63, 64, 68)
+                Sex <- c("female","female","female","male","male","male")
+                TinyFingers <- data.frame(Sex, Thumb)
+                TinyFingers$Sex <- as.factor(TinyFingers$Sex)
+                TinyFingers$Height = c(62, 66, 67, 63, 68, 71)
+                TinyFingers$Height2Group = ntile(TinyFingers$Height, 2)
+                TinyFingers$Height3Group = ntile(TinyFingers$Height, 3)
+                TinyFingers$Height2Group = recode(TinyFingers$Height2Group, '1' = "1-Short", '2' = "2-Tall")
+                TinyFingers$Height3Group = recode(TinyFingers$Height3Group, '1' = "1-Short", '2' = "2-Medium", '3' = "3-Tall")
                 
+                TinyFingers$Group01 <- ntile(TinyFingers$Height, 2)
+
             </code>
             <code data-type="sample-code">
+                # modify this code to fit an accidental regression model
+                Group01.model <- lm()
+                                 
+                # modify this code to fit a group model 
+                TinyHeight2Group.model <- lm()
+                
+                # this prints the accidental regression model
+                Group01.model
+                # this prints the group model
+                TinyHeight2Group.model
 
             </code>
             <code data-type="solution">
+                # modify this code to fit an accidental regression model
+                Group01.model <- lm(Thumb ~ Group01, data = TinyFingers)
 
+                # modify this code to fit a group model
+                TinyHeight2Group.model <- lm(Thumb ~ Height2Group, data = TinyFingers)
+                
+                # this prints the accidental regression model
+                Group01.model
+                # this prints the group model
+                TinyHeight2Group.model
        
             </code>
             <code data-type="sct">
-
+                test_object("Group01.model")
+                test_object("TinyHeight2Group.model")
+                test_output_contains("Group01.model")
+                test_output_contains("TinyHeight2Group.model")
+                test_error()
+                success_msg("Great work!")
             </code>
-            <div data-type="hint"></div>
+          
         </div>
     </body>
 </html>
