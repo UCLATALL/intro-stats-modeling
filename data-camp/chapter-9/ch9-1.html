@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 9 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">                
+                require(mosaic)
+                require(ggformula)
+                require(supernova)
+                set.seed(4)
+ 
+            </code>
+            <code data-type="sample-code">
+                # Write code to simulate a random sample of 24 dice rolls 
+                sample1 <- 
+                
+                # This will print the 24 numbers in sample1
+                sample1
+                
+                # This will return the mean of these numbers 
+                mean(sample1)
+            </code>
+            <code data-type="solution">
+                # Write code to simulate a random sample of 24 dice rolls 
+                sample1 <- sample(24)
+                
+                # This will print the 24 numbers in sample1
+                sample1
+                
+                # This will return the mean of these numbers 
+                mean(sample1)
+
+            </code>
+            <code data-type="sct">
+                test_object("sample1")
+                test_output_contains("sample1")
+                test_function_result("mean")
+            </code>
+        </div>
+    </body>
+</html>
