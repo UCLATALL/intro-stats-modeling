@@ -50,19 +50,19 @@
             <code data-type="sample-code">
                 # this makes a scatterplot of the raw scores
                 # size makes the points bigger or smaller
-                gf_point(Thumb ~ Height, data = Fingers) %>%
-                     gf_lm(Thumb ~ Height, data = Fingers)
+                gf_point(Thumb ~ Height, data = Fingers, size = 4, color = "black") %>%
+                    gf_lm(Thumb ~ Height, data = Fingers, color = "blue")
 
                 # modify this to make a scatterplot of the zscores
                 # feel free to change the colors
-                gf_point() %>%
-                    gf_lm()
+                gf_point( , size = 4, color = "sienna") %>%
+                    gf_lm( )
 
             </code>
             <code data-type="solution">
                 # modify this to make a scatterplot of the zscores
                 # feel free to change the colors
-                gf_point(zThumb ~ zHeight, data = Fingers) %>%
+                gf_point(zThumb ~ zHeight, data = Fingers, size = 4, color = "sienna") %>%
                     gf_lm(zThumb ~ zHeight, data = Fingers)
 
             </code>
