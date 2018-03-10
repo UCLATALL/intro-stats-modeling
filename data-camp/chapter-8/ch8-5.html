@@ -50,11 +50,6 @@
                 # Use gf_point() to plot the relationship between Height.pred and Height
             </code>
             <code data-type="solution">
-                # Run this code 
-                Height.model <- lm(Thumb ~ Height, data = Fingers)
-                Fingers$Height.pred <- predict(Height.model)
-                head(select(Fingers, Thumb, Height, Height.pred), 10) 
-                
                 # Use gf_point() to plot Height.pred as a function of Height
                 gf_point(Height.pred ~ Height, data = Fingers)
 
