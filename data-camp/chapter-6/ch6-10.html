@@ -10,11 +10,19 @@
             <code data-type="pre-exercise-code">
                 require(mosaic)
                 require(ggformula)
+                
                 set.seed(1)
+                outcome <- rnorm(500, 100, 4)
+                explanatory <- rep(1, 100)
+                somedata1 <- data.frame(outcome, explanatory)
                 outcome <- rnorm(500, 100, 12)
                 explanatory <- rep(2, 100)
                 somedata2 <- data.frame(outcome, explanatory)
+                somedata <- rbind(somedata1, somedata2)
+
                 somedata2$greaterthan110 <- somedata2$outcome > 110
+
+                tally(~ greaterthan110, data = somedata2)
             </code>
             <code data-type="sample-code">
                 # get a tally of greaterthan110
