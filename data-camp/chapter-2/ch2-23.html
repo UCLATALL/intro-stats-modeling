@@ -21,7 +21,7 @@
                   
             </code>
             <code data-type="solution">
-            Fingers$Job.recode <- recode(Fingers$Job, '0'=0, '1'=50, '2'=100)
+            Fingers$Job.recode <- recode(Fingers$Job, "0"=0, "1"=50, "2"=100)
             head(select(Fingers, Job, Job.recode))
             </code>
             <code data-type="sct">
@@ -29,7 +29,7 @@
             test_or(test_output_contains("head(select(Fingers, Job, Job.recode))"),
                     test_output_contains("head(select(Fingers, Job.recode, Job))"))
             </code>
-            <div data-type="hint">Use `recode(Fingers$Job, '0'=0, '1'=50, '2'=100)`</div>
+            <div data-type="hint">Use `recode(Fingers$Job, "0"=0, "1"=50, "2"=100)`</div>
         </div>
     </body>
 </html>
