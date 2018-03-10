@@ -12,27 +12,28 @@
                 require(ggformula)
                 require(supernova)
                 Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+                set.seed(12)
  
             </code>
             <code data-type="sample-code">
-                # These are the possible outcomes of a dice roll. 
-                diceoutcomes <- c(1, 2, 3, 4, 5, 6)
+                # Write code to simulate another random sample of 24 dice rolls
+                sample2 <- 
                 
-                # Modify this code to find the mean of the possible outcomes 
-                mean()
+                # This will retrn the mean of those numbers
+                mean(sample2)
             </code>
             <code data-type="solution">
-                # These are the possible outcomes of a dice roll. 
-                diceoutcomes <- c(1, 2, 3, 4, 5, 6)
+                # Write code to simulate another random sample of 24 dice rolls
+                sample2 <- resample(1:6, 24)
                 
-                # Modify this code to find the mean of the possible outcomes 
-                mean(diceoutcomes)
+                # This will retrn the mean of those numbers
+                mean(sample2)
             </code>
             <code data-type="sct">
-              test_object("diceoutcomes")
-              test_function_result("mean")
-              test_error()
-              success_msg("Keep up the hard work!")
+                test_object("sample2")
+                test_function_result("mean")
+                test_error()
+                success_msg("Great work!")
             </code>
         </div>
     </body>
