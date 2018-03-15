@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 8 Exercise 2</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">                
+                require(mosaic)
+                require(ggformula)
+                require(supernova)
+                Fingers <- supernova::Fingers
 
+            </code>
+            <code data-type="sample-code">
+                # fit a model of Thumb length based on Height2Group
+                Height2Group.model <- lm()
+                                 
+                # fit a model of Thumb length based on GroupNum 
+                GroupNum.model <- lm()
+                
+                # this prints the parameter estimates from the two models 
+                Height2Group.model
+                GroupNum.model
+
+            </code>
+            <code data-type="solution">
+                # fit a model of Thumb length based on Height2Group
+                Height2Group.model <- lm(Thumb ~ Height2Group, data = TinyFingers)
+                                 
+                # fit a model of Thumb length based on GroupNum 
+                GroupNum.model <- lm(Thumb ~ GroupNum, data = TinyFingers)
+                
+                # this prints the parameter estimates from the two models 
+                Height2Group.model
+                GroupNum.model
+       
+            </code>
+            <code data-type="sct">
+                test_object("Height2Group.model")
+                test_object("GroupNum.model")
+                test_output_contains("Height2Group.model")
+                test_output_contains("GroupNum.model")
+                success_msg("Great work!")
+            </code>
+          
+        </div>
+    </body>
+</html>
