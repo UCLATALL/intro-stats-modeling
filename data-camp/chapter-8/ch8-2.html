@@ -25,37 +25,34 @@
 
             </code>
             <code data-type="sample-code">
-                # modify this code to fit an accidental regression model
-                Group01.model <- lm()
+                # fit a model of Thumb length based on Height2Group
+                Height2Group.model <- lm()
                                  
-                # modify this code to fit a group model 
-                TinyHeight2Group.model <- lm()
+                # fit a model of Thumb length based on GroupNum 
+                GroupNum.model <- lm()
                 
-                # this prints the accidental regression model
-                Group01.model
-                # this prints the group model
-                TinyHeight2Group.model
+                # this prints the parameter estimates from the two models 
+                Height2Group.model
+                GroupNum.model
 
             </code>
             <code data-type="solution">
-                # modify this code to fit an accidental regression model
-                Group01.model <- lm(Thumb ~ Group01, data = TinyFingers)
-
-                # modify this code to fit a group model
-                TinyHeight2Group.model <- lm(Thumb ~ Height2Group, data = TinyFingers)
+                # fit a model of Thumb length based on Height2Group
+                Height2Group.model <- lm(Thumb ~ Height2Group, data = TinyFingers)
+                                 
+                # fit a model of Thumb length based on GroupNum 
+                GroupNum.model <- lm(Thumb ~ GroupNum, data = TinyFingers)
                 
-                # this prints the accidental regression model
-                Group01.model
-                # this prints the group model
-                TinyHeight2Group.model
+                # this prints the parameter estimates from the two models 
+                Height2Group.model
+                GroupNum.model
        
             </code>
             <code data-type="sct">
-                test_object("Group01.model")
-                test_object("TinyHeight2Group.model")
-                test_output_contains("Group01.model")
-                test_output_contains("TinyHeight2Group.model")
-                test_error()
+                test_object("Height2Group.model")
+                test_object("GroupNum.model")
+                test_output_contains("Height2Group.model")
+                test_output_contains("GroupNum.model")
                 success_msg("Great work!")
             </code>
           
