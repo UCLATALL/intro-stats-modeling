@@ -35,7 +35,7 @@
             </code>
             <code data-type="solution">               
                 # recode GroupNum from 1 and 2 to 0 and 1
-                TinyFingers$GroupNum <- recode(TinyFingers$GroupNum, 1 = 0, 2 = 1)
+                TinyFingers$GroupNum <- recode(TinyFingers$GroupNum, "1" = 0, "2" = 1)
                                             
                 # This will fit an accidental regression model 
                 GroupNum.model <- lm(Thumb ~ GroupNum, data = TinyFingers) 
