@@ -30,6 +30,13 @@
                                
             </code>
             <code data-type="solution">
+                
+                # this code generates histograms with lines to represent the mean Thumb length of each Sex group 
+                Thumb.stats <- favstats(Thumb ~ Sex, data = Fingers) 
+                    gf_histogram(..density.. ~ Thumb, data = Fingers) %>%
+                     gf_facet_grid(Sex ~ .) %>%
+                     gf_vline(xintercept = ~mean, color = "blue", data = Thumb.stats) 
+                
                 # modify this code to add lines to represent the mean Sex.resid of each Sex group
                 Sex.resid.stats <- favstats(Sex.resid ~ Sex, data = Fingers)
                 gf_histogram(..density.. ~ Sex.resid, data = Fingers, fill = "skyblue") %>%
@@ -39,9 +46,9 @@
        
             </code>
             <code data-type="sct">
-                test_function("gf_vline")
-                test_function("gf_facet_grid")
-                test_function_result("gf_histogram")
+                test_function("gf_vline", index = 2)
+                test_function("gf_facet_grid", index = 2)
+                test_function_result("gf_histogram", index = 2)
                 test_error()
 
             </code>
