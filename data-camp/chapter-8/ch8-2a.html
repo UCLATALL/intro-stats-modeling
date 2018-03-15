@@ -20,7 +20,7 @@
                 TinyFingers$Height3Group = ntile(TinyFingers$Height, 3)
                 TinyFingers$Height2Group = recode(TinyFingers$Height2Group, '1' = "1-Short", '2' = "2-Tall")
                 TinyFingers$Height3Group = recode(TinyFingers$Height3Group, '1' = "1-Short", '2' = "2-Medium", '3' = "3-Tall")
-                
+                TinyFingers$GroupNum <- ntile(TinyFingers$Height, 2)
                 TinyFingers$Group01 <- ntile(TinyFingers$Height, 2)
                 Height2Group.model <- lm(Thumb ~ Height2Group, data = TinyFingers)
 
