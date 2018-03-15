@@ -25,7 +25,7 @@
                 
                 # modify this code to add lines to represent the mean Sex.resid of each Sex group
                 Sex.resid.stats <- favstats(Sex.resid ~ Sex, data = Fingers)
-                gf_histogram(..density.. ~ Sex.resid, data = Fingers, fill = "skyblue") %>%
+                gf_histogram(..density.. ~ Sex.resid, data = Fingers) %>%
                     gf_facet_grid(Sex ~ . ) 
                                
             </code>
@@ -39,9 +39,9 @@
                 
                 # modify this code to add lines to represent the mean Sex.resid of each Sex group
                 Sex.resid.stats <- favstats(Sex.resid ~ Sex, data = Fingers)
-                gf_histogram(..density.. ~ Sex.resid, data = Fingers, fill = "skyblue") %>%
+                gf_histogram(..density.. ~ Sex.resid, data = Fingers) %>%
                     gf_facet_grid(Sex ~ . ) %>%
-                    gf_vline(xintercept=~mean, color = "blue", data=Sex.resid.stats)
+                    gf_vline(xintercept = ~mean, color = "blue", data=Sex.resid.stats)
 
        
             </code>
