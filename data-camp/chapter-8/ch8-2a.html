@@ -10,38 +10,42 @@
             <code data-type="pre-exercise-code">                
                 require(mosaic)
                 require(ggformula)
-                require(supernova)
-                Fingers <- supernova::Fingers
+                #set up tiny data set
+                Thumb <- c(56, 60, 61, 63, 64, 68)
+                Sex <- c("female","female","female","male","male","male")
+                TinyFingers <- data.frame(Sex, Thumb)
+                TinyFingers$Sex <- as.factor(TinyFingers$Sex)
+                TinyFingers$Height = c(62, 66, 67, 63, 68, 71)
+                TinyFingers$Height2Group = ntile(TinyFingers$Height, 2)
+                TinyFingers$Height3Group = ntile(TinyFingers$Height, 3)
+                TinyFingers$Height2Group = recode(TinyFingers$Height2Group, '1' = "1-Short", '2' = "2-Tall")
+                TinyFingers$Height3Group = recode(TinyFingers$Height3Group, '1' = "1-Short", '2' = "2-Medium", '3' = "3-Tall")
+                
+                TinyFingers$Group01 <- ntile(TinyFingers$Height, 2)
+                Height2Group.model <- lm(Thumb ~ Height2Group, data = TinyFingers)
 
             </code>
             <code data-type="sample-code">
-                # fit a model of Thumb length based on Height2Group
-                Height2Group.model <- lm()
-                                 
-                # fit a model of Thumb length based on GroupNum 
-                GroupNum.model <- lm()
-                
-                # this prints the parameter estimates from the two models 
-                Height2Group.model
+               # recode GroupNum from 1 and 2 to 0 and 1
+                TinyFingers$GroupNum <- recode()
+                                            
+                # This will fit an accidental regression model 
+                GroupNum.model <- lm(Thumb ~ GroupNum, data = TinyFingers) 
+                GroupNum.model
+            </code>
+            <code data-type="solution">               
+                # recode GroupNum from 1 and 2 to 0 and 1
+                TinyFingers$GroupNum <- recode(TinyFingers$GroupNum, 1 = 0, 2 = 1)
+                                            
+                # This will fit an accidental regression model 
+                GroupNum.model <- lm(Thumb ~ GroupNum, data = TinyFingers) 
                 GroupNum.model
 
-            </code>
-            <code data-type="solution">
-                # fit a model of Thumb length based on Height2Group
-                Height2Group.model <- lm(Thumb ~ Height2Group, data = TinyFingers)
-                                 
-                # fit a model of Thumb length based on GroupNum 
-                GroupNum.model <- lm(Thumb ~ GroupNum, data = TinyFingers)
-                
-                # this prints the parameter estimates from the two models 
-                Height2Group.model
-                GroupNum.model
        
             </code>
             <code data-type="sct">
-                test_object("Height2Group.model")
+                test_data_frame("TinyFingers") 
                 test_object("GroupNum.model")
-                test_output_contains("Height2Group.model")
                 test_output_contains("GroupNum.model")
                 success_msg("Great work!")
             </code>
