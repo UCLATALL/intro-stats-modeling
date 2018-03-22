@@ -27,7 +27,7 @@
                 Fingers$Height.pred <- predict(Height.model)
                                        
                # write code to create a scatter plot of Height.pred by Height
-                gf_point(Height.pred ~ Height)
+                gf_point(Height.pred ~ Height, data = Fingers)
                              
             </code>
             <code data-type="sct">
