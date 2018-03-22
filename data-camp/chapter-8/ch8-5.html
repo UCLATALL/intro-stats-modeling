@@ -35,11 +35,11 @@
                 Fingers$Pinkie <- as.numeric(Fingers$Pinkie)
                 Fingers$Height <- as.numeric(Fingers$Height)
                 Fingers$Weight <- as.numeric(Fingers$Weight)
-
-                Fingers <- filter(Fingers, Thumb >= 33 & Thumb <= 100)
+                Height.model <- lm(Thumb ~ Height, data = Fingers)
+                
               
                set.seed(2)
-                Height.model <- lm(Thumb ~ Height, data = Fingers)
+                
 
             </code>
             <code data-type="sample-code">
