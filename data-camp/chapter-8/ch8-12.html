@@ -15,35 +15,20 @@
                 Fingers$zThumb <- zscore(Fingers$Thumb)
                 Fingers$zHeight <- zscore(Fingers$Height)
                 Height.model <- lm(Thumb ~ Height, data = Fingers)
+                zHeight.model <- lm(zThumb ~ zHeight, data = Fingers)
                 
               
               
             </code>
             <code data-type="sample-code">
-               # this overlays the best fitting regression model on this scatter plot
-               gf_point(Thumb ~ Height, data = Fingers, size = 4, color = "black") %>%
-                gf_lm()
-               
-               # modify this to overlay the best fitting regression model on this scatter plot 
-               gf_point(zThumb ~ zHeight, data = Fingers, size = 4, color = "firebrick")
+
              
             </code>
             <code data-type="solution">
-              # this overlays the best fitting regression model on this scatter plot
-               gf_point(Thumb ~ Height, data = Fingers, size = 4, color = "black") %>%
-                gf_lm()
-               
-               # modify this to overlay the best fitting regression model on this scatter plot 
-               gf_point(zThumb ~ zHeight, data = Fingers, size = 4, color = "firebrick") %>%
-                gf_lm() 
 
             </code>
             <code data-type="sct">
-                test_function("gf_point", index = 1)
-                test_function("gf_point", index = 2) 
-                test_function("gf_lm", index = 1)
-                test_function("gf_lm", index = 2)
-                test_error() 
+
             </code>
             <div data-type="hint"></div>
         </div>
