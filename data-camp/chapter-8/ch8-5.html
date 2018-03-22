@@ -37,6 +37,7 @@
                 Fingers$Weight <- as.numeric(Fingers$Weight)
 
                 Fingers <- filter(Fingers, Thumb >= 33 & Thumb <= 100)
+                Height.model <- lm(Thumb ~ Height, data = Fingers)
                 set.seed(2)
 
             </code>
