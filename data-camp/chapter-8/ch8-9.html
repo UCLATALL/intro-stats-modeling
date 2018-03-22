@@ -37,9 +37,6 @@
                 Fingers$Height <- as.numeric(Fingers$Height)
                 Fingers$Weight <- as.numeric(Fingers$Weight)
 
-                Fingers <- filter(Fingers, Thumb >= 33 & Thumb <= 100)
-                set.seed(2)
-                
                 Height.model <- lm(Thumb ~ Height, data = Fingers)
                 Fingers$Height.resid <- resid(Height.model)
                                         
