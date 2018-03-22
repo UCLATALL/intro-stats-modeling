@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 8 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">                
+                require(mosaic)
+                require(supernova)
+                Fingers <- supernova::Fingers
+                Fingers$zThumb <- zscore(Fingers$Thumb)
+                Fingers$zHeight <- zscore(Fingers$Height)
+            </code>
+            <code data-type="sample-code">
+              # this calculates the correlation of Middle by Pinkie
+              cor(Middle ~ Pinkie, data = Fingers)
+              
+              # this calculates the correlation of Pinkie by Middle 
+              cor(Pinkie ~ Middle, data = Fingers) 
+                
+            </code>
+            <code data-type="solution">
+              # this calculates the correlation of Middle by Pinkie
+              cor(Middle ~ Pinkie, data = Fingers)
+              
+              # this calculates the correlation of Pinkie by Middle 
+              cor(Pinkie ~ Middle, data = Fingers)
+              
+            </code>
+            <code data-type="sct">
+               test_function("cor")
+               test_error()
+            </code>
+            <div data-type="hint"></div>
+        </div>
+    </body>
+</html>
