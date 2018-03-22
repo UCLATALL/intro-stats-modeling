@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 9 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">                
+                require(mosaic)
+                require(ggformula)
+                require(supernova)
+              
+                Fingers <- supernova::Fingers
+                set.seed(14)
+ 
+            </code>
+            <code data-type="sample-code">
+              # modify this to simulate 10 sample means 
+              do(3) * mean(resample(1:6, 24))
+              
+            </code>
+            <code data-type="solution">
+               # modify this to simulate 10 sample means 
+              do(3) * mean(resample(1:6, 24))
+                
+            </code>
+            <code data-type="sct">
+                test_function("do") 
+                test_function("mean")
+                test_function("resample")
+            </code>
+        </div>
+    </body>
+</html>
