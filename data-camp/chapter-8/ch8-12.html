@@ -13,6 +13,8 @@
                 Fingers <- supernova::Fingers
                 Fingers$zThumb <- zscore(Fingers$Thumb)
                 Fingers$zHeight <- zscore(Fingers$Height)
+                Height.model <- lm(Thumb ~ Height, data = Fingers)
+                zHeight.model <- lm(zThumb ~ zHeight, data = Fingers)
             </code>
             <code data-type="sample-code">
                # this quantifies error from 
