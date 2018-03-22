@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 9 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">                
+                require(mosaic)
+                require(ggformula)
+                require(supernova)
+              
+                Fingers <- supernova::Fingers
+                set.seed(14)
+ 
+            </code>
+            <code data-type="sample-code">
+              # saves 10 means into a dataframe called bunchofmeans 
+              bunchofmeans <- 
+              
+              # write code to look at this new data frame 
+              
+            </code>
+            <code data-type="solution">
+               bunchofmeans <- do(3) * mean(resample(1:6, 24))
+               
+            </code>
+            <code data-type="sct">
+            test_object("bunchofmeans")
+            test_error()
+
+            </code>
+        </div>
+    </body>
+</html>
