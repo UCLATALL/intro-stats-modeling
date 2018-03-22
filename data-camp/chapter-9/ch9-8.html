@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 9 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">                
+                require(mosaic)
+                require(ggformula)
+                require(supernova)
+              
+                Fingers <- supernova::Fingers
+                set.seed(14)
+ 
+            </code>
+            <code data-type="sample-code">
+              bunchofmeans <- do(10) * mean(resample(1:6, 24))
+
+              # make a histogram of means 
+              # draw a vertical line where the population mean should be 
+              
+            </code>
+            <code data-type="solution">
+               bunchofmeans <- do(3) * mean(resample(1:6, 24))
+               
+              # make a histogram of means 
+              # draw a vertical line where the population mean should be 
+               gf_histogram(bunchofmeans) %>%
+                vline()
+               
+            </code>
+            <code data-type="sct">
+            test_object("bunchofmeans")
+            test_error()
+
+            </code>
+        </div>
+    </body>
+</html>
