@@ -30,9 +30,16 @@
                 zHeight.model
             </code>
             <code data-type="sample-code">
+                # this fits a regression model of Thumb by Height 
+                Height.model <- lm(Thumb ~ Height, data = Fingers)
+                                
+                # modify this to fit a regression model predicting zThumb with zHeight
+                zHeight.model <- lm()
                 
+                # this prints the estimates 
+                Height.model
+                zHeight.model
 
-        
             </code>
             <code data-type="solution">
                
