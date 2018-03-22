@@ -41,16 +41,23 @@
 
             </code>
             <code data-type="sample-code">
-                # Run this code 
-                Height.model <- lm(Thumb ~ Height, data = Fingers)
+               # this creates predicted thumb lengths from Height.model
                 Fingers$Height.pred <- predict(Height.model)
-                head(select(Fingers, Thumb, Height, Height.pred), 10) 
-                
-                # Use gf_point() to plot the relationship between Height.pred and Height
+                                       
+               # write code to create a scatter plot of Height.pred by Height
+                gf_point()
             </code>
-            <code data-type="solution">
+            <code data-type="solution">               
+                # this creates predicted thumb lengths from Height.model
+                Fingers$Height.pred <- predict(Height.model)
+                                       
+               # write code to create a scatter plot of Height.pred by Height
+                gf_point(Height.pred ~ Height)
+                             
             </code>
             <code data-type="sct">
+                test_function_result("gf_point")
+                test_error() 
             </code>
         </div>
     </body>
