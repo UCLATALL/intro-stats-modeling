@@ -25,10 +25,12 @@
             </code>
             <code data-type="solution">
                bunchofmeans <- do(10) * mean(resample(1:6, 24))
+               head(bunchofmeans)
                
             </code>
             <code data-type="sct">
             test_object("bunchofmeans")
+            test_function("head")
             test_error()
 
             </code>
