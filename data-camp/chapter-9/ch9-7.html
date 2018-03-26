@@ -18,13 +18,13 @@
             </code>
             <code data-type="sample-code">
               # saves 10 means into a dataframe called bunchofmeans 
-              bunchofmeans <- 
+              bunchofmeans <- do(10) * mean(resample(1:6, 24))
               
               # write code to look at this new data frame 
               
             </code>
             <code data-type="solution">
-               bunchofmeans <- do(3) * mean(resample(1:6, 24))
+               bunchofmeans <- do(10) * mean(resample(1:6, 24))
                
             </code>
             <code data-type="sct">
