@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 9 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+                require(mosaic)
+                require(ggformula)
+                require(supernova)
+                require(tidyverse)
+              
+                Fingers <- supernova::Fingers
+                
+            </code>
+            <code data-type="sample-code">
+              # this sets the random numbers 
+                set.seed(14)
+              
+              # modify this for 10000 samples 
+              bunchofmeans <- do(10) * mean(resample(1:6, 24))
+
+              # this makes a histogram of the means 
+              gf_histogram(~ mean, data = bunchofmeans, fill = "blue") %>%
+                gf_vline(xintercept = 3.5) %>%
+                gf_labs(title = "Distribution of Means")
+              
+            </code>
+            <code data-type="solution">
+              # this sets the random numbers 
+                set.seed(14)
+              
+              # modify this for 10000 samples 
+              bunchofmeans <- do(10) * mean(resample(1:6, 24))
+
+              # this makes a histogram of the means 
+              gf_histogram(~ mean, data = bunchofmeans, fill = "blue") %>%
+                gf_vline(xintercept = 3.5) %>%
+                gf_labs(title = "Distribution of Means")
+
+            </code>
+            <code data-type="sct">
+            test_object("bunchofmeans")
+            test_function("gf_histogram")
+            test_function("gf_vline")
+            test_function("gf_labs")
+            test_error()
+
+            </code>
+        </div>
+    </body>
+</html>
