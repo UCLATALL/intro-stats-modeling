@@ -15,17 +15,28 @@
                 require(tidyverse)
                 Fingers <- supernova::Fingers
                 Thumb.stats <- favstats(~ Thumb, data = Fingers)
-                set.seed(2)
-                SDoM <- do(10000) * mean(rnorm(6, Thumb.stats$mean, Thumb.stats$sd))
+                
                 
             </code>
             <code data-type="sample-code">
+              # this sets the random numbers
+                set.seed(2)
+              
+              # this creates the distribution of means
+              SDoM <- do(10000) * mean(rnorm(6, Thumb.stats$mean, Thumb.stats$sd))
+            
               # modify this to return a proportion
               tally(~ mean >= 65, data = SDoM)
               
             
             </code>
             <code data-type="solution">
+              # this sets the random numbers
+              set.seed(2)
+              
+              # this creates the distribution of means
+              SDoM <- do(10000) * mean(rnorm(6, Thumb.stats$mean, Thumb.stats$sd))
+                      
               # modify this to return a proportion
               tally(~ mean >= 65, data = SDoM, format = "proportion")
 
