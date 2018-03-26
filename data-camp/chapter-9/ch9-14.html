@@ -15,7 +15,6 @@
                 Fingers <- supernova::Fingers
                 Thumb.stats <- favstats(~ Thumb, data = Fingers)
             </code>
-            
             <code data-type="sample-code">
              # this sets the random numbers
              set.seed(1)
@@ -25,7 +24,6 @@
 
             # calculate the favstats for simThumb in simpop
             </code>
-            
             <code data-type="solution">
             # this sets the random numbers
             set.seed(1)
@@ -36,7 +34,6 @@
             # calculate the favstats for simThumb in simpop
             favstats(~ simThumb, data = simpop)
             </code>
-            
             <code data-type="sct">
             test_object("simThumb")
             test_object("simpop")
