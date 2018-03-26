@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 9 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+                require(mosaic)
+                require(ggformula)
+                require(supernova)
+                require(tidyverse)
+                Fingers <- supernova::Fingers
+                Thumb.stats <- favstats(~ Thumb, data = Fingers)
+                set.seed(1)
+                simThumb <- rnorm(20, Thumb.stats$mean, Thumb.stats$sd)
+                simpop <- data.frame(simThumb)
+                set.seed(2)
+                SDoM <- do(10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
+                
+            </code>
+            <code data-type="sample-code">
+              # this makes the Simulated Population histogram scaled from 25 to 95
+              gf_histogram(~ simThumb, data = simpop, fill = "darkorange2", bins = 100) %>%
+              gf_labs(title = "Simulated Population Distribution") %>%
+              gf_lims(x = c(25,95))
+              
+              # add code to scale the Sampling Distribution histogram from 25 to 95
+              gf_histogram(~ mean, data = SDoM, fill = "blue", bins = 100) %>%
+              gf_labs(title = "Sampling Distribution (n = 157)")
+            
+            </code>
+            <code data-type="solution">
+              # this makes the Simulated Population histogram scaled from 25 to 95
+              gf_histogram(~ simThumb, data = simpop, fill = "darkorange2", bins = 100) %>%
+              gf_labs(title = "Simulated Population Distribution") %>%
+              gf_lims(x = c(25,95))
+              
+              # add code to scale the Sampling Distribution histogram from 25 to 95
+              gf_histogram(~ mean, data = SDoM, fill = "blue", bins = 100) %>%
+              gf_labs(title = "Sampling Distribution (n = 157)") %>%
+              gf_lims(x = c(25, 95))
+            </code>
+            
+            <code data-type="sct">
+            test_function("gf_histogram", index = 1)
+            test_function("gf_labs", index = 1)
+            test_function("gf_lims", index = 1)
+            test_function("gf_histogram", index = 2)
+            test_function("gf_labs", index = 2) 
+            test_function("gf_lims", index = 2) 
+            test_error()
+       
+            </code>
+        </div>
+    </body>
+</html>
