@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 9 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+                require(mosaic)
+                require(ggformula)
+                require(supernova)
+                require(tidyverse)
+              
+                Fingers <- supernova::Fingers
+                Thumb.stats <- favstats(~ Thumb, data = Fingers)
+            </code>
+            
+            <code data-type="sample-code">
+              # this sets the random numbers 
+              set.seed(1)
+              
+              # modify this to generate 20 thumb lengths
+              rnorm(1, Thumb.stats$mean, Thumb.stats$sd)
+            </code>
+            
+            <code data-type="solution">
+              # this sets the random numbers 
+              set.seed(1)
+              
+              # modify this to generate 20 thumb lengths
+              rnorm(20, Thumb.stats$mean, Thumb.stats$sd)
+            </code>
+            
+            <code data-type="sct">
+            test_function("rnorm")
+            test_error()
+            </code>
+        </div>
+    </body>
+</html>
