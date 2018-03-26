@@ -13,15 +13,17 @@
                 require(supernova)
                 require(tidyverse)
                 Fingers <- supernova::Fingers
-                Thumb.stats <- favstats(~ Thumb, data = Fingers)
+               
                # this sets the random numbers
                 set.seed(25)
-              
-              # this creates the distribution of means
-              SDoM <- do(10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
-                
+                Thumb.stats <- favstats(~ Thumb, data = Fingers)
+
             </code>
             <code data-type="sample-code">
+                
+              # change the population mean to 65
+              SDoM <- do(10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
+                      
               # this creates a histogram of this SDoM
               gf_histogram(~ mean, data = SDoM, bins = 100, color = "blue") %>%
                 gf_vline(xintercept = 65, color = "darkblue")%>%
@@ -29,6 +31,10 @@
                 
             </code>
             <code data-type="solution">
+              # change the population mean to 65
+              SDoM <- do(10000) * mean(rnorm(157, mean = 65, Thumb.stats$sd))
+                      
+              # this creates a histogram of this SDoM
               gf_histogram(~ mean, data = SDoM, bins = 100, color = "blue") %>%
                 gf_vline(xintercept = 65, color = "darkblue")%>%
                 gf_labs(title = "SDoM, n=157, M=65")
