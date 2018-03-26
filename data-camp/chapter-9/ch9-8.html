@@ -14,9 +14,12 @@
                 require(tidyverse)
               
                 Fingers <- supernova::Fingers
-                set.seed(14)
+                
             </code>
             <code data-type="sample-code">
+              # this sets the random numbers 
+                set.seed(14)
+                
               bunchofmeans <- do(10) * mean(resample(1:6, 24))
 
               # make a histogram of means 
