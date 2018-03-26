@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 9 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+                require(mosaic)
+                require(ggformula)
+                require(supernova)
+                require(tidyverse)
+              
+                Fingers <- supernova::Fingers
+            </code>
+            
+            <code data-type="sample-code">
+              # save the favstats for Thumb in Thumb.stats
+
+              # this will print Thumb.stats
+              Thumb.stats
+            </code>
+            
+            <code data-type="solution">
+              # save the favstats for Thumb in Thumb.stats
+              Thumb.stats <- favstats(~ Thumb, data = Fingers)
+              
+              # this will print Thumb.stats
+              Thumb.stats
+            </code>
+            
+            <code data-type="sct">
+            test_object("Thumb.stats")
+            test_function("favstats")
+            test_error()
+            </code>
+        </div>
+    </body>
+</html>
