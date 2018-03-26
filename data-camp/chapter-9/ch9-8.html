@@ -7,15 +7,15 @@
     </head>
     <body>
         <div data-datacamp-exercise data-lang="r">
-            <code data-type="pre-exercise-code">                
+            <code data-type="pre-exercise-code">    
+                set.seed(14)
                 require(mosaic)
                 require(ggformula)
                 require(supernova)
                 require(tidyverse)
               
                 Fingers <- supernova::Fingers
-                set.seed(14)
- 
+
             </code>
             <code data-type="sample-code">
               bunchofmeans <- do(10) * mean(resample(1:6, 24))
