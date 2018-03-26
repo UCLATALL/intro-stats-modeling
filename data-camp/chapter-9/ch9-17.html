@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 9 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+                require(mosaic)
+                require(ggformula)
+                require(supernova)
+                require(tidyverse)
+                Fingers <- supernova::Fingers
+                Thumb.stats <- favstats(~ Thumb, data = Fingers)
+            </code>
+            <code data-type="sample-code">
+             # this sets the random numbers
+            set.seed(2)
+
+            # modify this code to save 10000 sample means 
+            SDoM <- do(20) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
+            
+            # print the first 6 lines of SDoM
+            
+            </code>
+            
+            <code data-type="solution">
+             # this sets the random numbers
+            set.seed(2)
+
+            # modify this code to save 10000 sample means 
+            SDoM <- do(10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
+            
+            # print the first 6 lines of SDoM
+            head(SDoM)
+            </code>
+            
+            <code data-type="sct">
+            test_function("do")
+            test_function("mean")
+            test_function("head")
+            test_error()
+       
+            </code>
+        </div>
+    </body>
+</html>
