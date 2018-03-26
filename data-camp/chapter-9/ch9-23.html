@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 9 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+                require(mosaic)
+                require(ggformula)
+                require(supernova)
+                require(tidyverse)
+                Fingers <- supernova::Fingers
+                Thumb.stats <- favstats(~ Thumb, data = Fingers)
+               # this sets the random numbers
+                set.seed(2)
+              
+              # this creates the distribution of means
+              SDoM <- do(10000) * mean(rnorm(6, Thumb.stats$mean, Thumb.stats$sd))
+                
+            </code>
+            <code data-type="sample-code">
+              # how many simulated means are less than 59 mm? 
+              
+              # make a histogram to eyeball whether your answer seems reasonable
+              gf_histogram()
+              
+            
+            </code>
+            <code data-type="solution">
+              # how many simulated means are less than 59 mm? 
+              tally(~ mean < 59, data = SDoM)
+              
+              # make a histogram to eyeball whether your answer seems reasonable
+              gf_histogram(~ mean, data = SDoM, fill = ~(mean < 59))
+
+
+            </code>
+            
+            <code data-type="sct">
+            test_function("tally")
+            test_function("gf_histogram", args = c("data", "fill")) 
+            test_error()
+       
+            </code>
+        </div>
+    </body>
+</html>
