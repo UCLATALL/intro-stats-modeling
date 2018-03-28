@@ -14,8 +14,7 @@
                 require(tidyverse)
                 Fingers <- supernova::Fingers
                
-               # this sets the random numbers
-                set.seed(25)
+                custom_seed(25)
                 Thumb.stats <- favstats(~ Thumb, data = Fingers)
 
             </code>
