@@ -14,11 +14,9 @@
                 require(tidyverse)
                 Fingers <- supernova::Fingers
                 Thumb.stats <- favstats(~ Thumb, data = Fingers)
+                custom_seed(2)
             </code>
             <code data-type="sample-code">
-             # this sets the random numbers
-            set.seed(2)
-
             # add do() to generate 20 means from samples of n=157 Thumb lengths
             mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
             
