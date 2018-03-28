@@ -14,7 +14,7 @@
                 require(tidyverse)
                 Fingers <- supernova::Fingers
                 Thumb.stats <- favstats(~ Thumb, data = Fingers)
-                set.seed(1)
+                custom_seed(1)
                 simThumb <- rnorm(20, Thumb.stats$mean, Thumb.stats$sd)
                 simpop <- data.frame(simThumb)
                 custom_seed(2)
