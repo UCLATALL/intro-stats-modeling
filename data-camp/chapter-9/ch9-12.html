@@ -14,12 +14,10 @@
                 require(tidyverse)
                 Fingers <- supernova::Fingers
                 Thumb.stats <- favstats(~ Thumb, data = Fingers)
+                custom_seed(1)
             </code>
             
             <code data-type="sample-code">
-              # this sets the random numbers 
-              set.seed(1)
-              
               # modify this to generate 20 thumb lengths
               rnorm(1, Thumb.stats$mean, Thumb.stats$sd)
             </code>
