@@ -17,7 +17,7 @@
                 set.seed(1)
                 simThumb <- rnorm(20, Thumb.stats$mean, Thumb.stats$sd)
                 simpop <- data.frame(simThumb)
-                set.seed(2)
+                custom_seed(2)
                 SDoM <- do(10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
                 
             </code>
