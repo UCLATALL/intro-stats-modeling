@@ -10,8 +10,9 @@
             <code data-type="pre-exercise-code">
                 require(mosaic)
                 require(tidyverse)
-                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
-                set.seed(2)
+                require(supernova)
+                Fingers <- supernova::Fingers
+                custom_seed(2)
             </code>
             <code data-type="sample-code"> 
             # This code shows the RaceEthnic variable for the first 3 students in the Fingers dataframe
