@@ -10,7 +10,11 @@
             <code data-type="pre-exercise-code">
                 require(mosaic)
                 require(tidyverse)
-                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+                require(supernova)
+                
+                Fingers$MathAnxious <- as.numeric(Fingers$MathAnxious)
+                Fingers$Interest <- as.numeric(Fingers$Interest)
+                Fingers <- arrange(Fingers, desc(Sex))
             </code>
             <code data-type="sample-code"> 
                 
@@ -27,7 +31,7 @@
             <code data-type="solution">
              Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels=c(1,2,3,4,5), labels=c("White", "African American", "Asian", "Latino", "Other"))
              
-             Fingers$Job <- factor(Fingers$Job, levels=c(0,1,2), labels=c("not working", "part-time job", "full-time job"))
+             Fingers$Job <- factor(Fingers$Job, levels=c(1,2,3), labels=c("none", "parttime", "full-time"))
              
              head(Fingers)
                  
