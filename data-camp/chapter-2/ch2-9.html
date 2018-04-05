@@ -9,6 +9,8 @@
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">
                 require(supernova)
+                require(mosaic)
+                require(tidyverse)
                 Fingers <- arrange(Fingers, desc(Sex))
                 Fingers$FamilyMembers[1] <- 2
                 Fingers$Height[1] <- 62
