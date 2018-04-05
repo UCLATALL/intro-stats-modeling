@@ -10,7 +10,8 @@
             <code data-type="pre-exercise-code">                
                 require(mosaic)
                 require(ggformula)
-                Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
+                require(supernova)
+                Fingers <- supernova::Fingers
                StudentID <- c(1,2,3,4,5,6)
                 Thumb <- c(56, 60, 61, 63, 64, 68)
                 TinyFingers <- data.frame(StudentID, Thumb)
@@ -31,7 +32,6 @@
                     TinyFingers$AbsResidual <- abs(TinyFingers$Residual)
   
                 # modify this code to sum up AbsResidual
-                    print("SAD")
                     sum(TinyFingers$AbsResidual)  
             </code>
             <code data-type="sct">
