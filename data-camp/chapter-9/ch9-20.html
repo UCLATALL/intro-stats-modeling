@@ -23,7 +23,7 @@
             </code>
             <code data-type="sample-code">
               # modify this to return a proportion
-              tally(~ mean >= 65, data = SDoM)
+              tally(~ mean >= 61, data = SDoM)
               
             
             </code>
@@ -35,7 +35,7 @@
               SDoM <- do(10000) * mean(rnorm(6, Thumb.stats$mean, Thumb.stats$sd))
                       
               # modify this to return a proportion
-              tally(~ mean >= 65, data = SDoM, format = "proportion")
+              tally(~ mean >= 61, data = SDoM, format = "proportion")
 
             </code>
             
