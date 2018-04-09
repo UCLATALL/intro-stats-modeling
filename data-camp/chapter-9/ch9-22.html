@@ -26,10 +26,10 @@
             </code>
             <code data-type="solution">
             # write code to tally how many simulated means are >= 65 
-            tally(~ mean>=65, data = SDoM)
+            tally(~ mean>=65, data = SDoM, format = "proportion")
             </code>
             <code data-type="sct">
-            test_function_result("tally") 
+            test_function("tally", args = "data") 
             test_error()
        
             </code>
