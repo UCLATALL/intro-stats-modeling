@@ -10,7 +10,9 @@
             <code data-type="pre-exercise-code">
                 require(mosaic)
                 require(tidyverse)
-                HappyPlanetIndex <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/happy-planet-index.csv", header=TRUE, sep=",") 
+                require(Lock5withR)
+                require(supernova)
+                HappyPlanetIndex <- Lock5withR::HappyPlanetIndex
                 HappyPlanetIndex$Region <- recode(HappyPlanetIndex$Region, '1'="Latin America", '2'="Western Nations", '3'="Middle East and North Africa", '4'="Sub-Saharan Africa", '5'="South Asia", '6'="East Asia", '7'="Former Communist Countries")
             </code>
             <code data-type="sample-code">
