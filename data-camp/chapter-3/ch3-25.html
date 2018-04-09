@@ -11,10 +11,9 @@
             # Load packages
             require(mosaic)
             require(tidyverse)
-            
-            # Import Fingers data frame
-            Fingers <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/fingers.csv", header=TRUE, sep=",")
-            Fingers <- data.frame(Fingers)
+            require(Lock5withR)
+            require(supernova)
+            Fingers <- supernova::Fingers
             
             # Clean up str
             Fingers$Sex <- as.factor(Fingers$Sex)
