@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 9 Exercise 1</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            require(mosaic)
+            require(supernova)
+            require(Lock5withR)
+            require(tidyverse)
+            require(ggformula)
+            require(Lock5Data)
+            require(okcupiddata)
+            Fingers <- supernova::Fingers
+            Thumb.stats <- favstats(~ Thumb, data = Fingers)
+            custom_seed(1)
+            simSDoM <- do(10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
+            simSDoM <- arrange(simSDoM, mean)
+   
+            </code>
+            <code data-type="sample-code">
+            # write code to print the 250th mean 
+            
+            # write code to print the 9750th mean 
+            </code>
+            <code data-type="solution">
+
+            </code>
+            
+            <code data-type="sct">
+       
+            </code>
+        </div>
+    </body>
+</html>
