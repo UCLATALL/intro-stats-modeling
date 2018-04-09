@@ -10,7 +10,10 @@
             <code data-type="pre-exercise-code">
             require(mosaic)
             require(tidyverse)
-            MindsetMatters <- read.csv(file="https://raw.githubusercontent.com/UCLATALL/intro-stats-modeling/master/datasets/mindset-matters.csv", header=TRUE, sep=",")  
+            require(Lock5withR)
+            require(supernova)
+            MindsetMatters <- Lock5withR::MindsetMatters
+            
             </code>
             <code data-type="sample-code">
             # Based on the numbers from the favstats results above, use R as a calculator to find the range of Wt in MindsetMatters    
