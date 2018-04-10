@@ -12,11 +12,10 @@
             require(tidyverse)
             require(supernova)
             require(Lock5withR)
+            custom_seed(7)
             model.pop <- c(1,2,3,4,5,6)
             </code>
             <code data-type="sample-code">
-            #pre run
-            set.seed(7)
 
             # create samples #3, #4, #5 of 24 dice rolls
             sample3 <- 
@@ -63,7 +62,12 @@
             test_object("sample4")
             test_object("sample5")
             test_data_frame("dicerolls")
-            test_function("gf_histogram")
+            test_function("gf_histogram", index = 1)
+            test_function("gf_density", index = 1)
+            test_function("gf_histogram", index = 2) 
+            test_function("gf_density", index = 2) 
+            test_function("gf_histogram", index = 3)
+            test_function("gf_density", index = 3)
             test_error()
             success_msg("Great work!")
             </code>
