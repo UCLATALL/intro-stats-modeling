@@ -13,8 +13,6 @@
             require(tidyverse)
             require(supernova)
             require(Lock5withR)
-            Fingers <- supernova::Fingers
-                
             # Clean up the data 
             Fingers$RaceEthnic <- as.factor(Fingers$RaceEthnic)
             Fingers$RaceEthnic <- factor(Fingers$RaceEthnic, levels = c(1,2,3,4,5), labels = c("White","African American","Asian","Latino","Other"))
