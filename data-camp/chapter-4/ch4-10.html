@@ -10,11 +10,9 @@
             <code data-type="pre-exercise-code">
              require(mosaic)
              require(tidyverse)
+             custom_seed(13)
             </code>
             <code data-type="sample-code">
-            # pre-run
-            set.seed(13)
-
             # create a random sample of 211 numbers between 1 and 20
             Any1_20 <- 
 
@@ -25,9 +23,6 @@
        
             </code>
             <code data-type="solution">
-            # pre-run
-            set.seed(13)
-
             # create a random sample of 211 numbers between 1 and 20
             Any1_20 <- resample(1:20, 211)
 
