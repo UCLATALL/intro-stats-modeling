@@ -13,13 +13,11 @@
             require(supernova)
             require(Lock5withR)
             model.pop <- c(1,2,3,4,5,6)  
+            custom_seed(7)
+            W.pop <- c(rep(1,5), 2,rep(3,10),rep(4,10),5, rep(6,5))
                 
             </code>
             <code data-type="sample-code">
-            #pre run
-            set.seed(7)
-            W.pop <- c(rep(1,5), 2,rep(3,10),rep(4,10),5, rep(6,5))
-
             # create a sample that draws 10000 times from W.pop
             largesample <- 
 
@@ -31,9 +29,6 @@
             </code>
             
             <code data-type="solution">
-            set.seed(7)
-            W.pop <- c(rep(1,5), 2,rep(3,10),rep(4,10),5, rep(6,5))
-
             # create a sample that draws 10000 times from W.pop
             largesample <- resample(W.pop, 10000)
 
