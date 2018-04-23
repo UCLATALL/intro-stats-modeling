@@ -13,11 +13,9 @@
             require(supernova)
             require(Lock5withR)
             model.pop <- c(1,2,3,4,5,6)   
+            custom_seed(7)
             </code>
             <code data-type="sample-code">
-            #pre run
-            set.seed(7)
-
             # create a sample with 10000 rolls of a die
             largesample <- 
 
@@ -30,9 +28,6 @@
                  
             </code>
             <code data-type="solution">
-            #pre run
-            set.seed(7)
-
             # create a sample with 10000 rolls of a die
             largesample <- resample(model.pop, 10000)
 
