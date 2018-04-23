@@ -13,10 +13,10 @@
             require(supernova)
             require(Lock5withR)
             model.pop <- c(1,2,3,4,5,6)
+            custom_seed(4)
                 
             </code>
             <code data-type="sample-code">
-            set.seed(4)
             sample1 <- resample(model.pop, 12)
             dicerolls <- data.frame(sample1)
             
@@ -25,7 +25,6 @@
                  
             </code>
             <code data-type="solution">
-            set.seed(4)
             sample1 <- resample(model.pop, 12)
             dicerolls <- data.frame(sample1)
             
