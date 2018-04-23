@@ -14,11 +14,10 @@
                 n <- 100
                 number <- c(rep(0,n),rep(1,n),rep(2,n),rep(3,n),rep(4,n), rep(5,n),rep(6,n),rep(7,n),rep(8,n),rep(9,n))
                 fakepop <- data.frame(number)
-                set.seed(4)
+                custom_seed(4)
             </code>
             <code data-type="sample-code">
                 # the fakepop data frame has bee loaded for you
-                set.seed(4)
                 # this will take a random sample of 10 from the fakepop dataframe and save it in a variable called randomsample
                 
                 randomsample <- sample(fakepop, 10)
@@ -31,9 +30,7 @@
             <code data-type="solution">
                 
                 # the fakepop data frame has bee loaded for you
-            
                 # this will take a random sample of 10 from the fakepop dataframe and save it in a variable called randomsample
-                set.seed(4)
                 randomsample <- sample(fakepop, 10)
                 
                 # this will make a histogram of your sample 
