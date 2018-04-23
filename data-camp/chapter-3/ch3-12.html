@@ -13,10 +13,9 @@
                 require(supernova)
                 require(Lock5withR)
                 model.pop <- c(1,2,3,4,5,6)
+                custom_seed(5)
             </code>
             <code data-type="sample-code">
-            set.seed(5)
-            
             # Modify this code from 12 dice rolls to 24 dice rolls 
             sample2 <- resample(model.pop, 12)
             dicerolls <- data.frame(sample2)
@@ -25,7 +24,6 @@
             gf_histogram(..density..~sample2, data=dicerolls, color="darkgray", fill="springgreen", bins=6) 
             </code>
             <code data-type="solution">
-            set.seed(5)
             sample2 <- resample(model.pop, 24)
             dicerolls <- data.frame(sample2)
             
