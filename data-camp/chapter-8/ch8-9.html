@@ -45,20 +45,32 @@
                 
             </code>
             <code data-type="sample-code">
+                
                 # this makes a scatterplot of the raw scores
                 # size makes the points bigger or smaller
                 gf_point(Thumb ~ Height, data = Fingers, size = 4, color = "black") 
 
                 # modify this to make a scatterplot of the zscores
                 # feel free to change the colors
-                gf_point( , size = 4, color = "firebrick")
-
-            </code>
-            <code data-type="solution">
+                gf_point( , data = Fingers, size = 4, color = "firebrick")
                 
             </code>
-            <code data-type="sct">
+            <code data-type="solution">
+               # this makes a scatterplot of the raw scores
+                # size makes the points bigger or smaller
+                gf_point(Thumb ~ Height, data = Fingers, size = 4, color = "black") 
 
+                # modify this to make a scatterplot of the zscores
+                # feel free to change the colors
+                gf_point(zThumb ~ zHeight, data = Fingers, size = 4, color = "firebrick")
+   
+            </code>
+            <code data-type="sct">
+                test_function("gf_point", index = 1)
+                test_function("gf_point", index = 2)
+                test_function_result("gf_point")
+                test_error()
+                
             </code>
             <div data-type="hint">Change Thumb and Height to zThumb and zHeight</div>
         </div>
