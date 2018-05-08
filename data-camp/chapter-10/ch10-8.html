@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 8</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+           
+            #set up exercise 
+             custom_seed(31)
+             Thumb.stats <- favstats(~ Thumb, data = Fingers)
+              bootSDoM <- do(10000) * mean(resample(Fingers$Thumb, 157))
+              simSDoM <- do(10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
+            </code>
+            <code data-type="sample-code">
+            # favstats for Thumb
+
+            # favstats for bootstrapped means
+
+            # favstats for simulated means
+            </code>
+            <code data-type="solution">
+            # favstats for Thumb
+              favstats(~Thumb, data = Fingers)
+            # favstats for bootstrapped means
+              favstats(~mean, data = bootSDoM)
+            # favstats for simulated means
+              favstats(~mean, data = simSDoM)
+            </code>
+            </code>
+            <code data-type="sct">
+              test_function("favstats", args = "data", index = 1)
+              test_function("favstats", args = "data", index = 2)
+              test_function("favstats", args = "data", index = 3)
+              test_error()
+              success_msg("Nice job!")
+            </code>
+            <div data-type="hint">You'll want to use Fingers, bootSDoM, and simSDoM </div>
+        </div>
+    </body>
+</html>
