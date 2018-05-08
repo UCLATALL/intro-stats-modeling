@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 5</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+           
+            #set up exercise 
+             custom_seed(31)
+            </code>
+            <code data-type="sample-code">
+            # Modify to bootstrap 10000 means.
+            bootSDoM <- do(5) * mean(resample(Fingers$Thumb, 157))
+
+            # Make a histogram of these bootstrapped means.
+            </code>
+            <code data-type="solution">
+            # Modify to bootstrap 10000 means.
+            bootSDoM <- do(10000) * mean(resample(Fingers$Thumb, 157))
+
+            # Make a histogram of these bootstrapped means.
+            gf_histogram(~ mean, data = bootSDoM, fill = "darkblue") %>%
+              gf_labs(title = "Bootstrapped Sampling Distribution of Means (n = 157)")
+            </code>
+            <code data-type="sct">
+             test_object("bootSDoM")
+             test_function("gf_histogram", args = "data")
+             test_error()
+            </code>
+            <div data-type="hint">Don't forget to update the do() function!</div>
+        </div>
+    </body>
+</html>
