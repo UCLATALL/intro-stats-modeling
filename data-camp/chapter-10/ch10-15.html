@@ -18,6 +18,7 @@
             # set up exercise 
             Thumb.stats <- favstats(~ Thumb, data = Fingers)
             SE <- Thumb.stats$sd/sqrt(Thumb.stats$n)
+            Empty.model <- lm(Thumb ~ NULL, data = Fingers)
             </code>
             <code data-type="sample-code">
             # This will calculate CI based on the normal distribution.
