@@ -21,10 +21,10 @@
             </code>
             <code data-type="sample-code">
             # this calculates the favstats for Thumb
-               Thumb.stats <- favstats(~ Thumb, data = Fingers)
+             Thumb.stats <- favstats(~ Thumb, data = Fingers)
 
             # modify this code to generate samples from a population with a mean of 58.7
-                simSDoMlower <- do (10000) * mean(rnorm(157, , Thumb.stats$sd))
+             simSDoMlower <- do (10000) * mean(rnorm(157, , Thumb.stats$sd))
                 
             # make a histogram of this sampling distribution
             # draw a vertical line at the mean of the sampling distribution (58.7)
@@ -36,7 +36,7 @@
             Thumb.stats <- favstats(~ Thumb, data = Fingers)
 
             # modify this code to generate samples from a population with a mean of 58.7
-             simSDoMlower <- do (10000) * mean(rnorm(157, , Thumb.stats$sd))
+             simSDoMlower <- do (10000) * mean(rnorm(157,58.7, Thumb.stats$sd))
                 
             # make a histogram of this sampling distribution
             # draw a vertical line at the mean of the sampling distribution (58.7)
