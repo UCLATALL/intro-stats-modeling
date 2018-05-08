@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 10</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+           
+            </code>
+            <code data-type="sample-code">
+            # here we saved the standard error in SE
+            SE <- Thumb.stats$sd / sqrt(157)
+
+            # calculate the confidence interval using SE
+            # upper bound
+            Thumb.stats$mean +
+  
+            # lower bound
+            Thumb.stats$ mean - 
+            </code>
+            <code data-type="solution">
+             # upper bound
+            Thumb.stats$mean + 2*SE
+  
+            # lower bound
+            Thumb.stats$ mean - 2*SE
+
+            </code>
+            </code>
+            <code data-type="sct">
+              test_output_contains("Thumb.stats$mean + 2*SE")
+              test_output_contains("Thumb.stats$ mean - 2*SE")
+              test_error()
+              success_msg("Super!")
+            </code>
+            <div data-type="hint">Did you account for 2 standard deviations in your calculation?</div>
+        </div>
+    </body>
+</html>
