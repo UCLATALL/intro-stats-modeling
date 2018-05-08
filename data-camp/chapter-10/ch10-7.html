@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 6</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+           
+            #set up exercise 
+             custom_seed(31)
+             Thumb.stats <- favstats(~ Thumb, data = Fingers)
+            </code>
+            <code data-type="sample-code">
+            # This generates and plots a sampling distribution of 10000 bootstrapped means.
+              bootSDoM <- do(10000) * mean(resample(Fingers$Thumb, 157))
+              gf_histogram(~ mean, data = bootSDoM, fill = "darkblue") %>%
+                 gf_labs(title = "Bootstrapped Sampling Distribution of Means (n = 157)")
+
+            # Modify this code to generate and plot a sampling distribution of 10000 simulated means.
+              simSDoM <- 
+              gf_histogram(~ mean, data = simSDoM, fill = "blue") %>%
+                 gf_labs(title = "Simulated Sampling Distribution of Means (n = 157)")
+                 
+            <code data-type="solution">
+            # This generates and plots a sampling distribution of 10000 bootstrapped means.
+              bootSDoM <- do(10000) * mean(resample(Fingers$Thumb, 157))
+              gf_histogram(~ mean, data = bootSDoM, fill = "darkblue") %>%
+                  gf_labs(title = "Bootstrapped Sampling Distribution of Means (n = 157)")
+
+            # Modify this code to generate and plot a sampling distribution of 10000 simulated means.
+              simSDoM <- do(10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
+              gf_histogram(~ mean, data = simSDoM, fill = "blue") %>%
+                 gf_labs(title = "Simulated Sampling Distribution of Means (n = 157)")
+            </code>
+            </code>
+            <code data-type="sct">
+             test_object("bootSDoM")
+             test_function("gf_histogram", args = "data", index = 1)
+             test_object("simSDoM")
+             test_function("mean", index = 2)
+             test_function("rnorm")
+             test_function("gf_histogram", args = "data", index = 2) 
+             test_error()
+             success_msg("Great thinking!")
+            </code>
+            <div data-type="hint">Think about the difference between a sampling difference of bootstrapped means and a sampling distribution of simulated means. What function could you use to simulate a distribution? </div>
+        </div>
+    </body>
+</html>
