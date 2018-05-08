@@ -31,6 +31,9 @@
             Thumb.stats$ mean - 
             </code>
             <code data-type="solution">
+            # here we saved the standard error in SE
+            SE <- Thumb.stats$sd / sqrt(157)
+                  
              # upper bound
             Thumb.stats$mean + 2*SE
   
