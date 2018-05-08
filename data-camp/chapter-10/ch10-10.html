@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 10</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+           
+            </code>
+            <code data-type="sample-code">
+            Thumb.stats <- favstats(~ Thumb, data = Fingers)
+            
+            # estimate the standard error
+            </code>
+            <code data-type="solution">
+             Thumb.stats <- favstats(~ Thumb, data = Fingers)
+
+             # estimate the standard error
+            Thumb.stats$sd / sqrt(157)
+
+            </code>
+            </code>
+            <code data-type="sct">
+              test_output_contains("Thumb.stats$sd / sqrt(157)")
+              test_function("sqrt")
+              test_error()
+              success_msg("Nice job!")
+            </code>
+            <div data-type="hint">Review the formula for standard error above if you're not sure how to calculate it</div>
+        </div>
+    </body>
+</html>
