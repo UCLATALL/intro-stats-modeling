@@ -8,32 +8,43 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">    
-            require(mosaic)
-            require(supernova)
-            require(Lock5withR)
-            require(tidyverse)
-            require(ggformula)
-            require(Lock5Data)
-            require(okcupiddata)
-            Fingers <- supernova::Fingers
-            Thumb.stats <- favstats(~ Thumb, data = Fingers)
-            custom_seed(1)
-            simSDoM <- do(10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
-   
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+           
+            #set up exercise 
+             Thumb.stats <- favstats(~ Thumb, data = Fingers) #creates Thumb.stats 
+             set.seed(1) #sets the random number generator
+             simSDoM <- do (10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd)) #simulates sampling distribution
             </code>
             <code data-type="sample-code">
-            #arrange simSDoM in order by mean 
+             # arrange simSDoM in descending order by mean
             simSDoM <- 
-            
-            #print a few lines of simSDoM
 
+            # print first 6 lines of simSDoM
+  
+            # print last 6 lines of simSDoM
             </code>
             <code data-type="solution">
+            # arrange simSDoM in descending order by mean
+            simSDoM <- arrange(simSDoM, desc(mean))
 
+            # print first 6 lines of simSDoM
+            head(simSDoM)
+                       
+            # print last 6 lines of simSDoM
+            tail(simSDoM)
             </code>
-            
             <code data-type="sct">
-       
+             test_object("simSDoM")
+             test_function_result("head")
+             test_function_result("tail")
+             test_error() 
+             success_msg("Great thinking!")
             </code>
         </div>
     </body>
