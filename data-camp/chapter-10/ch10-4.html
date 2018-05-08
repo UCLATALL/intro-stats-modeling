@@ -2,41 +2,59 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Chapter 9 Exercise 1</title>
+        <title>Chapter 10 Exercise 4</title>
         <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
     </head>
     <body>
         <div data-datacamp-exercise data-lang="r">
             <code data-type="pre-exercise-code">    
-            require(mosaic)
-            require(supernova)
-            require(Lock5withR)
-            require(tidyverse)
-            require(ggformula)
-            require(Lock5Data)
-            require(okcupiddata)
-            custom_seed(2)
-            Fingers <- supernova::Fingers
-            Thumb.stats <- favstats(~ Thumb, data = Fingers)
-            simSDoM <- do(10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
-   
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+           
+            #set up exercise 
+             custom_seed(2)
             </code>
             <code data-type="sample-code">
-            # modify this code to generate samples from a population with a mean of 58.7
-            simSDoM <- do(10000) * mean(rnorm( , Thumb.stats$sd))
-            
-            # here is the code to draw a histogram of this sampling distribution with the unlikely and likely zones colored appropriately 
-            simSDoM <- arrange(simSDoM, mean) 
-            
+            # this calculates the favstats for Thumb
+               Thumb.stats <- favstats(~ Thumb, data = Fingers)
 
+            # modify this code to generate samples from a population with a mean of 58.7
+                simSDoMlower <- do (10000) * mean(rnorm(157, , Thumb.stats$sd))
+                
+            # make a histogram of this sampling distribution
+            # draw a vertical line at the mean of the sampling distribution (58.7)
+            # draw a vertical line at our sample mean (60.1)
+             
             </code>
             <code data-type="solution">
+            # this calculates the favstats for Thumb
+            Thumb.stats <- favstats(~ Thumb, data = Fingers)
 
+            # modify this code to generate samples from a population with a mean of 58.7
+             simSDoMlower <- do (10000) * mean(rnorm(157, , Thumb.stats$sd))
+                
+            # make a histogram of this sampling distribution
+            # draw a vertical line at the mean of the sampling distribution (58.7)
+            # draw a vertical line at our sample mean (60.1)
+              gf_histogram(~mean, data = simSDoMlower) %>%
+                gf_vline(xintercept = 58.7, color = "darkorange3") %>%
+                gf_vline(xintercept = Thumb.stats$mean, color = "black") %>%
+                gf_labs(title = "Lower Bound Sampling Distribution of the Mean")
+             
             </code>
-            
             <code data-type="sct">
-       
+                test_function("gf_histogram", args = "data")
+                test_function("gf_vline", args = "xintercept", index = 1) 
+                test_function("gf_vline", args = "xintercept", index = 2)
+                test_error()
+                success_msg("That was tough! Way to work through it.")         
             </code>
+            <div data-type="hint">Use gf_vline() to add a line to your graph. Don't forget the %>% operator!</div>
         </div>
     </body>
 </html>
