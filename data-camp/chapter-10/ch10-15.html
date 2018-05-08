@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 15</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+            # set up exercise 
+            Thumb.stats <- favstats(~ Thumb, data = Fingers)
+            SE <- Thumb.stats$sd/sqrt(Thumb.stats$n)
+            </code>
+            <code data-type="sample-code">
+            # This will calculate CI based on the normal distribution.
+            confint.default(Empty.model)
+
+            # Write code to calculate CI based on the t distribution.
+           
+            </code>
+            <code data-type="solution">
+            # Write code to calculate CI based on the t distribution.
+            Thumb.stats$mean + xqt(.975, df = Thumb.stats$n-1)*SE
+            Thumb.stats$mean - xqt(.975, df = Thumb.stats$n-1)*SE
+            </code>
+            </code>
+            <code data-type="sct">
+              test_function("xqt", args = "df", index = 1)
+              test_function("xqt", args = "df", index = 2)
+              test_error()
+              success_msg("Keep up the great work!")
+            </code>
+            <div data-type="hint">Use xqt() for t distributions</div>
+        </div>
+    </body>
+</html>
