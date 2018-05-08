@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 12</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+            # set up exercise
+             Empty.model <- lm(Thumb ~ NULL, data = Fingers)
+           
+            </code>
+            <code data-type="sample-code">
+            # This calculates the confidence intervals for the parameters of this model using the normal approximation of the sampling distribution.
+            confint.default(Empty.model)
+           
+            </code>
+            <code data-type="solution">
+            # This calculates the confidence intervals for the parameters of this model using the normal approximation of the sampling distribution.
+            confint.default(Empty.model)
+            
+            </code>
+            </code>
+            <code data-type="sct">
+              test_function_result("confint.default")
+              test_error()
+              success_msg("Super!")
+            </code>
+            <div data-type="hint">Just click Run</div>
+        </div>
+    </body>
+</html>
