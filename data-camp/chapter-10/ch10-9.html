@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 9</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+            #set up exercise 
+             custom_seed(31)
+             Thumb.stats <- favstats(~ Thumb, data = Fingers)
+             bootSDoM <- do(10000) * mean(resample(Fingers$Thumb, 157))
+             simSDoM <- do(10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
+            </code>
+            <code data-type="sample-code">
+            #This finds the confidence interval from a simulated sampling distribution.
+            simSDoM <- arrange(simSDoM, desc(mean))
+            simSDoM$mean[250] 
+            simSDoM$mean[9750] 
+
+            #Modify to find the confidence interval from the bootstrapped sampling distribution (bootSDoM).
+            simSDoM <- arrange(simSDoM, desc(mean))
+            simSDoM$mean[250] 
+            simSDoM$mean[9750]
+            </code>
+            <code data-type="solution">
+            #This calculates the critical distance from a simulated sampling distribution.
+            simSDoM <- arrange(simSDoM, desc(mean))
+            simSDoM$mean[250] 
+            simSDoM$mean[9750] 
+
+            #Modify to find the confidence interval from the bootstrapped sampling distribution (bootSDoM).
+            bootSDoM <- arrange(bootSDoM, desc(mean))
+            bootSDoM$mean[250] 
+            bootSDoM$mean[9750]
+            </code>
+            </code>
+            <code data-type="sct">
+              test_object("bootSDoM")
+              test_function("arrange")
+              test_function("desc")
+              test_output_contains("bootSDoM$mean[250]")
+              test_output_contains("bootSDoM$mean[9750]")
+              test_error()
+              success_msg("Nice job!")
+            </code>
+            <div data-type="hint">Have you changed the variable to bootSDoM?</div>
+        </div>
+    </body>
+</html>
