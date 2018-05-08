@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 14</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+            
+            </code>
+            <code data-type="sample-code">
+            # Try finding the critical t in these different situations
+
+            # When the sample size is 500 
+            xqt(.975,df=)
+
+            # When the sample size is 157 (like in our Fingers data)
+            xqt(.975,df=)
+
+            # When the sample size is 50
+            xqt(.975,df=)
+
+            # When the sample size is 20
+            xqt(.975,df=)
+           
+            </code>
+            <code data-type="solution">
+            # Run this code
+            xqt(.975,df=499)
+            xqt(.975,df=156)
+            xqt(.975,df=49)
+            xqt(.975,df=19)
+            </code>
+            </code>
+            <code data-type="sct">
+              test_function("xqt", args = "df", index = 1)
+              test_function("xqt", args = "df", index = 2)
+              test_function("xqt", args = "df", index = 3)
+              test_function("xqt", args = "df", index = 4)
+              test_error()
+              success_msg("Keep up the great work!")
+            </code>
+            <div data-type="hint">In this case, find degrees of freedom by subtracting 1 from the sample size</div>
+        </div>
+    </body>
+</html>
