@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 17</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+           <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+            # set up exercise 
+            MindsetMatters$PoundsLost <- MindsetMatters$Wt2 - MindsetMatters$Wt
+            </code>
+            <code data-type="sample-code">
+            # fit and print the empty model for PoundsLost
+
+
+            # compute the confidence interval around this estimate
+            </code>
+            <code data-type="solution">
+            # fit and print the empty model for PoundsLost
+            Empty.model <- lm(PoundsLost ~ NULL, data = MindsetMatters)
+            Empty.model
+            
+            # compute the confidence interval around this estimate
+            confint(Empty.model)
+            </code>
+            </code>
+            <code data-type="sct">
+              test_object("Empty.model")
+              test_function("lm", args = "data")
+              test_output_contains("Empty.model")
+              test_function_result("confint")
+              test_error()
+              success_msg("Great job!")
+            </code>
+            <div data-type="hint">When creating your empty model, use `PoundsLost ~ NULL`. Remember to use the MindsetMatters data frame</div>
+        </div>
+    </body>
+</html>
