@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 5</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+           
+            #set up exercise 
+             custom_seed(31)
+            </code>
+            <code data-type="sample-code">
+            # This selects a bootstrapped sample and calculates the mean 5 times.
+            # These 5 means are saved in bootSDoM.
+            bootSDoM <- do(5) * mean(resample(Fingers$Thumb, 157))
+
+            # This prints bootSDoM.
+            bootSDoM
+
+            </code>
+            <code data-type="solution">
+             # This selects a bootstrapped sample and calculates the mean 5 times.
+            # These 5 means are saved in bootSDoM.
+            bootSDoM <- do(5) * mean(resample(Fingers$Thumb, 157))
+
+            # This prints bootSDoM.
+            bootSDoM
+            </code>
+            <code data-type="sct">
+             test_object("bootSDoM")
+             test_output_contains("bootSDoM")
+             test_error()
+            </code>
+            <div data-type="hint">Just click Run</div>
+        </div>
+    </body>
+</html>
