@@ -30,7 +30,7 @@
               simSDoM <- 
               gf_histogram(~ mean, data = simSDoM, fill = "blue") %>%
                  gf_labs(title = "Simulated Sampling Distribution of Means (n = 157)")
-                 
+            </code>
             <code data-type="solution">
             # This generates and plots a sampling distribution of 10000 bootstrapped means.
               bootSDoM <- do(10000) * mean(resample(Fingers$Thumb, 157))
