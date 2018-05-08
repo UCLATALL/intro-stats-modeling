@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 17</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+           <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+            # set up exercise 
+            MindsetMatters$PoundsLost <- MindsetMatters$Wt2 - MindsetMatters$Wt
+            Empty.model <- lm(PoundsLost ~ NULL, data = MindsetMatters)
+            </code>
+            <code data-type="sample-code">
+            # compute the critical distance
+            </code>
+            <code data-type="solution">
+            # fit and print the empty model for PoundsLost
+            Empty.model <- lm(PoundsLost ~ NULL, data = MindsetMatters)
+            Empty.model
+            
+            # compute the confidence interval around this estimate
+            # there are several possible solutions
+            confint(Empty.model)[2]-confint(Empty.model)[1])/2
+            confint(Empty.model)[2]-mean(MindsetMatters$PoundsLost)
+            </code>
+            </code>
+            <code data-type="sct">
+              test_function("confint")
+              test_error()
+              success_msg("Great job!")
+            </code>
+            <div data-type="hint"></div>
+        </div>
+    </body>
+</html>
