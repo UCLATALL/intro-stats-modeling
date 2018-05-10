@@ -30,7 +30,7 @@
             </code>
             <code data-type="solution">
               # change the population mean to 55 
-              SDoM <- do(10000) * mean(rnorm(55, Thumb.stats$mean, Thumb.stats$sd))
+              SDoM <- do(10000) * mean(rnorm(157, 55, Thumb.stats$sd))
                       
               # this creates a histogram of this SDoM 
               gf_histogram(~ mean, data = SDoM, bins = 100, fill = "blue") %>%
