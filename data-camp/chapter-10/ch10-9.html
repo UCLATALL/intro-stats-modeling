@@ -22,7 +22,7 @@
              simSDoM <- do(10000) * mean(rnorm(157, Thumb.stats$mean, Thumb.stats$sd))
             </code>
             <code data-type="sample-code">
-            #This finds the confidence interval from a simulated sampling distribution.
+            #This calculates the critical distance from a simulated sampling distribution.
             simSDoM <- arrange(simSDoM, desc(mean))
             simSDoM$mean[250] 
             simSDoM$mean[9750] 
