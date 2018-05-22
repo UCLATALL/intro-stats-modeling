@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 17</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+           <code data-type="pre-exercise-code">    
+            require(supernova)
+            require(Lock5Data)
+            require(mosaic)
+            require(Lock5withR)
+            custom_seed(100)
+            bootSDob1 <- do(10000) * b1(Thumb ~ Height, data = resample(Fingers, 157))
+            </code>
+            <code data-type="sample-code">
+              # fit the complex model and save it as Height.model
+
+              # get the confidence interval around these best fitting estimates          
+            </code>
+            <code data-type="solution">
+              # fit the complex model and save it as Height.model
+              Height.model <- lm(Thumb ~ Height, data = Fingers)
+
+              # get the confidence interval around these best fitting estimates
+              confint(Height.model)
+            </code>
+            </code>
+            <code data-type="sct">
+              test_object("Height.model")
+              test_function_result("confint")
+              test_error()
+            success_msg("Well done!")
+            </code>
+            <div data-type="hint"></div>
+        </div>
+    </body>
+</html>
