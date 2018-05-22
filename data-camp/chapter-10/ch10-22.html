@@ -20,15 +20,24 @@
             bootSDob1 <- do(10000) * b1(Thumb ~ Height2Group, data = resample(Fingers, 157))
             </code>
             <code data-type="sample-code">
+               # here we fit the Height2Group model of Thumb
+                Height2Group.model <- lm(Thumb ~ Height2Group, data = Fingers)
 
+                # try out confint() on this model               
             </code>
             <code data-type="solution">
+            # here we fit the Height2Group model of Thumb
+            Height2Group.model <- lm(Thumb ~ Height2Group, data = Fingers)
 
+             # try out confint() on this model
+            confint(Height2Group.model) 
             </code>
             </code>
             <code data-type="sct">
-           
-                
+            test_object("Height2Group.model")
+            test_function_result("confint")
+            test_error()
+            success_msg("Keep up the good work!")
             </code>
             <div data-type="hint"></div>
         </div>
