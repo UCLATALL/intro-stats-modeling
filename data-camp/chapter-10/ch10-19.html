@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 17</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+           <code data-type="pre-exercise-code">    
+            require(supernova)
+            require(Lock5Data)
+            require(Mosaic)
+            require(Lock5withR)
+            custom_seed(51)
+            </code>
+            <code data-type="sample-code">
+            # edit this code to bootstrap 10000 mean differences 
+            SDob1 <- do() * b1()
+            
+            # write code to look at the first few lines of SDob1
+            </code>
+            <code data-type="solution">
+            # edit this code to boostrap 10000 random mean differences
+            bootSDob1 <- do(10000) * b1(Thumb ~ Height2Group, data = resample(Fingers, 157))
+
+            # write code to look at the first few lines of bootSDob1
+            head(bootSDob1)
+            </code>
+            </code>
+            <code data-type="sct">
+            test_object("bootSDob1")
+            test_function("head")
+            test_error()
+            success_msg("Great work!")
+            </code>
+            <div data-type="hint"></div>
+        </div>
+    </body>
+</html>
