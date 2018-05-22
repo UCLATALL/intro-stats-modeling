@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 17</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+           <code data-type="pre-exercise-code">    
+            require(supernova)
+            require(Lock5Data)
+            require(mosaic)
+            require(Lock5withR)
+            custom_seed(51)
+            Fingers$Height2Group <- ntile(Fingers$Height, 2)
+            Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))
+            Height2Group.model <- lm(Thumb ~ Height2Group, data = Fingers)
+            bootSDob1 <- do(10000) * b1(Thumb ~ Height2Group, data = resample(Fingers, 157))
+            </code>
+            <code data-type="sample-code">
+            # arrange b1s in descending order
+            bootSDob1 <- 
+  
+            # print the 250th b1
+  
+            # print the 9750th b1
+            </code>
+            <code data-type="solution">
+              # arrange b1s in descending order
+              bootSDob1 <- arrange(bootSDob1, desc(b1))
+              # print the 250th b1
+              # print the 9750th b1
+              bootSDob1$b1[250]
+              bootSDob1$b1[9750]
+            </code>
+            </code>
+            <code data-type="sct">
+              test_object("bootSDob1")
+              test_output_contains("bootSDob1$b1[250]")
+              test_output_contains("bootSDob1$b1[9750]")
+              test_error()
+              success_msg("Great work!")
+            </code>
+            <div data-type="hint"></div>
+        </div>
+    </body>
+</html>
