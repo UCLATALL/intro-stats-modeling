@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 10 Exercise 17</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+           <code data-type="pre-exercise-code">    
+            require(supernova)
+            require(Lock5Data)
+            require(mosaic)
+            require(Lock5withR)
+            custom_seed(51)
+            Fingers$Height2Group <- ntile(Fingers$Height, 2)
+            Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))
+            Height2Group.model <- lm(Thumb ~ Height2Group, data = Fingers)
+            bootSDob1 <- do(10000) * b1(Thumb ~ Height2Group, data = resample(Fingers, 157))
+            </code>
+            <code data-type="sample-code">
+            # make a histogram of b1
+
+            # get the favstats for b1
+            </code>
+            <code data-type="solution">
+            # make a histogram of b1
+              gf_histogram(~ b1, data = bootSDob1, fill = "seagreen", alpha = 1)
+ 
+            # get the favstats for b1
+              favstats(~ b1, data = bootSDob1)
+            </code>
+            </code>
+            <code data-type="sct">
+            test_function("gf_histogram", args = "data")
+            test_function("favstats", arags = "bootSDob1")
+            test_error()
+            success_msg("Great work!")
+            </code>
+            <div data-type="hint"></div>
+        </div>
+    </body>
+</html>
