@@ -13,6 +13,9 @@
             require(mosaic)
             require(Lock5withR)
             custom_seed(51)
+            Fingers$Height2Group <- ntile(Fingers$Height, 2)
+            Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))
+            Height2Group.model <- lm(Thumb ~ Height2Group, data = Fingers)
             </code>
             <code data-type="sample-code">
             # edit this code to bootstrap 10000 mean differences 
