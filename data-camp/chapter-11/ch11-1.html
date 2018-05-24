@@ -18,13 +18,23 @@
            
             </code>
             <code data-type="sample-code">
+            # fit the two-group model and save it as Condition.model
+            Condition.model <- 
+
+            # print out the best fitting estimates
             
             </code>
             <code data-type="solution">
+             # fit the two-group model and save it as Condition.model
+             Condition.model <- lm(Tip ~ Condition, data = TipExperiment)
+
+             # print out the best fitting estimates
+             Condition.model
             
             </code>
             <code data-type="sct">
-             
+             test_object("Condition.model")
+             test_output_contains("Condition.model")
              test_error() 
              success_msg("Great thinking!")
             </code>
