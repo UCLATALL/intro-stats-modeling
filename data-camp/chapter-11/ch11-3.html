@@ -15,18 +15,26 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
+             custom_seed(50)
            
             </code>
             <code data-type="sample-code">
-            
+            # run this code
+            SDob1 <- do(10000) * b1(Tip ~ Condition, data = resample(TipExperiment, 44))
+
+            # show the first 6 lines of this data frame
             </code>
             <code data-type="solution">
-            
+            # run this code
+            SDob1 <- do(10000) * b1(Tip ~ Condition, data = resample(TipExperiment, 44))
+
+            # show the first 6 lines of this data frame
+            head(SDob1)
             </code>
             <code data-type="sct">
-             
-             test_error() 
-             success_msg("Great thinking!")
+            test_object("SDob1")
+            test_error() 
+            success_msg("Great thinking!")
             </code>
         </div>
     </body>
