@@ -15,18 +15,21 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
-           
+             Condition.model <- lm(Tip ~ Condition, data = TipExperiment)
             </code>
             <code data-type="sample-code">
+             # take a look at the sum of squares from the Condition.model
             
             </code>
             <code data-type="solution">
-            
+            # take a look at the sum of squares from the Condition.model
+             supernova(Condition.model)
             </code>
             <code data-type="sct">
-             
-             test_error() 
-             success_msg("Great thinking!")
+             test_function("supernova")
+             test_output_contains("supernova(Condition.model)")
+             test_error()
+             success_msg("Great work!")
             </code>
         </div>
     </body>
