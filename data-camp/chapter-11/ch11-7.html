@@ -15,18 +15,22 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
+             custom_seed(20)
            
             </code>
             <code data-type="sample-code">
+                # modify this to calculate PRE based on shuffled values of Condition
+                PRE(Tip ~ Condition, data = TipExperiment)
             
             </code>
             <code data-type="solution">
-            
+                 PRE(Tip ~ shuffle(Condition), data = TipExperiment)
             </code>
             <code data-type="sct">
-             
+             test_function("shuffle")
+             test_function_result("PRE")
              test_error() 
-             success_msg("Great thinking!")
+             success_msg("That was a tough one. Way to think through it!")
             </code>
         </div>
     </body>
