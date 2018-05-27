@@ -16,6 +16,8 @@
              require(Lock5withR)
              require(okcupiddata)
              custom_seed(20)
+             sampleF <- fVal(Tip ~ Condition, data = TipExperiment)
+            SDoF <- do(10000) * fVal(Tip ~ shuffle(Condition), data = TipExperiment)
             </code>
             <code data-type="sample-code">
             sampleF <- fVal(Tip ~ Condition, data = TipExperiment)
