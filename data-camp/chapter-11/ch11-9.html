@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Chapter 10 Exercise 1</title>
+        <title>Chapter 11 Exercise 9</title>
         <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
     </head>
     <body>
@@ -15,18 +15,37 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
+             custom_seed(213)
            
             </code>
             <code data-type="sample-code">
-            
+            samplePRE <- PRE(Tip ~ Condition, data = TipExperiment)
+            SDoPRE <- do(10000) * PRE(Tip ~ shuffle(Condition), data = TipExperiment)
+
+            # modify this to fill the PREs greater than the samplePRE in a different  color
+            gf_histogram(~ PRE, data = SDoPRE)
+                
+            # what is the proportion of randomized PREs that are greater than .0729?
+
             </code>
             <code data-type="solution">
+                
+            samplePRE <- PRE(Tip ~ Condition, data = TipExperiment)
+            SDoPRE <- do(10000) * PRE(Tip ~ shuffle(Condition), data = TipExperiment)
+
+            # modify this to fill the PREs greater than the samplePRE in a different  color
+            gf_histogram(~ PRE, data = SDoPRE, fill = ~PRE > samplePRE)
+
+            # what is the proportion of randomized PREs that are greater than .0729?
+            tally(~ PRE>samplePRE, data = SDoPRE, format = "proportion")
             
             </code>
             <code data-type="sct">
-             
+             test_object("SDoPRE")
+             test_function("gf_histogram", args = c("data", "fill"))
+             test_function("tally", args = c("data", "format"))
              test_error() 
-             success_msg("Great thinking!")
+             success_msg("Nice work!")
             </code>
         </div>
     </body>
