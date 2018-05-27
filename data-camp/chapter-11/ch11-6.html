@@ -18,15 +18,27 @@
            
             </code>
             <code data-type="sample-code">
+                # calculates PRE (of a model explaining variation in Tip with Condition)
+                # based on our TipExperiment data
+                samplePRE <- PRE(Tip ~ Condition, data = TipExperiment)
+
+                # write code to print out the samplePRE
             
             </code>
             <code data-type="solution">
+                # calculates PRE (of a model explaining variation in Tip with Condition)
+                # based on our TipExperiment data
+                samplePRE <- PRE(Tip ~ Condition, data = TipExperiment)
+
+                # write code to print out the samplePRE
+                samplePRE
             
             </code>
             <code data-type="sct">
-             
+             test_object("samplePRE")
+             test_output_contains("samplePRE")
              test_error() 
-             success_msg("Great thinking!")
+             success_msg("Nice!")
             </code>
         </div>
     </body>
