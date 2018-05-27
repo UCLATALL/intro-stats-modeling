@@ -19,12 +19,26 @@
            
             </code>
             <code data-type="sample-code">
+             Empty.model <- lm(Tip ~ NULL, data = TipExperiment)
+             Condition.model <- lm(Tip ~ Condition, data = TipExperiment)
+
+             # print out the supernova table comparing these two models
             
             </code>
             <code data-type="solution">
+             Empty.model <- lm(Tip ~ NULL, data = TipExperiment)
+             Condition.model <- lm(Tip ~ Condition, data = TipExperiment)
+
+             # print out the supernova table comparing these two models
+             supernova(Condition.model)
            
             </code>
             <code data-type="sct">
+             test_object("Empty.model")
+             test_object("Condition.model")
+             test_function("supernova")
+             test_error()
+             success_msg("Keep up the great work!")
             </code>
         </div>
     </body>
