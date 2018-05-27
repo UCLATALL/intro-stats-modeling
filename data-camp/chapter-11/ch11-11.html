@@ -15,16 +15,33 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
-           
+             custom_seed(20)
             </code>
             <code data-type="sample-code">
-            
+            sampleF <- fVal(Tip ~ Condition, data = TipExperiment)
+            SDoF <- do(10000) * fVal(Tip ~ shuffle(Condition), data = TipExperiment)
+
+            # modify this to fill the Fs greater than the sampleF in a different  color
+            gf_histogram(~ fVal, data = SDoF)
+
+            # what is the proportion of randomized Fs that are greater than 3.305?
+
             </code>
             <code data-type="solution">
+            sampleF <- fVal(Tip ~ Condition, data = TipExperiment)
+            SDoF <- do(10000) * fVal(Tip ~ shuffle(Condition), data = TipExperiment)
+
+            # modify this to fill the Fs greater than the sampleF in a different  color
+            gf_histogram(~ fVal, data = SDoF, fill = ~fVal > sampleF)
+
+            # what is the proportion of randomized Fs that are greater than 3.305?
+            tally(~ fVal>sampleF, data = SDoF, format = "proportion")
             
             </code>
             <code data-type="sct">
-             
+             test_object("SDoF")
+             test_function("gf_histogram", args = c("data", "fill"))
+             test_function("tally", args = c("data", "format"))
              test_error() 
              success_msg("Great thinking!")
             </code>
