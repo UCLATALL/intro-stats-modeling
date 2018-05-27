@@ -18,15 +18,22 @@
            
             </code>
             <code data-type="sample-code">
+            sampleF <- fVal(Tip ~ Condition, data = TipExperiment)
+
+            # write code to print out the sampleF
             
             </code>
             <code data-type="solution">
+            sampleF <- fVal(Tip ~ Condition, data = TipExperiment)
+
+            # write code to print out the sampleF
+            sampleF
             
             </code>
             <code data-type="sct">
-             
-             test_error() 
-             success_msg("Great thinking!")
+            test_output_contains("sampleF")
+            test_error() 
+            success_msg("Great thinking!")
             </code>
         </div>
     </body>
