@@ -15,16 +15,27 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
-             custom_seed(50)
+             Fingers$Height3Group <- factor(ntile(Fingers$Height, 3), levels = c(1:3), labels = c("short","medium","tall")
            
             </code>
             <code data-type="sample-code">
+             # fit and print the Height3Group model of Thumb length
+
+             # fit and print the empty model of Thumb length
             
             </code>
             <code data-type="solution">
+            # fit and print the Height3Group model of Thumb length
+            lm(Thumb ~ Height3Group, data = Fingers)
+            # fit and print the empty model of Thumb length
+            lm(Thumb ~ NULL, data = Fingers)
            
             </code>
             <code data-type="sct">
+             test_function("lm", args = "data", index = 1)
+             test_function("lm", args = "data", index = 2) 
+             test_error()
+             success_msg("Great thinking!")
             </code>
         </div>
     </body>
