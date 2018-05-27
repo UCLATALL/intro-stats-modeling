@@ -16,16 +16,25 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
-             custom_seed(50)
-           
             </code>
             <code data-type="sample-code">
-            
+             # fit the null model (also print out best fitting estimates)
+
+             # fit the complex model (also print out best fitting estimates)
             </code>
             <code data-type="solution">
+             # fit the null model (also print out best fitting estimates)
+            lm(Tip ~ NULL, data = TipExperiment)
+
+            # fit the complex model (also print out best fitting estimates)
+            lm(Tip ~ Condition, data = TipExperiment)
            
             </code>
             <code data-type="sct">
+            test_function("lm", args = "data", index = 1)
+            test_function("lm", args = "data", index = 2)
+            test_error()
+            success_msg("Keep up the great work!")
             </code>
         </div>
     </body>
