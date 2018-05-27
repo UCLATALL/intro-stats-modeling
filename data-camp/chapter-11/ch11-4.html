@@ -18,13 +18,20 @@
            
             </code>
             <code data-type="sample-code">
+             Condition.model <- lm(Tip ~ Condition, data = TipExperiment)
+             
+             # add code to calculate the 95% confidence interval around our estimates
             
             </code>
             <code data-type="solution">
-            
+            Condition.model <- lm(Tip ~ Condition, data = TipExperiment)
+
+             # add code to calculate the 95% confidence interval around our estimates
+             confint(Condition.model)
             </code>
             <code data-type="sct">
-             
+             test_function("confint")
+             test_function_result("confint")
              test_error() 
              success_msg("Great thinking!")
             </code>
