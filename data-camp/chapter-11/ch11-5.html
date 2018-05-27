@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Chapter 10 Exercise 1</title>
+        <title>Chapter 11 Exercise 5</title>
         <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
     </head>
     <body>
@@ -18,15 +18,23 @@
            
             </code>
             <code data-type="sample-code">
+                Condition.model <- lm(Tip ~ Condition, data = TipExperiment)
+
+                # add code to get the supernova table for this model
             
             </code>
             <code data-type="solution">
+                Condition.model <- lm(Tip ~ Condition, data = TipExperiment)
+
+                # add code to get the supernova table for this model
+                supernova(Condition.model)
             
             </code>
             <code data-type="sct">
-             
+             test_function("supernova")
+             test_function_result("supernova")
              test_error() 
-             success_msg("Great thinking!")
+             success_msg("Keep up the good work!")
             </code>
         </div>
     </body>
