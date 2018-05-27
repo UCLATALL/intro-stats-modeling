@@ -24,15 +24,14 @@
           
             </code>
             <code data-type="solution">
-             Fingers$Height3Group <- factor(ntile(Fingers$Height, 3), levels = c(1:3), labels = c("short","medium","tall")
-            # fit and print the Height3Group model of Thumb length
+             # fit and print the Height3Group model of Thumb length
             lm(Thumb ~ Height3Group, data = Fingers)
-            # fit and print the empty model of Thumb length
+             # fit and print the empty model of Thumb length
             lm(Thumb ~ NULL, data = Fingers)
-           
             </code>
             <code data-type="sct">
-
+            test_function("lm")
+            
             </code>
         </div>
     </body>
