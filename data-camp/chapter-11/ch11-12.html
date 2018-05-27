@@ -16,16 +16,23 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
-             custom_seed(50)
+             sampleF <- fVal(Tip ~ Condition, data = TipExperiment)
            
             </code>
             <code data-type="sample-code">
+             # edit this to explore the F distribution with df model = 6
+            xpf(sampleF, df1 = 1, df2 = 42)
             
             </code>
             <code data-type="solution">
+            # edit this to explore the F distribution with df model = 6
+            xpf(sampleF, df1 = 6, df2 = 42)
            
             </code>
             <code data-type="sct">
+            test_function("xpf", args = c("df1", "df2"))
+            test_error()
+            success_msg("Great job!")
             </code>
         </div>
     </body>
