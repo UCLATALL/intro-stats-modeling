@@ -15,16 +15,23 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
-           
+             custom_seed(21)
             </code>
             <code data-type="sample-code">
-            
+            # modify this to calculate 10,000 PREs based on shuffled data
+            SDoPRE <- PRE(Tip ~ shuffle(Condition), data = TipExperiment)
+
+            # print the first 6 lines of SDoPRE
             </code>
             <code data-type="solution">
-            
+            SDoPRE <- do(10000) * PRE(Tip ~ shuffle(Condition), data = TipExperiment)
+            head(SDoPRE)
             </code>
             <code data-type="sct">
-             
+             test_function("do")
+             test_function("PRE")
+             test_object("SDoPRE")
+             test_function("head")
              test_error() 
              success_msg("Great thinking!")
             </code>
