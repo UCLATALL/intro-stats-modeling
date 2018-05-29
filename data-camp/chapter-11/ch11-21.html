@@ -15,16 +15,26 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
-             custom_seed(50)
+             custom_seed(51)
            
             </code>
             <code data-type="sample-code">
+             # create a sampling distribution of F generated from the empty model
+
+             # print the first 6 rows
             
             </code>
             <code data-type="solution">
-           
+             # create a sampling distribution of F generated from the empty model
+             SDoF <- do(10000) * fVal(Thumb ~ shuffle(Height), data = Fingers)
+             # print the first 6 rows
+             head(SDoF)
             </code>
             <code data-type="sct">
+             test_object("SDoF")
+             test_function("head") 
+             test_error()
+             success_msg("Great work!")
             </code>
         </div>
     </body>
