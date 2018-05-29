@@ -14,8 +14,8 @@
             require(Lock5Data)
             require(Lock5withR)
             custom_seed(51)
-            Fingers$Height2Group <- ntile(Fingers$Height, 2) 
-            Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))           
+            Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))    
+            Fingers$Height2Group <- ntile(Fingers$Height, 2)                         
             Height2Group.model <- lm(Thumb ~ Height2Group, data = Fingers)
             bootSDob1 <- do(10000) * b1(Thumb ~ Height2Group, data = resample(Fingers, 157))
             </code>
