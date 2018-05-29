@@ -14,6 +14,8 @@
             library(Lock5Data)
             library(Lock5withR)
             library(okcupiddata)
+            set.seed(51)
+            bootSDob1 <- do(10000) * b1(Thumb ~ Height2Group, data = resample(Fingers, 157))
             
            
             </code>
