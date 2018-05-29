@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 11 Exercise 32</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5Data)
+             require(Lock5withR)
+             require(okcupiddata)
+             require(fivethirtyeight)
+             custom_seed(41)
+                
+           
+            </code>
+            <code data-type="sample-code">
+            # we've saved the sample F
+            sampleF <- fVal(avg_hatecrimes_per_100k_fbi ~ median_house_inc, data = hate_crimes)
+
+            # create sampling distribution of randomized Fs
+            SDoF <- 
+
+            # depict the sampling distribution in a histogram
+
+            # run a tally
+
+            </code>
+            <code data-type="solution">
+            # we've saved the sample PRE
+            sampleF <- fVal(avg_hatecrimes_per_100k_fbi ~ median_house_inc, data = hate_crimes)
+
+            # create sampling distribution of randomized PREs
+            SDoF <- do(10000) * fVal(avg_hatecrimes_per_100k_fbi ~ shuffle(median_house_inc), data = hate_crimes)
+
+            # depict the sampling distribution in a histogram
+            gf_histogram(~ fVal, data = SDoF, fill = ~fVal>sampleF)
+
+            # run a tally
+            tally(~fVal > sampleF, data = SDoF, format = "proportion")
+           
+            </code>
+            <code data-type="sct">
+             test_object("sampleF")
+             test_object("SDoF")
+             test_function("gf_histogram")
+             test_function("tally")
+             test_error()
+             success_msg("Great thinking!")
+            </code>
+        </div>
+    </body>
+</html>
