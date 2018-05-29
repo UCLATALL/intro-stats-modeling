@@ -19,12 +19,22 @@
            
             </code>
             <code data-type="sample-code">
+             # find and print the best fitting estimates for the unemployment model
+
+             # find and print the best fitting estimates for the income model
             
             </code>
             <code data-type="solution">
-           
+             # find and print the best fitting estimates for the unemployment model
+             lm(avg_hatecrimes_per_100k_fbi ~ share_unemp_seas, data = hate_crimes)
+             # find and print the best fitting estimates for the income model
+             lm(avg_hatecrimes_per_100k_fbi ~ median_house_inc, data = hate_crimes)
             </code>
             <code data-type="sct">
+             test_function("lm", index = 1)
+             test_function("lm", index = 2) 
+             test_error()
+             success_msg("Keep up the great work!")
             </code>
         </div>
     </body>
