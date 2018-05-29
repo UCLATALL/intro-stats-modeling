@@ -15,16 +15,34 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
-             custom_seed(50)
+             custom_seed(15)
            
             </code>
             <code data-type="sample-code">
+             # create a randomized sampling distribution of PREs
+                SDoPRE <-
+
+                # how many of our randomized PREs are greater than our sample PRE
+                samplePRE <- PRE(Thumb ~ Height, data = Fingers)
+                tally()
             
             </code>
             <code data-type="solution">
+                # create a randomized sampling distribution of PREs
+                SDoPRE <- do(10000) * PRE(Thumb ~ shuffle(Height), data = Fingers)
+
+                # how many of our randomized PREs are greater than our sample PRE
+                samplePRE <- PRE(Thumb ~ Height, data = Fingers)
+                tally(~PRE>samplePRE, data = SDoPRE)
            
             </code>
             <code data-type="sct">
+                test_object("SDoPRE")
+                test_object("samplePRE")
+                test_function("tally")
+                test_error()
+                success_msg("Great thinking!")
+           
             </code>
         </div>
     </body>
