@@ -15,16 +15,24 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
-             custom_seed(50)
-           
+
             </code>
             <code data-type="sample-code">
+            # Can you arrange the data frame to show you the places with the highest hate crime rates? Can you just print the 6 states with the highest crime rates?
             
             </code>
             <code data-type="solution">
-           
+           # Can you arrange the data frame to show you the places with the highest hate crime rates? Can you just print the 6 states with the highest crime rates?
+            head(arrange(hate_crimes, desc(avg_hatecrimes_per_100k_fbi)))
+
+            hate_crimes <- arrange(hate_crimes, desc(avg_hatecrimes_per_100k_fbi))
+            head(select(hate_crimes, state, avg_hatecrimes_per_100k_fbi))
             </code>
             <code data-type="sct">
+            test_function("head") 
+            test_object("hate_crimes")
+            test_error()
+            
             </code>
         </div>
     </body>
