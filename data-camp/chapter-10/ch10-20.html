@@ -13,7 +13,9 @@
             require(supernova)
             require(Lock5Data)
             require(Lock5withR)
-            Fingers$Height2Group <- ntile(Fingers$Height, 2)                         
+            custom_seed(51) 
+            Fingers$Height2Group <- ntile(Fingers$Height, 2)
+            Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))                       
             bootSDob1 <- do(10000) * b1(Thumb ~ Height2Group, data = resample(Fingers, 157))
             </code>
             <code data-type="sample-code">
