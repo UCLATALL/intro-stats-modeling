@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 11 Exercise 20</title>
+        <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+    </head>
+    <body>
+        <div data-datacamp-exercise data-lang="r">
+            <code data-type="pre-exercise-code">    
+            #load packages
+             require(ggformula)
+             require(mosaic)
+             require(supernova)
+             require(Lock5withR)
+             require(Lock5Data)
+             require(fivethirtyeight)
+
+            </code>
+            <code data-type="sample-code">
+            Height.model <- lm(Thumb ~ Height, data = Fingers)
+            # use fVal to get the F ratio for Height model
+            </code>
+            <code data-type="solution">
+            # use fVal to get the F ratio for Height model
+            fVal(Height.model)            
+            </code>
+            <code data-type="sct">
+            test_function("fVal")
+            test_error()
+            success_msg("Nice work!")
+            </code>
+        </div>
+    </body>
+</html>
