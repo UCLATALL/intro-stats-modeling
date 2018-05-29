@@ -15,16 +15,28 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
-             custom_seed(50)
+             custom_seed(88)
            
             </code>
             <code data-type="sample-code">
-            
+            # create a sampling distribution with 1000 Fs from shuffled data
+            SDoF1000 <- 
+
+            # depict the sampling distribution in a histogram
+
             </code>
             <code data-type="solution">
-           
+           # create a sampling distribution with 1000 Fs from shuffled data
+            SDoF1000 <- do(1000) * fVal(Thumb ~ shuffle(Height), data = Fingers)
+
+            # depict the sampling distribution in a histogram
+            gf_histogram(~ fVal, data = SDoF1000, fill = "firebrick3", alpha = .9)
             </code>
             <code data-type="sct">
+            test_object("SDoF1000")
+            test_function("gf_histogram")
+            test_error()
+            success_msg("Keep up the good work!")
             </code>
         </div>
     </body>
