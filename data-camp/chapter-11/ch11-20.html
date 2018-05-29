@@ -20,19 +20,15 @@
             
             </code>
             <code data-type="sample-code">
-             sampleF <- fVal(Thumb ~ Height3Group, data = Fingers)
-
             # use fVal to get the F ratio for Height model
             </code>
             <code data-type="solution">
-            ssampleF <- fVal(Thumb ~ Height3Group, data = Fingers)
+            sampleF <- fVal(Thumb ~ Height3Group, data = Fingers)
 
             # use fVal to get the F ratio for Height model
-            Height.model <- lm(Thumb ~ Height, data = Fingers)
             fVal(Height.model)            
             </code>
             <code data-type="sct">
-            test_object("Height.model")
             test_function("fVal")
             test_error()
             success_msg("Nice work!")
