@@ -15,16 +15,24 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
-             custom_seed(50)
+             custom_seed(51)
+             SDoF <- do(10000) * fVal(Thumb ~ shuffle(Height3Group), data = Fingers)
            
             </code>
             <code data-type="sample-code">
+             # SDoF has been created for you
+             # plot these randomized F values in a histogram
             
             </code>
             <code data-type="solution">
-           
+             # SDoF has been created for you
+             # plot these randomized F values in a histogram
+               gf_histogram(~ fVal, data = SDoF, fill = "firebrick2", alpha = .9)
             </code>
             <code data-type="sct">
+             test_function("gf_histogram")
+             test_error()
+             success_msg("Keep it up!")
             </code>
         </div>
     </body>
