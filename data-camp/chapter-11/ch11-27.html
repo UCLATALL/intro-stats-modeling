@@ -15,13 +15,17 @@
              require(Lock5Data)
              require(Lock5withR)
              require(okcupiddata)
-             custom_seed(50)
            
             </code>
             <code data-type="sample-code">
+             # make a plot to help us explore the variation in avg_hatecrimes_per_100k_fbi
             
             </code>
             <code data-type="solution">
+            gf_histogram(~ avg_hatecrimes_per_100k_fbi, data = hate_crimes, fill = "navy", color="lightyellow") 
+
+            gf_boxplot(avg_hatecrimes_per_100k_fbi ~ 1, data = hate_crimes, fill = "lightyellow", color="navy") 
+
            
             </code>
             <code data-type="sct">
