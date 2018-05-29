@@ -16,15 +16,42 @@
              require(Lock5withR)
              require(okcupiddata)
              require(fivethirtyeight)
+             custom_seed(41)
+                
            
             </code>
             <code data-type="sample-code">
-            
+             # we've saved the sample PRE
+            samplePRE <- PRE(avg_hatecrimes_per_100k_fbi ~ median_house_inc, data = hate_crimes)
+
+            # create sampling distribution of randomized PREs
+            SDoPRE <-
+
+            # depict the sampling distribution in a histogram
+
+            # run a tally
+
             </code>
             <code data-type="solution">
+            # we've saved the sample PRE
+            samplePRE <- PRE(avg_hatecrimes_per_100k_fbi ~ median_house_inc, data = hate_crimes)
+
+            # create sampling distribution of randomized PREs
+            SDoPRE <- do(10000) * PRE(avg_hatecrimes_per_100k_fbi ~ shuffle(median_house_inc), data = hate_crimes)
+
+            # depict the sampling distribution in a histogram
+            gf_histogram(~ PRE, data = SDoPRE, fill = ~PRE>samplePRE)
+
+            # run a tally
+            tally(~PRE > samplePRE, data = SDoPRE, format = "proportion")
            
             </code>
             <code data-type="sct">
+             test_object("samplePRE")
+             test_function("gf_histogram")
+             test_function("tally")
+             test_error()
+             success_msg("Keep up the hard work")
             </code>
         </div>
     </body>
