@@ -33,6 +33,11 @@
 
             </code>
             <code data-type="sct">
+                test_function("lm") 
+                test_output_contains("lm(Thumb ~ Height3Group, data = Fingers)")
+                test_output_contains("lm(Thumb ~ NULL, data = Fingers)")
+                test_error()
+                success_msg("Keep up the hard work!")
             </code>
         </div>
     </body>
