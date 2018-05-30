@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Chapter 10 Exercise 17</title>
+        <title>Chapter 10 Exercise 20</title>
         <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
     </head>
     <body>
@@ -11,11 +11,10 @@
             library(ggformula)
             library(mosaic)
             library(supernova)
-            library(Lock5Data)
-            library(Lock5withR)
-            library(okcupiddata)
             Fingers <- supernova::Fingers
+            Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))
             Fingers$Height2Group <- ntile(Fingers$Height, 2)
+            
             set.seed(51)
             bootSDob1 <- do(10000) * b1(Thumb ~ Height2Group, data = resample(Fingers, 157))
             </code>
