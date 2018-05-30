@@ -13,14 +13,16 @@
             require(mosaic)
             require(Lock5withR)
             custom_seed(100)
-            bootSDob1 <- do(10000) * b1(Thumb ~ Height, data = resample(Fingers, 157))
+           
             </code>
             <code data-type="sample-code">
+              bootSDob1 <- do(10000) * b1(Thumb ~ Height, data = resample(Fingers, 157))
               # make a histogram
 
               # run favstats            
             </code>
             <code data-type="solution">
+              bootSDob1 <- do(10000) * b1(Thumb ~ Height, data = resample(Fingers, 157))
              # make a histogram 
              gf_histogram(~ b1, data = bootSDob1, fill = "gold")
              
