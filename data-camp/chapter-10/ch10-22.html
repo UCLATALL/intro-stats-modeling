@@ -17,15 +17,18 @@
             Fingers$Height2Group <- ntile(Fingers$Height, 2)
             Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))
             Height2Group.model <- lm(Thumb ~ Height2Group, data = Fingers)
-            bootSDob1 <- do(10000) * b1(Thumb ~ Height2Group, data = resample(Fingers, 157))
+            
             </code>
             <code data-type="sample-code">
+               bootSDob1 <- do(10000) * b1(Thumb ~ Height2Group, data = resample(Fingers, 157))
+                            
                # here we fit the Height2Group model of Thumb
                 Height2Group.model <- lm(Thumb ~ Height2Group, data = Fingers)
 
                 # try out confint() on this model               
             </code>
             <code data-type="solution">
+            bootSDob1 <- do(10000) * b1(Thumb ~ Height2Group, data = resample(Fingers, 157))
             # here we fit the Height2Group model of Thumb
             Height2Group.model <- lm(Thumb ~ Height2Group, data = Fingers)
 
