@@ -14,7 +14,7 @@
 	             require(Lock5Data)
 	             require(Lock5withR)
 	             require(okcupiddata)
-            Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))
+            
             Fingers$Height2Group <- ntile(Fingers$Height, 2)
             
             set.seed(51)
