@@ -8,10 +8,12 @@
     <body>
         <div data-datacamp-exercise data-lang="r">
            <code data-type="pre-exercise-code"> 
-            library(ggformula)
-            library(mosaic)
-            library(supernova)
-            Fingers <- supernova::Fingers
+              require(ggformula)
+	             require(mosaic)
+	             require(supernova)
+	             require(Lock5Data)
+	             require(Lock5withR)
+	             require(okcupiddata)
             Fingers$Height2Group <- factor(Fingers$Height2Group, levels = c(1,2), labels = c("short", "tall"))
             Fingers$Height2Group <- ntile(Fingers$Height, 2)
             
