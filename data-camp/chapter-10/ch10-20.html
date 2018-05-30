@@ -27,10 +27,18 @@
             # get the favstats for b1
             </code>
             <code data-type="solution">
-
+             bootSDob1 <- do(10000) * b1(Thumb ~ Height2Group, data = resample(Fingers, 157))
+	     # make a histogram of b1
+		gf_histogram(~ b1, data = bootSDob1, fill = "seagreen", alpha = 1)
+             # get the favstats for b1
+		favstats(~ b1, data = bootSDob1)
             </code>
             </code>
             <code data-type="sct">
+		test_function("gf_histogram")
+		test_function("favstats")
+		test_error()
+		success_msg("Great job, thanks for sticking with it!")
 
             </code>
             <div data-type="hint"></div>
